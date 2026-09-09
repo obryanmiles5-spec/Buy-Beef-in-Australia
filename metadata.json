@@ -1,0 +1,6 @@
+{
+  "name": "Buy Beef Online Australia",
+  "description": "Premium online beef delivery and wholesale meat platform for Australian households, BBQ enthusiasts, and commercial food businesses.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
