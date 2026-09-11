@@ -21,6 +21,7 @@ import ProductDetailModal from '@/components/ProductDetailModal';
 import DeliveryComplianceModal from '@/components/DeliveryComplianceModal';
 import BlueprintCenterModal from '@/components/BlueprintCenterModal';
 import CartDrawer from '@/components/CartDrawer';
+import MobileBottomNav from '@/components/MobileBottomNav';
 import { Product, CartItem, BlogPost } from '@/lib/types';
 import { BUSINESS_CONFIG } from '@/lib/data';
 import { Search, User, X } from 'lucide-react';
@@ -170,7 +171,7 @@ export default function HomePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#F8F5EF] text-[#151515] flex flex-col selection:bg-[#7A1F2B] selection:text-white">
+    <div className="min-h-screen bg-[#F8F5EF] text-[#151515] flex flex-col selection:bg-[#7A1F2B] selection:text-white pb-16 lg:pb-0">
       {/* Sitewide JSON-LD Structured Data */}
       <script
         type="application/ld+json"
@@ -215,7 +216,12 @@ export default function HomePage() {
             />
 
             {/* 4. Why Choose Us & 5. How It Works (Static background on scroll ending at "What Customers Say") */}
-            <StaticParallaxContainer bgImageUrl="/why-choose-bg.webp">
+            <StaticParallaxContainer
+              id="why-choose-us-static-parallax-container"
+              bgImageUrl="/why-choose-bg.jpg"
+              webpUrl="/why-choose-bg.webp"
+              altText="Why Customers Choose Our Online Butcher - Premium Australian MSA Beef, Wagyu & Carcass Shares"
+            >
               {/* 4. Why Choose Us / Trust Badges */}
               <WhyChooseUs onOpenCompliance={handleOpenCompliance} />
 
@@ -417,6 +423,15 @@ export default function HomePage() {
           </div>
         </div>
       )}
+
+      {/* Mobile Sticky Quick Navigation Bar */}
+      <MobileBottomNav
+        currentView={currentView}
+        selectedCategory={selectedCategory}
+        cartCount={totalCartCount}
+        onNavigate={handleNavigate}
+        onOpenCart={() => setCartOpen(true)}
+      />
     </div>
   );
 }

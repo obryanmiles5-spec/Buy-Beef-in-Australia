@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect, useCallback } from 'react';
+import Image from 'next/image';
 import { 
   Star, 
   ShieldCheck, 
@@ -86,37 +87,37 @@ export default function ReviewSection() {
     <section
       id="reviews-section"
       aria-labelledby="reviews-heading"
-      className="relative z-20 py-16 sm:py-24 bg-[#F8F5EF] text-[#151515] border-b border-[#EAE6DF]"
+      className="relative z-20 py-16 sm:py-24 lg:py-28 bg-[#F8F5EF] text-[#151515] border-b border-[#EAE6DF]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Top Header */}
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 bg-[#00b67a]/10 border border-[#00b67a]/30 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-[#008257] mb-3">
+        <div className="text-center max-w-3xl mx-auto mb-12">
+          <div className="inline-flex items-center gap-1.5 px-3.5 py-1 bg-[#00b67a]/10 border border-[#00b67a]/30 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] text-[#008257] mb-3">
             <span className="w-2 h-2 rounded-full bg-[#00b67a] animate-pulse"></span>
-            <span>Trustpilot Verified Feedback</span>
+            <span>Trustpilot Verified Feedback • Australian Delivery</span>
           </div>
           <h2
             id="reviews-heading"
-            className="font-serif text-3xl sm:text-4xl font-bold text-[#151515] tracking-tight mb-3"
+            className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#151515] tracking-tight mb-3"
           >
             Verified Customer Reviews
           </h2>
-          <p className="text-stone-600 text-xs sm:text-sm leading-relaxed max-w-2xl mx-auto">
-            Authentic experiences from home cooks, BBQ pitmasters, and food connoisseurs across Australia. Dispatched with temperature-controlled cold-chain insulation from {BUSINESS_CONFIG.location}.
+          <p className="text-stone-600 text-xs sm:text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+            Authentic dining experiences from home cooks, BBQ pitmasters, and food connoisseurs across Australia. Dispatched with temperature-controlled cold-chain insulation from {BUSINESS_CONFIG.location}.
           </p>
         </div>
 
-        {/* Trustpilot Score Summary Bar */}
-        <div className="bg-white border border-[#EAE6DF] rounded-sm p-6 sm:p-8 shadow-xs mb-10 max-w-5xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-center divide-y md:divide-y-0 md:divide-x divide-[#EAE6DF]">
+        {/* Trustpilot Score Summary Bar (Full-Length 4-Column Grid) */}
+        <div className="bg-white border border-[#EAE6DF] rounded-sm p-6 sm:p-8 lg:p-9 shadow-sm mb-12 w-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 items-center divide-y sm:divide-y-0 lg:divide-x divide-[#EAE6DF]">
             {/* Trustpilot Score & Stars */}
-            <div className="flex flex-col items-center md:items-start text-center md:text-left">
-              <div className="flex items-center gap-2 mb-1.5">
-                <span className="font-serif text-3xl sm:text-4xl font-extrabold text-[#151515]">
+            <div className="flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="font-serif text-4xl lg:text-5xl font-extrabold text-[#151515]">
                   4.9
                 </span>
                 <div className="text-left">
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-[#00b67a] block leading-none">
+                  <span className="text-xs font-bold uppercase tracking-wider text-[#00b67a] block leading-tight">
                     Excellent Rating
                   </span>
                   <span className="text-[10px] text-stone-500 font-mono">
@@ -140,28 +141,40 @@ export default function ReviewSection() {
               </div>
             </div>
 
+            {/* Cold-Chain Assurance */}
+            <div className="pt-4 sm:pt-0 sm:px-4 lg:px-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2E6B4D] mb-1.5">
+                <ShieldCheck className="w-4 h-4 text-[#2E6B4D]" />
+                <span>Cold-Chain Delivery Sealed</span>
+              </div>
+              <p className="text-xs text-stone-600 leading-relaxed mb-2.5">
+                Vacuum-sealed sub-4°C thermal liners and gel packs keeping all meats fresh in transit.
+              </p>
+              <div className="inline-flex items-center gap-1 px-2.5 py-1 bg-[#2E6B4D]/10 border border-[#2E6B4D]/25 rounded-xs text-[10px] font-mono text-[#2E6B4D] font-bold">
+                <span>✓ 48-Hour Chill Guarantee</span>
+              </div>
+            </div>
+
             {/* Verified Australian Entity & Location */}
-            <div className="pt-4 md:pt-0 md:px-6 flex flex-col items-center md:items-start text-center md:text-left">
-              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2E6B4D] mb-1">
-                <ShieldCheck className="w-4 h-4" />
-                <span>Verified Australian Butcher</span>
+            <div className="pt-4 sm:pt-0 sm:px-4 lg:px-6 flex flex-col items-center sm:items-start text-center sm:text-left">
+              <div className="inline-flex items-center gap-1.5 text-xs font-bold text-[#7A1F2B] mb-1.5">
+                <MapPin className="w-4 h-4 text-[#7A1F2B]" />
+                <span>Regional Dispatch Hub</span>
               </div>
               <p className="text-xs text-stone-700 font-mono mb-2">
-                Dispatched from NSW, 2642
+                Dispatched from NSW 2642
               </p>
-              <div className="flex items-center gap-1 text-[11px] text-stone-600 mb-3">
-                <MapPin className="w-3.5 h-3.5 text-[#7A1F2B]" />
-                <span>Dispatch Base: {BUSINESS_CONFIG.location}</span>
+              <div className="flex items-center gap-1 text-[11px] text-stone-600 mb-2">
+                <span>Verified ABN: 45 775 613 837</span>
               </div>
-              <div className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-[#F8F5EF] border border-[#2E6B4D]/30 rounded-sm text-[11px] font-mono text-[#2E6B4D]">
-                <ShieldCheck className="w-3 h-3" />
-                <span>Farm-Direct Cold-Chain Freshness</span>
+              <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#F8F5EF] border border-[#EAE6DF] rounded-xs text-[10px] font-mono text-stone-600">
+                <span>✓ Australian Farm Direct</span>
               </div>
             </div>
 
             {/* Customer Review Action */}
-            <div className="pt-4 md:pt-0 md:pl-6 flex flex-col items-center justify-center gap-2">
-              <div className="text-center md:text-left w-full mb-1">
+            <div className="pt-4 sm:pt-0 sm:pl-4 lg:pl-6 flex flex-col items-center sm:items-start justify-center gap-2">
+              <div className="text-center sm:text-left w-full mb-1">
                 <span className="text-[10px] uppercase font-mono tracking-widest text-stone-500 block">
                   Have you ordered recently?
                 </span>
@@ -173,7 +186,7 @@ export default function ReviewSection() {
                 type="button"
                 id="open-leave-review-btn"
                 onClick={() => setShowLeaveReviewModal(true)}
-                className="w-full bg-[#7A1F2B] hover:bg-[#5A1720] text-white text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-sm transition-colors flex items-center justify-center gap-2 shadow-xs"
+                className="w-full bg-[#7A1F2B] hover:bg-[#5A1720] text-white text-[11px] font-bold uppercase tracking-wider py-3 px-4 rounded-sm transition-colors flex items-center justify-center gap-2 shadow-sm cursor-pointer"
               >
                 <MessageSquarePlus className="w-3.5 h-3.5" />
                 <span>Write a Customer Review</span>
@@ -199,9 +212,9 @@ export default function ReviewSection() {
               key={tag.id}
               type="button"
               onClick={() => handleSelectTag(tag.id)}
-              className={`px-3 py-1 rounded-sm text-[11px] font-bold uppercase tracking-wider transition-colors ${
+              className={`px-3.5 py-1.5 rounded-sm text-[11px] font-bold uppercase tracking-wider transition-colors cursor-pointer ${
                 selectedTag === tag.id
-                  ? 'bg-[#151515] text-white'
+                  ? 'bg-[#151515] text-white shadow-xs'
                   : 'bg-white text-stone-700 hover:bg-stone-200 border border-[#EAE6DF]'
               }`}
             >
@@ -211,10 +224,10 @@ export default function ReviewSection() {
         </div>
 
         {/* =========================================================================
-            REV SLIDER: Interactive Trustpilot Reviews Carousel
+            REV SLIDER: Interactive Trustpilot Reviews Carousel (Full Length)
             ========================================================================= */}
         <div 
-          className="relative max-w-6xl mx-auto"
+          className="relative w-full"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
         >
@@ -235,7 +248,7 @@ export default function ReviewSection() {
                 onClick={() => setIsPaused(!isPaused)}
                 aria-label={isPaused ? 'Resume auto-rotation' : 'Pause auto-rotation'}
                 title={isPaused ? 'Resume auto-rotation' : 'Pause auto-rotation'}
-                className="p-2 rounded-sm bg-white hover:bg-[#F8F5EF] border border-[#EAE6DF] text-stone-600 hover:text-stone-900 transition-colors shadow-xs"
+                className="p-2 rounded-sm bg-white hover:bg-[#F8F5EF] border border-[#EAE6DF] text-stone-600 hover:text-stone-900 transition-colors shadow-xs cursor-pointer"
               >
                 {isPaused ? <Play className="w-3.5 h-3.5 text-[#C7903E]" /> : <Pause className="w-3.5 h-3.5" />}
               </button>
@@ -246,7 +259,7 @@ export default function ReviewSection() {
                 onClick={prevReview}
                 aria-label="Previous Review"
                 title="Previous Review"
-                className="p-2 rounded-sm bg-white hover:bg-[#C7903E] hover:text-white border border-[#EAE6DF] text-stone-700 transition-all shadow-xs"
+                className="p-2 rounded-sm bg-white hover:bg-[#C7903E] hover:text-white border border-[#EAE6DF] text-stone-700 transition-all shadow-xs cursor-pointer"
               >
                 <ChevronLeft className="w-4 h-4" />
               </button>
@@ -257,7 +270,7 @@ export default function ReviewSection() {
                 onClick={nextReview}
                 aria-label="Next Review"
                 title="Next Review"
-                className="p-2 rounded-sm bg-white hover:bg-[#C7903E] hover:text-white border border-[#EAE6DF] text-stone-700 transition-all shadow-xs"
+                className="p-2 rounded-sm bg-white hover:bg-[#C7903E] hover:text-white border border-[#EAE6DF] text-stone-700 transition-all shadow-xs cursor-pointer"
               >
                 <ChevronRight className="w-4 h-4" />
               </button>
@@ -266,8 +279,8 @@ export default function ReviewSection() {
 
           {/* Rev Slider Main Viewport: Multi-Card Grid / Carousel */}
           {totalReviews > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-              {[0, 1, 2].map((offset) => {
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {[0, 1, 2, 3].map((offset) => {
                 const reviewItemIndex = (currentIndex + offset) % totalReviews;
                 const review = filteredReviews[reviewItemIndex];
                 if (!review) return null;
@@ -280,11 +293,11 @@ export default function ReviewSection() {
                   <div
                     key={`${review.id}-${offset}`}
                     id={`rev-slide-review-${review.id}`}
-                    className={`bg-white border rounded-sm p-6 flex flex-col justify-between transition-all duration-300 shadow-xs relative overflow-hidden group ${
+                    className={`bg-white border rounded-sm p-6 sm:p-7 flex flex-col justify-between transition-all duration-300 shadow-xs relative overflow-hidden group ${
                       isPrimary 
                         ? 'border-[#00b67a] ring-1 ring-[#00b67a]/30 shadow-md' 
                         : 'border-[#EAE6DF] hover:border-[#00b67a]'
-                    } ${offset >= 1 ? 'hidden md:flex' : 'flex'} ${offset === 2 ? 'hidden lg:flex' : ''}`}
+                    } ${offset >= 1 ? 'hidden md:flex' : 'flex'} ${offset === 2 ? 'hidden lg:flex' : ''} ${offset === 3 ? 'hidden xl:flex' : ''}`}
                   >
                     {/* Decorative Watermark Quote */}
                     <Quote className="absolute -bottom-2 -right-2 w-20 h-20 text-stone-100 -rotate-12 pointer-events-none group-hover:text-[#00b67a]/5 transition-colors" />
@@ -346,7 +359,7 @@ export default function ReviewSection() {
                         <button
                           type="button"
                           onClick={() => handleHelpful(review.id)}
-                          className={`inline-flex items-center gap-1 text-[10px] px-2.5 py-1 rounded-sm border transition-colors ${
+                          className={`inline-flex items-center gap-1 text-[10px] px-2.5 py-1 rounded-sm border transition-colors cursor-pointer ${
                             isLiked
                               ? 'bg-[#00b67a]/10 border-[#00b67a]/40 text-[#008257] font-bold'
                               : 'bg-[#F8F5EF] border-[#EAE6DF] text-stone-600 hover:text-stone-900 hover:border-stone-400'
@@ -378,7 +391,7 @@ export default function ReviewSection() {
                   id={`rev-dot-${idx}`}
                   onClick={() => setCurrentIndex(idx)}
                   aria-label={`Jump to review ${idx + 1}`}
-                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                  className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${
                     currentIndex === idx 
                       ? 'w-8 bg-[#00b67a]' 
                       : 'w-2 bg-stone-300 hover:bg-stone-400'
@@ -387,6 +400,21 @@ export default function ReviewSection() {
               ))}
             </div>
           )}
+        </div>
+
+        {/* Full-Length Customer Trust & Artisan Butchery Showcase Banner */}
+        <div className="mt-10 sm:mt-14 w-full overflow-hidden rounded-sm border border-[#EAE6DF] shadow-md bg-white">
+          <div className="relative w-full overflow-hidden">
+            <Image
+              src="/trustpilot-banner.webp"
+              alt="Australian Online Butcher - Premium Meat Delivery, Whole Carcass Shares & Verified Customer Satisfaction"
+              width={1672}
+              height={941}
+              priority={false}
+              className="w-full h-auto object-cover block select-none"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 100vw, (max-width: 1440px) 1440px, 1600px"
+            />
+          </div>
         </div>
       </div>
 

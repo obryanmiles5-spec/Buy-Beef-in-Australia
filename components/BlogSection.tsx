@@ -41,39 +41,39 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
     <section
       id="blog-guides-section"
       aria-labelledby="blog-heading"
-      className="relative z-20 py-16 sm:py-24 bg-[#F8F5EF] text-[#151515] border-b border-[#EAE6DF]"
+      className="relative z-20 py-16 sm:py-24 lg:py-28 bg-[#F8F5EF] text-[#151515] border-b border-[#EAE6DF]"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full max-w-[1440px] 2xl:max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 lg:mb-12 pb-4 border-b border-[#EAE6DF] gap-4">
           <div>
             <div className="flex items-center gap-2 mb-2">
               <span className="w-6 h-[2px] bg-[#7A1F2B]" />
               <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-[#7A1F2B]">
-                Australian Butcher Journal & Culinary Guides
+                Australian Butcher Journal &amp; Culinary Guides
               </span>
             </div>
             <h2
               id="blog-heading"
-              className="font-serif text-3xl sm:text-4xl font-bold text-[#151515] tracking-tight"
+              className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#151515] tracking-tight"
             >
-              Recipes, Cut Guides & Meat Storage Advice
+              Recipes, Cut Guides &amp; Meat Storage Advice
             </h2>
           </div>
-          <p className="text-xs sm:text-sm text-stone-600 max-w-md mt-3 md:mt-0 leading-relaxed">
+          <p className="text-xs sm:text-sm text-stone-600 max-w-md mt-2 md:mt-0 leading-relaxed">
             Practical culinary insights, food safety advice, and barbecue techniques directly from our Australian butcher counter.
           </p>
         </div>
 
-        {/* SPOT 1: Lead High-Resolution Spotlight (home1.webp - 2500x1667 Landscape) */}
+        {/* SPOT 1: Lead High-Resolution Spotlight (home1.webp - 2500x1667 Landscape) Full Width */}
         {featuredBbqPost && (
           <div
             id="blog-spotlight-home1"
-            className="mb-10 bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-sm hover:border-[#C7903E] transition-all duration-300 group"
+            className="mb-10 lg:mb-12 bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-sm hover:border-[#C7903E] transition-all duration-300 group w-full"
           >
             <div className="grid grid-cols-1 lg:grid-cols-12">
               {/* High-Resolution Landscape Image Stage */}
-              <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[280px] sm:min-h-[380px] overflow-hidden bg-stone-900">
+              <div className="lg:col-span-7 relative aspect-[16/10] sm:aspect-[16/9] lg:aspect-auto min-h-[300px] sm:min-h-[420px] lg:min-h-[480px] overflow-hidden bg-stone-900">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={featuredBbqPost.image}
@@ -81,11 +81,11 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-black/20 pointer-events-none" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-black/25 pointer-events-none" />
 
                 {/* Badges on Image */}
-                <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
-                  <span className="bg-[#7A1F2B] text-white text-[10px] font-bold uppercase tracking-wider px-3 py-1 rounded-sm shadow-md flex items-center gap-1.5">
+                <div className="absolute top-4 left-4 flex items-center gap-2">
+                  <span className="bg-[#7A1F2B] text-white text-[10px] font-bold uppercase tracking-wider px-3.5 py-1.5 rounded-sm shadow-md flex items-center gap-1.5">
                     <Flame className="w-3.5 h-3.5 text-amber-300" />
                     <span>Featured Masterclass</span>
                   </span>
@@ -94,26 +94,26 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                   </span>
                 </div>
 
-                <div className="absolute bottom-3 left-3.5 right-3.5 flex items-center justify-between text-white/90 text-xs font-mono">
-                  <span className="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-sm border border-white/10">
-                    Category: BBQ & Grilling
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between text-white/90 text-xs font-mono">
+                  <span className="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-sm border border-white/10 font-medium">
+                    Category: BBQ &amp; Grilling
                   </span>
-                  <span className="bg-black/60 backdrop-blur-sm px-2.5 py-1 rounded-sm border border-white/10 flex items-center gap-1.5">
-                    <Clock className="w-3 h-3 text-[#C7903E]" />
+                  <span className="bg-black/60 backdrop-blur-sm px-3 py-1 rounded-sm border border-white/10 flex items-center gap-1.5">
+                    <Clock className="w-3.5 h-3.5 text-[#C7903E]" />
                     <span>{featuredBbqPost.readingTime}</span>
                   </span>
                 </div>
               </div>
 
               {/* Editorial Copy Column */}
-              <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 flex flex-col justify-between bg-white">
+              <div className="lg:col-span-5 p-6 sm:p-8 lg:p-10 xl:p-12 flex flex-col justify-between bg-white">
                 <div>
-                  <div className="flex items-center gap-2 text-stone-500 text-[11px] font-mono uppercase tracking-wider mb-2.5">
-                    <ChefHat className="w-3.5 h-3.5 text-[#C7903E]" />
+                  <div className="flex items-center gap-2 text-stone-500 text-[11px] font-mono uppercase tracking-wider mb-3">
+                    <ChefHat className="w-4 h-4 text-[#C7903E]" />
                     <span>Master Butcher Series • Summer Season</span>
                   </div>
 
-                  <h3 className="font-serif text-2xl sm:text-3xl font-bold text-[#151515] leading-snug group-hover:text-[#7A1F2B] transition-colors mb-3">
+                  <h3 className="font-serif text-2xl sm:text-3xl lg:text-4xl font-bold text-[#151515] leading-snug group-hover:text-[#7A1F2B] transition-colors mb-4">
                     {featuredBbqPost.title}
                   </h3>
 
@@ -122,21 +122,21 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                   </p>
 
                   {/* Cut Highlights */}
-                  <div className="space-y-2.5 pt-4 border-t border-stone-100 mb-6">
-                    <div className="flex items-start gap-2 text-xs text-stone-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
+                  <div className="space-y-3 pt-4 border-t border-stone-100 mb-6">
+                    <div className="flex items-start gap-2.5 text-xs text-stone-700">
+                      <span className="w-2 h-2 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
                       <div>
-                        <strong className="text-stone-900 font-semibold">Scotch Fillet (Ribeye):</strong> Built-in basting with rich intramuscular fat ribbons.
+                        <strong className="text-stone-900 font-semibold">Scotch Fillet (Ribeye):</strong> Built-in basting with rich intramuscular fat ribbons for maximum tenderness.
                       </div>
                     </div>
-                    <div className="flex items-start gap-2 text-xs text-stone-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
+                    <div className="flex items-start gap-2.5 text-xs text-stone-700">
+                      <span className="w-2 h-2 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
                       <div>
                         <strong className="text-stone-900 font-semibold">Thick-Cut Rump:</strong> High value, robust beef flavour, perfect for sizzling high-heat char.
                       </div>
                     </div>
-                    <div className="flex items-start gap-2 text-xs text-stone-700">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
+                    <div className="flex items-start gap-2.5 text-xs text-stone-700">
+                      <span className="w-2 h-2 rounded-full bg-[#C7903E] mt-1.5 shrink-0" />
                       <div>
                         <strong className="text-stone-900 font-semibold">Resting Principle:</strong> Always rest on a warm board for 5–8 minutes prior to carving.
                       </div>
@@ -150,7 +150,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     type="button"
                     id="blog-spotlight-read-btn"
                     onClick={() => handleRead(featuredBbqPost)}
-                    className="bg-[#151515] hover:bg-[#7A1F2B] text-white font-bold text-[11px] uppercase tracking-wider py-3 px-6 rounded-sm transition-all flex items-center gap-2 shadow-sm"
+                    className="bg-[#151515] hover:bg-[#7A1F2B] text-white font-bold text-[11px] uppercase tracking-wider py-3.5 px-7 rounded-sm transition-all flex items-center gap-2 shadow-sm cursor-pointer"
                   >
                     <BookOpen className="w-4 h-4" />
                     <span>Read Complete Guide</span>
@@ -161,7 +161,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     type="button"
                     id="blog-spotlight-shop-btn"
                     onClick={handleShopBeef}
-                    className="border border-stone-300 hover:border-stone-500 text-stone-800 font-bold text-[11px] uppercase tracking-wider py-3 px-5 rounded-sm hover:bg-stone-50 transition-all"
+                    className="border border-stone-300 hover:border-stone-500 text-stone-800 font-bold text-[11px] uppercase tracking-wider py-3.5 px-6 rounded-sm hover:bg-stone-50 transition-all cursor-pointer"
                   >
                     Shop BBQ Cuts →
                   </button>
@@ -172,16 +172,16 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
         )}
 
         {/* Lower Row: SPOT 2 (home.webp - 3000x4000 Portrait) + Supporting Guides */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch w-full">
           {/* SPOT 2: Artisan Butcher Cut Manual (home.webp - 3000x4000 Portrait Frame) */}
           {cutManualPost && (
             <article
               id="blog-spotlight-home"
-              className="md:col-span-6 lg:col-span-5 bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 flex flex-col justify-between group"
+              className="lg:col-span-5 bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* High-Resolution Portrait Container */}
-                <div className="relative aspect-[3/4] sm:aspect-[4/5] overflow-hidden bg-stone-950">
+                <div className="relative aspect-[3/4] sm:aspect-[4/5] lg:aspect-[3/4] overflow-hidden bg-stone-950">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={cutManualPost.image}
@@ -189,20 +189,20 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     className="w-full h-full object-cover object-center transform transition-transform duration-700 ease-out group-hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#151515]/85 via-transparent to-black/25 pointer-events-none" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#151515]/90 via-transparent to-black/30 pointer-events-none" />
 
                   {/* Top Resolution Badges */}
-                  <div className="absolute top-3 left-3 flex items-center gap-2">
+                  <div className="absolute top-3.5 left-3.5 flex items-center gap-2">
                     <span className="bg-[#151515]/90 backdrop-blur-sm text-[#C7903E] text-[9px] font-mono uppercase tracking-wider px-2.5 py-1 rounded-sm border border-stone-700">
                       {cutManualPost.category}
                     </span>
-                    <span className="bg-black/75 backdrop-blur-sm text-stone-300 text-[9px] font-mono tracking-widest px-2 py-0.5 rounded-sm border border-white/15">
+                    <span className="bg-black/75 backdrop-blur-sm text-stone-300 text-[9px] font-mono tracking-widest px-2.5 py-1 rounded-sm border border-white/15">
                       3000×4000 HD SPEC
                     </span>
                   </div>
 
                   {/* Bottom Image Overlay Header */}
-                  <div className="absolute bottom-3 left-3 right-3">
+                  <div className="absolute bottom-4 left-4 right-4">
                     <span className="text-[10px] font-mono uppercase tracking-wider text-[#C7903E] font-bold block mb-1">
                       Artisan Cut Anatomy
                     </span>
@@ -213,9 +213,9 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                 </div>
 
                 {/* Excerpt and Specs */}
-                <div className="p-5">
+                <div className="p-6">
                   <div className="flex items-center gap-2 text-[10px] text-stone-500 font-medium mb-3">
-                    <Clock className="w-3 h-3 text-[#C7903E]" />
+                    <Clock className="w-3.5 h-3.5 text-[#C7903E]" />
                     <span>{cutManualPost.readingTime}</span>
                     <span>•</span>
                     <span className="font-mono text-stone-400">/blog/{cutManualPost.slug}</span>
@@ -227,7 +227,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
 
                   <div className="grid grid-cols-2 gap-2 text-[11px] bg-[#F8F5EF] p-3 rounded-sm border border-[#EAE6DF] font-sans">
                     <div>
-                      <span className="font-bold text-stone-900 block">Low & Slow:</span>
+                      <span className="font-bold text-stone-900 block">Low &amp; Slow:</span>
                       <span className="text-stone-600 text-[10px]">Chuck, Shin, Brisket</span>
                     </div>
                     <div>
@@ -238,30 +238,30 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                 </div>
               </div>
 
-              <div className="p-5 pt-0">
+              <div className="p-6 pt-0">
                 <button
                   type="button"
                   id={`read-more-${cutManualPost.id}`}
                   onClick={() => handleRead(cutManualPost)}
-                  className="w-full bg-[#F8F5EF] hover:bg-[#7A1F2B] hover:text-white text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2.5 px-4 rounded-sm border border-[#EAE6DF] transition-all flex items-center justify-center gap-2 cursor-pointer"
+                  className="w-full bg-[#F8F5EF] hover:bg-[#7A1F2B] hover:text-white text-stone-800 text-[11px] font-bold uppercase tracking-wider py-3 px-4 rounded-sm border border-[#EAE6DF] transition-all flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <BookOpen className="w-3.5 h-3.5" />
                   <span>Read Butcher Cut Manual</span>
-                  <ArrowRight className="w-3 h-3" />
+                  <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
             </article>
           )}
 
           {/* Supporting Articles: Safe Storage & Cooking Temperatures */}
-          <div className="md:col-span-6 lg:col-span-7 flex flex-col justify-between gap-6">
+          <div className="lg:col-span-7 flex flex-col justify-between gap-6">
             {/* Guide 3: Food Safety & Meat Storage */}
             {storagePost && (
               <article
                 id={`blog-card-${storagePost.id}`}
-                className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 p-5 flex flex-col sm:flex-row gap-4 group"
+                className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 p-6 flex flex-col sm:flex-row gap-5 group"
               >
-                <div className="sm:w-44 shrink-0 relative aspect-[4/3] sm:aspect-auto sm:h-full min-h-[140px] rounded-sm overflow-hidden bg-stone-100">
+                <div className="sm:w-52 shrink-0 relative aspect-[4/3] sm:aspect-auto sm:h-full min-h-[160px] rounded-sm overflow-hidden bg-stone-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={storagePost.image}
@@ -269,7 +269,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <span className="absolute top-2 left-2 bg-[#151515]/90 text-[#2E6B4D] text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-sm border border-stone-700">
+                  <span className="absolute top-2.5 left-2.5 bg-[#151515]/90 text-[#2E6B4D] text-[9px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-sm border border-stone-700">
                     Food Safety
                   </span>
                 </div>
@@ -277,13 +277,13 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                 <div className="flex flex-col justify-between flex-grow">
                   <div>
                     <div className="flex items-center gap-1.5 text-[10px] text-stone-500 mb-1.5">
-                      <ShieldCheck className="w-3 h-3 text-[#2E6B4D]" />
+                      <ShieldCheck className="w-3.5 h-3.5 text-[#2E6B4D]" />
                       <span>{storagePost.readingTime}</span>
                       <span>•</span>
-                      <span className="font-mono text-stone-400">Domestic & Cold-Chain</span>
+                      <span className="font-mono text-stone-400">Domestic &amp; Cold-Chain</span>
                     </div>
 
-                    <h3 className="font-serif text-base font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors leading-snug mb-2">
+                    <h3 className="font-serif text-lg font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors leading-snug mb-2">
                       {storagePost.title}
                     </h3>
 
@@ -299,7 +299,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     className="self-start text-[11px] font-bold uppercase tracking-wider text-[#7A1F2B] hover:text-[#C7903E] transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>Read Storage Protocol</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </article>
@@ -309,9 +309,9 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
             {tempsPost && (
               <article
                 id={`blog-card-${tempsPost.id}`}
-                className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 p-5 flex flex-col sm:flex-row gap-4 group"
+                className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] shadow-xs hover:border-[#C7903E] transition-all duration-300 p-6 flex flex-col sm:flex-row gap-5 group"
               >
-                <div className="sm:w-44 shrink-0 relative aspect-[4/3] sm:aspect-auto sm:h-full min-h-[140px] rounded-sm overflow-hidden bg-stone-100">
+                <div className="sm:w-52 shrink-0 relative aspect-[4/3] sm:aspect-auto sm:h-full min-h-[160px] rounded-sm overflow-hidden bg-stone-100">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
                     src={tempsPost.image}
@@ -319,7 +319,7 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
                   />
-                  <span className="absolute top-2 left-2 bg-[#151515]/90 text-[#C7903E] text-[9px] font-mono uppercase tracking-wider px-2 py-0.5 rounded-sm border border-stone-700">
+                  <span className="absolute top-2.5 left-2.5 bg-[#151515]/90 text-[#C7903E] text-[9px] font-mono uppercase tracking-wider px-2.5 py-0.5 rounded-sm border border-stone-700">
                     Culinary Temps
                   </span>
                 </div>
@@ -327,13 +327,13 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                 <div className="flex flex-col justify-between flex-grow">
                   <div>
                     <div className="flex items-center gap-1.5 text-[10px] text-stone-500 mb-1.5">
-                      <Thermometer className="w-3 h-3 text-[#C7903E]" />
+                      <Thermometer className="w-3.5 h-3.5 text-[#C7903E]" />
                       <span>{tempsPost.readingTime}</span>
                       <span>•</span>
                       <span className="font-mono text-stone-400">Core Probe Guide</span>
                     </div>
 
-                    <h3 className="font-serif text-base font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors leading-snug mb-2">
+                    <h3 className="font-serif text-lg font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors leading-snug mb-2">
                       {tempsPost.title}
                     </h3>
 
@@ -349,28 +349,28 @@ export default function BlogSection({ onOpenArticle, onNavigate }: BlogSectionPr
                     className="self-start text-[11px] font-bold uppercase tracking-wider text-[#7A1F2B] hover:text-[#C7903E] transition-colors flex items-center gap-1.5 cursor-pointer"
                   >
                     <span>Read Temp Guide</span>
-                    <ArrowRight className="w-3 h-3" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
                 </div>
               </article>
             )}
 
             {/* Quick Meat Cutting Tip Box */}
-            <div className="bg-[#151515] text-[#F8F5EF] p-5 rounded-sm border border-stone-800 flex items-center justify-between gap-4">
+            <div className="bg-[#151515] text-[#F8F5EF] p-6 rounded-sm border border-stone-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div>
-                <span className="text-[9px] uppercase font-mono tracking-widest text-[#C7903E] block mb-1">
+                <span className="text-[9px] uppercase font-mono tracking-widest text-[#C7903E] block mb-1 font-bold">
                   Butcher Counter Tip
                 </span>
-                <p className="text-xs text-stone-300 leading-relaxed">
-                  Need custom cut thickness or carton primal portions? Our master butchers cut to order for both household packs and hospitality supply.
+                <p className="text-xs text-stone-300 leading-relaxed max-w-xl">
+                  Need custom cut thickness or carton primal portions? Our master butchers cut to order for both household packs and commercial hospitality supply.
                 </p>
               </div>
               <button
                 type="button"
                 onClick={handleShopBeef}
-                className="shrink-0 bg-[#C7903E] hover:bg-[#B37F33] text-white text-[10px] font-bold uppercase tracking-wider px-4 py-2 rounded-sm transition-all whitespace-nowrap"
+                className="shrink-0 bg-[#C7903E] hover:bg-[#B37F33] text-white text-[10px] font-bold uppercase tracking-wider px-5 py-2.5 rounded-sm transition-all whitespace-nowrap cursor-pointer shadow-sm"
               >
-                Order Fresh Cuts
+                Order Fresh Cuts →
               </button>
             </div>
           </div>

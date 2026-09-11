@@ -194,13 +194,13 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
       <div className="absolute inset-0 bg-gradient-to-r from-[#151515] via-[#151515]/75 to-[#151515]/35 z-10 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-t from-[#151515] via-transparent to-[#151515]/30 z-10 pointer-events-none" />
 
-      {/* Rev Slider Navigation Controls: Prev & Next Arrows */}
+      {/* Rev Slider Navigation Controls: Prev & Next Arrows (Desktop & Tablet; Mobile uses swipe) */}
       <button
         type="button"
         id="hero-rev-prev-btn"
         aria-label="Previous Slide"
         onClick={prevSlide}
-        className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-black/40 hover:bg-[#C7903E] text-white/80 hover:text-white border border-white/15 hover:border-[#C7903E] backdrop-blur-sm flex items-center justify-center transition-all shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C7903E]"
+        className="hidden sm:flex absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-black/40 hover:bg-[#C7903E] text-white/80 hover:text-white border border-white/15 hover:border-[#C7903E] backdrop-blur-sm items-center justify-center transition-all shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C7903E]"
       >
         <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
@@ -210,45 +210,45 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
         id="hero-rev-next-btn"
         aria-label="Next Slide"
         onClick={nextSlide}
-        className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-black/40 hover:bg-[#C7903E] text-white/80 hover:text-white border border-white/15 hover:border-[#C7903E] backdrop-blur-sm flex items-center justify-center transition-all shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C7903E]"
+        className="hidden sm:flex absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-30 w-10 h-10 sm:w-12 sm:h-12 rounded-sm bg-black/40 hover:bg-[#C7903E] text-white/80 hover:text-white border border-white/15 hover:border-[#C7903E] backdrop-blur-sm items-center justify-center transition-all shadow-lg hover:scale-105 focus:outline-none focus:ring-2 focus:ring-[#C7903E]"
       >
         <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Verified Business Details & ABN Link (Directly under Home & Shop Navigation) */}
-      <div className="absolute top-4 left-4 sm:left-8 z-30 flex items-center max-w-[calc(100%-140px)] sm:max-w-none overflow-hidden">
+      <div className="absolute top-3 sm:top-4 left-3 sm:left-8 z-30 flex items-center max-w-[calc(100%-65px)] sm:max-w-none overflow-hidden">
         <a
           href={BUSINESS_CONFIG.abnLookupUrl}
           target="_blank"
           rel="noopener noreferrer"
           id="hero-business-abn-verify-btn"
           title="Verify business registration on Australian Business Register"
-          className="inline-flex items-center gap-1.5 sm:gap-2 text-[9px] sm:text-[10px] font-mono tracking-widest uppercase bg-black/50 hover:bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-sm border border-white/15 hover:border-[#C7903E] text-stone-300 transition-all shadow-md group truncate sm:overflow-visible"
+          className="inline-flex items-center gap-1.5 sm:gap-2 text-[8.5px] sm:text-[10px] font-mono tracking-wider uppercase bg-black/60 hover:bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-sm border border-white/15 hover:border-[#C7903E] text-stone-300 transition-all shadow-md group truncate sm:overflow-visible"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#2E6B4D] animate-pulse shrink-0" />
-          <span className="text-stone-400">Entity:</span>
-          <strong className="text-white font-semibold">A.J BLANCH &amp; M.C BLANCH</strong>
-          <span className="text-stone-600">|</span>
-          <span className="text-stone-400">Verified ABN:</span>
+          <span className="text-stone-400 hidden sm:inline">Entity:</span>
+          <strong className="text-white font-semibold hidden sm:inline">A.J BLANCH &amp; M.C BLANCH</strong>
+          <span className="text-stone-600 hidden sm:inline">|</span>
+          <span className="text-stone-400">ABN:</span>
           <strong className="text-[#C7903E] font-bold">45 775 613 837</strong>
           <span className="text-stone-600 hidden md:inline">|</span>
           <span className="text-stone-400 hidden md:inline">Business Name:</span>
           <strong className="text-white font-semibold hidden md:inline">Matty B Farm Fencing</strong>
-          <span className="text-stone-600">|</span>
-          <span className="text-[#C7903E] group-hover:text-[#E0AE5C] font-bold inline-flex items-center gap-0.5 group-hover:underline shrink-0">
-            Verify Business ↗
+          <span className="text-stone-600 hidden sm:inline">|</span>
+          <span className="text-[#C7903E] group-hover:text-[#E0AE5C] font-bold inline-flex items-center gap-0.5 group-hover:underline shrink-0 ml-0.5">
+            Verified ↗
           </span>
         </a>
       </div>
 
       {/* Rev Slider Top Meta Indicator (Play/Pause) */}
-      <div className="absolute top-4 right-4 sm:right-8 z-30 flex items-center gap-2">
+      <div className="absolute top-3 sm:top-4 right-3 sm:right-8 z-30 flex items-center gap-2">
         <button
           type="button"
           id="hero-rev-pause-btn"
           aria-label={isPaused ? 'Resume slider auto-play' : 'Pause slider auto-play'}
           onClick={() => setIsPaused(!isPaused)}
-          className="p-1.5 rounded-sm bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/15 text-stone-300 hover:text-white transition-colors"
+          className="p-1.5 rounded-sm bg-black/50 hover:bg-black/80 backdrop-blur-md border border-white/15 text-stone-300 hover:text-white transition-colors min-w-[36px] min-h-[36px] flex items-center justify-center"
           title={isPaused ? 'Play' : 'Pause'}
         >
           {isPaused ? <Play className="w-3 h-3 text-[#C7903E]" /> : <Pause className="w-3 h-3" />}
@@ -256,8 +256,8 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
       </div>
 
       {/* Slider Main Stage Content */}
-      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 flex items-center justify-between min-h-[580px] sm:min-h-[640px]">
-        <div className="max-w-2xl">
+      <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 lg:py-28 flex flex-col lg:flex-row items-center justify-between min-h-[540px] sm:min-h-[640px]">
+        <div className="max-w-2xl w-full">
           {/* Eyebrow with Natural Tones Gold Rule */}
           <div className="flex items-center gap-3 mb-3">
             <span className="w-8 h-[1px] bg-[#C7903E]"></span>
@@ -269,7 +269,7 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
           {/* H1 Heading targeting primary butcher keywords */}
           <h1
             key={`title-${activeSlide.id}`}
-            className="font-serif text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-4 animate-fade-in"
+            className="font-serif text-2xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-tight mb-4 animate-fade-in"
           >
             {activeSlide.titleLead} <br />
             <span className="text-[#C7903E] italic font-normal">{activeSlide.titleAccent}</span>
@@ -278,21 +278,21 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
           {/* Supporting text */}
           <p
             key={`desc-${activeSlide.id}`}
-            className="text-sm sm:text-base text-[#F8F5EF]/80 leading-relaxed mb-8 max-w-xl animate-fade-in"
+            className="text-xs sm:text-base text-[#F8F5EF]/80 leading-relaxed mb-6 sm:mb-8 max-w-xl animate-fade-in"
           >
             {activeSlide.description}
           </p>
 
           {/* CTAs */}
-          <div className="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 sm:gap-4 mb-8 sm:mb-10">
             {/* Primary CTA */}
             <button
               type="button"
               id={`hero-rev-cta-primary-${activeSlide.id}`}
               onClick={handlePrimaryClick}
-              className="bg-[#C7903E] hover:bg-[#B37F33] text-white font-bold text-[11px] uppercase tracking-widest px-7 py-3.5 rounded-sm shadow-md transition-all flex items-center gap-2 hover:shadow-lg"
+              className="w-full sm:w-auto min-h-[44px] justify-center bg-[#C7903E] hover:bg-[#B37F33] text-white font-bold text-[11px] uppercase tracking-widest px-6 sm:px-7 py-3.5 rounded-sm shadow-md transition-all flex items-center gap-2 hover:shadow-lg active:scale-98"
             >
-              <span>Shop Black Angus & Wagyu</span>
+              <span>Shop Black Angus &amp; Wagyu</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
 
@@ -301,7 +301,7 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
               type="button"
               id={`hero-rev-cta-secondary-${activeSlide.id}`}
               onClick={handleSecondaryClick}
-              className="border border-white/30 hover:border-white/60 text-white font-bold text-[11px] uppercase tracking-widest px-7 py-3.5 rounded-sm hover:bg-white/10 transition-all"
+              className="w-full sm:w-auto min-h-[44px] justify-center border border-white/30 hover:border-white/60 text-white font-bold text-[11px] uppercase tracking-widest px-6 sm:px-7 py-3.5 rounded-sm hover:bg-white/10 transition-all flex items-center"
             >
               Explore Family Meat Packs
             </button>
@@ -311,7 +311,7 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
               type="button"
               id={`hero-rev-cta-wholesale-${activeSlide.id}`}
               onClick={onWholesale}
-              className="text-[#C7903E] hover:text-[#E0AE5C] text-[11px] font-bold uppercase tracking-widest py-2 px-3 transition-colors"
+              className="text-center sm:text-left text-[#C7903E] hover:text-[#E0AE5C] text-[11px] font-bold uppercase tracking-widest py-2 px-3 transition-colors"
             >
               Wholesale Supply →
             </button>
