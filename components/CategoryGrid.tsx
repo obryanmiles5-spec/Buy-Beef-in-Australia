@@ -32,7 +32,7 @@ export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
           </div>
           <div className="flex items-center gap-3">
             <span className="hidden md:inline-flex text-[11px] font-mono text-stone-500 uppercase">
-              10 Specialized Departments + Wholesale
+              10 Specialized Departments
             </span>
             <button
               type="button"
@@ -96,53 +96,6 @@ export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
               </div>
             );
           })}
-
-          {/* Wholesale Card in Natural Tones theme */}
-          <div
-            id="category-card-wholesale"
-            onClick={() => onSelectCategory('wholesale')}
-            className="group relative bg-[#151515] text-white rounded-sm overflow-hidden border border-stone-800 hover:border-[#C7903E] p-6 sm:p-7 flex flex-col justify-between cursor-pointer hover:shadow-2xl transition-all"
-          >
-            <div className="absolute inset-0 z-0">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="/categories/wholesale.webp"
-                alt="Wholesale Meat Commercial Supply"
-                className="w-full h-full object-cover opacity-25 group-hover:scale-105 group-hover:opacity-35 transition-all duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-[#151515] via-[#151515]/85 to-[#151515]/70" />
-            </div>
-
-            <div className="relative z-10">
-              <div className="flex items-center justify-between mb-3">
-                <span className="text-[9px] uppercase tracking-[0.25em] font-bold text-[#C7903E] block">
-                  Wholesale Counter
-                </span>
-                <span className="text-[9px] bg-[#C7903E]/20 text-[#C7903E] font-mono px-2 py-0.5 rounded-xs font-bold border border-[#C7903E]/40">
-                  Commercial
-                </span>
-              </div>
-              <h3 className="font-serif text-2xl lg:text-3xl font-bold text-white mb-2 leading-tight">
-                Commercial Supply
-              </h3>
-              <p className="text-xs text-[#F8F5EF]/75 leading-relaxed mb-6">
-                Primal vacuum-packed cuts, carton buys, and dedicated wholesale butcher accounts for Australian restaurants, pubs, and catering.
-              </p>
-            </div>
-
-            <div className="relative z-10 pt-4 border-t border-stone-800 flex items-center justify-between">
-              <span className="text-[10px] font-mono text-[#C7903E] uppercase tracking-wider">
-                Cartons &amp; Primals
-              </span>
-              <button
-                type="button"
-                className="bg-[#C7903E] hover:bg-[#B37F33] text-white px-4 py-2 text-[10px] font-bold uppercase tracking-widest rounded-sm transition-colors shadow-sm"
-              >
-                Enquire Now →
-              </button>
-            </div>
-          </div>
         </div>
       </div>
     </section>

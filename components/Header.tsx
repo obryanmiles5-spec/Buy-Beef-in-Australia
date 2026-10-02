@@ -18,6 +18,7 @@ import {
   ExternalLink
 } from 'lucide-react';
 import AnnouncementBar from './AnnouncementBar';
+import BrandLogo from './BrandLogo';
 import { CATEGORIES, BUSINESS_CONFIG } from '@/lib/data';
 
 interface HeaderProps {
@@ -151,25 +152,14 @@ export default function Header({
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
-              {/* Text-based Logo with Natural Tones Butcher Stamp */}
+              {/* Refined Brand Logo */}
               <button
                 type="button"
                 id="brand-logo-btn"
                 onClick={() => onNavigate('home')}
-                className="text-left group flex items-center min-w-0 py-1"
+                className="text-left group flex items-center min-w-0 py-1 cursor-pointer focus:outline-none"
               >
-                <div className="w-7 h-7 sm:w-8 sm:h-8 bg-[#7A1F2B] mr-2 sm:mr-2.5 flex items-center justify-center text-white text-xs sm:text-sm font-serif italic rounded-sm shadow-sm shrink-0">
-                  B
-                </div>
-                <div className="flex flex-col justify-center min-w-0">
-                  <span className="font-serif text-base sm:text-xl md:text-2xl font-bold tracking-tight text-[#151515] group-hover:text-[#7A1F2B] transition-colors leading-tight truncate">
-                    {BUSINESS_CONFIG.businessName}
-                  </span>
-                  <span className="text-[8px] sm:text-[9px] tracking-[0.12em] uppercase font-mono text-[#706E6B] flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#2E6B4D] shrink-0"></span>
-                    <span className="truncate">NSW 2642 • AUSTRALIA</span>
-                  </span>
-                </div>
+                <BrandLogo variant="full" />
               </button>
             </div>
 
@@ -411,20 +401,7 @@ export default function Header({
             <div className="pb-6">
               {/* Mobile Drawer Header */}
               <div className="p-4 border-b border-[#EAE6DF] flex items-center justify-between bg-white sticky top-0 z-10">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 bg-[#7A1F2B] flex items-center justify-center text-white text-sm font-serif italic rounded-sm shadow-sm shrink-0">
-                    B
-                  </div>
-                  <div>
-                    <h3 className="font-serif font-bold text-base text-[#151515] leading-tight">
-                      {BUSINESS_CONFIG.businessName}
-                    </h3>
-                    <p className="text-[9px] text-[#706E6B] uppercase font-mono tracking-wider flex items-center gap-1">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#2E6B4D]" />
-                      NSW 2642 • Master Butcher
-                    </p>
-                  </div>
-                </div>
+                <BrandLogo variant="compact" onClick={() => { setMobileMenuOpen(false); onNavigate('home'); }} />
                 <button
                   type="button"
                   id="mobile-nav-close-btn"

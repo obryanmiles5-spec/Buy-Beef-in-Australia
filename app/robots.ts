@@ -9,6 +9,8 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/checkout', '/account', '/api/'],
       },
     ],
-    sitemap: 'https://[INSERT DOMAIN]/sitemap.xml',
+    sitemap: 'https://pastureandtide.com.au/sitemap.xml',
+    host: 'https://pastureandtide.com.au',
   };
 }
+

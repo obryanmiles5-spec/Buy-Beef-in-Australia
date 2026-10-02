@@ -7,6 +7,7 @@ export interface Product {
   shortDescription: string;
   fullDescription: string;
   image: string;
+  galleryImages?: string[];
   weightOptions: {
     weight: string;
     serves: string;

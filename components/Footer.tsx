@@ -1,6 +1,7 @@
 'use client';
 
 import { ShieldCheck } from 'lucide-react';
+import BrandLogo from './BrandLogo';
 import { BUSINESS_CONFIG } from '@/lib/data';
 
 interface FooterProps {
@@ -23,16 +24,8 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
           {/* Column 1: Brand & Location (lg:col-span-4) */}
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-1.5">
-                <div className="w-6 h-6 bg-[#7A1F2B] text-white flex items-center justify-center text-xs font-serif italic rounded-xs shadow-xs">
-                  B
-                </div>
-                <h3 className="font-serif text-base font-bold text-[#151515] tracking-tight">
-                  {BUSINESS_CONFIG.businessName}
-                </h3>
-                <span className="text-[9px] font-mono uppercase px-1.5 py-0.5 bg-[#7A1F2B]/10 text-[#7A1F2B] rounded-xs font-bold">
-                  AU Butcher
-                </span>
+              <div className="mb-2">
+                <BrandLogo variant="footer" onClick={() => onNavigate('home')} />
               </div>
               <p className="text-xs text-stone-600 leading-relaxed mb-3">
                 Farm-direct carcass shares, free-range poultry, and artisan cuts dispatched across Australia with cold-chain packaging.

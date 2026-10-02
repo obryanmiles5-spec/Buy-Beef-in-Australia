@@ -150,24 +150,54 @@ export default function HomePage() {
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
-  // Structured Data Schema for Google Indexing
+  // Structured Data Schema for Google Indexing & Rich Sitelinks
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'ButcherShop',
-    name: BUSINESS_CONFIG.businessName,
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop',
-    description: 'Online beef and fresh meat delivery service in Australia. Buy premium beef cuts, steaks, chicken, pork, lamb, and family packs.',
-    telephone: BUSINESS_CONFIG.phone,
-    email: BUSINESS_CONFIG.email,
-    address: {
-      '@type': 'PostalAddress',
-      addressCountry: 'AU',
-      addressRegion: 'Australia',
-      streetAddress: '[BUSINESS ADDRESS]',
-    },
-    currenciesAccepted: 'AUD',
-    priceRange: '$$',
-    paymentAccepted: 'Credit Card, Debit Card, Apple Pay, Google Pay, Cryptocurrency',
+    '@graph': [
+      {
+        '@type': 'ButcherShop',
+        '@id': 'https://pastureandtide.com.au/#store',
+        name: 'Pasture & Tide | Buy Beef Online Australia',
+        alternateName: 'Pasture & Tide',
+        url: 'https://pastureandtide.com.au',
+        logo: 'https://pastureandtide.com.au/site-logo.svg',
+        image: 'https://pastureandtide.com.au/site-logo.svg',
+        description: 'Online beef and fresh meat delivery service in Australia. Buy premium beef cuts, steaks, chicken, pork, lamb, and family packs.',
+        telephone: BUSINESS_CONFIG.phone,
+        email: BUSINESS_CONFIG.email,
+        address: {
+          '@type': 'PostalAddress',
+          addressCountry: 'AU',
+          addressRegion: 'NSW',
+          postalCode: '2642',
+          addressLocality: 'NSW, Australia',
+        },
+        areaServed: {
+          '@type': 'Country',
+          name: 'Australia',
+        },
+        currenciesAccepted: 'AUD',
+        priceRange: '$$',
+        paymentAccepted: 'Credit Card, Debit Card, Apple Pay, Google Pay, Cryptocurrency',
+      },
+      {
+        '@type': 'WebSite',
+        '@id': 'https://pastureandtide.com.au/#website',
+        url: 'https://pastureandtide.com.au',
+        name: 'Pasture & Tide',
+        publisher: {
+          '@id': 'https://pastureandtide.com.au/#store',
+        },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: 'https://pastureandtide.com.au/shop?q={search_term_string}',
+          },
+          'query-input': 'required name=search_term_string',
+        },
+      },
+    ],
   };
 
   return (

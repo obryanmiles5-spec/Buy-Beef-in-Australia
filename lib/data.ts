@@ -4,17 +4,17 @@ export const BUSINESS_CONFIG = {
   businessName: 'Buy Beef Online Australia',
   registeredBusinessName: 'Matty B Farm Fencing',
   entityName: 'A.J BLANCH & M.C BLANCH',
-  domain: 'buybeefonline.com.au',
+  domain: 'pastureandtide.com.au',
   abn: '45 775 613 837',
   abnVerifiedText: 'Verified ABN: 45 775 613 837',
   abnLookupUrl: 'https://abr.business.gov.au/ABN/View?abn=45775613837',
   location: 'NSW, 2642, Australia',
   address: 'NSW, 2642, Australia',
   phone: '1300 000 632',
-  email: 'orders@buybeefonline.com.au',
+  email: 'orders@pastureandtide.com.au',
   whatsapp: '+61 400 000 632',
   operatingHours: 'Mon–Fri: 7:00am – 5:00pm AEST',
-  minimumOrder: '80',
+  minimumOrder: '300',
   freeDeliveryThreshold: '180',
   cryptoDiscount: '5',
   deliveryTimeframe: 'Cold-chain dispatch within 24–48 hours across NSW & Eastern Australia',
@@ -313,11 +313,20 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Carcass Shares',
     shortDescription: 'Balanced quarter beef carcass from Australian pasture-fed Black Angus cattle: prime steaks, roasts, brisket, ribs, and lean mince.',
     fullDescription: 'Our 1/4 Black Angus Beef Share offers exceptional farm-direct value. Sourced from verified Australian Black Angus cattle in NSW 2642, dry-aged for 14–21 days in climate-controlled lockers, and custom butchered into table-ready cuts: Scotch Fillet/Ribeye, Porterhouse, Rump, T-Bone, slow-cooking brisket, short ribs, chuck roasts, osso buco, and gourmet mince. Every cut is individually vacuum-sealed in heavy cryovac barrier pouches and labeled for seamless home freezer organization.',
-    image: '/hero/home2_hd.webp',
-    defaultPrice: '1050.00',
+    image: 'https://lh3.googleusercontent.com/d/1jhqTYPi1GOotsvUJ7f70ZMucNfYvtRD_',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1jhqTYPi1GOotsvUJ7f70ZMucNfYvtRD_',
+      'https://lh3.googleusercontent.com/d/17RFPbUudFuRFDukY29I4LyypGyzseeiL',
+      'https://lh3.googleusercontent.com/d/12qqm7zPC0WBYailg2zS18cVXO5gEcQpv',
+      'https://lh3.googleusercontent.com/d/13hUpOUgMDrVk5PftXZzb_NTbJipL4j4v',
+      'https://lh3.googleusercontent.com/d/1BciH6xhTbX16iTjfsT1BBFYTyrvPFkUZ',
+      'https://lh3.googleusercontent.com/d/1x7-puzNN1IO3u_cdQzNAFNjWvf-_fDhs',
+      'https://lh3.googleusercontent.com/d/1_1k5G40fe1dCj95f4Lvj90d0x1EywwDR'
+    ],
+    defaultPrice: '840.00',
     weightOptions: [
-      { weight: 'Standard 1/4 Share (~50kg dressed yield)', serves: '120–140 family meals', pricePlaceholder: '1050.00' },
-      { weight: 'Heavy 1/4 Share (~60kg dressed yield)', serves: '150–170 family meals', pricePlaceholder: '1260.00' }
+      { weight: 'Standard 1/4 Share (~50kg dressed yield)', serves: '120–140 family meals', pricePlaceholder: '840.00' },
+      { weight: 'Heavy 1/4 Share (~60kg dressed yield)', serves: '150–170 family meals', pricePlaceholder: '1008.00' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Artisan portioned from 14–21 day aged Black Angus prime steer. Includes prime Ribeye, Sirloin, Rump, T-Bone, Brisket, Short Ribs, Chuck Roasts, Osso Buco, and Mince.',
@@ -335,11 +344,20 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Carcass Shares',
     shortDescription: 'Complete half side of Australian Black Angus beef custom butchered into prime steaks, dry-aged roasts, brisket, ribs, and mince.',
     fullDescription: 'The ultimate freezer filler for large families, homesteads, farm-to-table dining, and serious BBQ pitmasters. An entire half side (forequarter and hindquarter) of prime Australian Black Angus beef. Hung in cold-aging rooms for optimal tenderness, then broken down, portioned, vacuum-sealed, and labeled to your butchery specifications.',
-    image: '/hero/home_hd.webp',
-    defaultPrice: '1890.00',
+    image: 'https://lh3.googleusercontent.com/d/125Gc856xxeehhVaB3Hpb_CWnKKOCnSEY',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/125Gc856xxeehhVaB3Hpb_CWnKKOCnSEY',
+      'https://lh3.googleusercontent.com/d/1_LgpKdlcn09C5_TeYBSPCFnfJhKSgfgF',
+      'https://lh3.googleusercontent.com/d/1al7oLvRZ9qV4e90D9DElj49Ingkqrhct',
+      'https://lh3.googleusercontent.com/d/1Mgvapu4ORwK7Jhr7lxKDdMOxOzocvOnl',
+      'https://lh3.googleusercontent.com/d/1H2pSuHMZG4VUpZHv5kiIXNGSrTVPyBo3',
+      'https://lh3.googleusercontent.com/d/1s27XX9A6UGYFAVp1xD9lMGN6h5PIwuJW',
+      'https://lh3.googleusercontent.com/d/1pqOHzJ6-uVyC8P4euqA3Dk4icpc8HwtW'
+    ],
+    defaultPrice: '1512.00',
     weightOptions: [
-      { weight: 'Standard 1/2 Side (~100kg dressed yield)', serves: '250–280 family meals', pricePlaceholder: '1890.00' },
-      { weight: 'Heavy 1/2 Side (~120kg dressed yield)', serves: '300–340 family meals', pricePlaceholder: '2280.00' }
+      { weight: 'Standard 1/2 Side (~100kg dressed yield)', serves: '250–280 family meals', pricePlaceholder: '1512.00' },
+      { weight: 'Heavy 1/2 Side (~120kg dressed yield)', serves: '300–340 family meals', pricePlaceholder: '1824.00' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Complete side of prime Australian Black Angus hung in climate-controlled aging room. Custom broken down to your steak thickness, roast sizing, and mince preferences.',
@@ -357,11 +375,19 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Carcass Shares',
     shortDescription: 'Whole carcass Australian Black Angus prime beef custom hung, dry-aged, and portioned to your butchery specifications.',
     fullDescription: 'Wholesale-rate whole beast buying direct from Australian pastoral stations in NSW 2642. Yields 180kg–220kg of premium Black Angus cuts: Tenderloin/Eye Fillet, Scotch Fillet, Porterhouse, Rump, Brisket, Ribs, Silverside, Osso Buco, Chuck, and Premium Mince. Delivered in cold-chain temperature-controlled packaging.',
-    image: '/hero/home3_hd.webp',
-    defaultPrice: '3450.00',
+    image: 'https://lh3.googleusercontent.com/d/1KuO0-5I7V14coT-gSfjU9GICnRkDAa2a',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1KuO0-5I7V14coT-gSfjU9GICnRkDAa2a',
+      'https://lh3.googleusercontent.com/d/1al7oLvRZ9qV4e90D9DElj49Ingkqrhct',
+      'https://lh3.googleusercontent.com/d/1Mgvapu4ORwK7Jhr7lxKDdMOxOzocvOnl',
+      'https://lh3.googleusercontent.com/d/1H2pSuHMZG4VUpZHv5kiIXNGSrTVPyBo3',
+      'https://lh3.googleusercontent.com/d/1s27XX9A6UGYFAVp1xD9lMGN6h5PIwuJW',
+      'https://lh3.googleusercontent.com/d/1pqOHzJ6-uVyC8P4euqA3Dk4icpc8HwtW'
+    ],
+    defaultPrice: '2760.00',
     weightOptions: [
-      { weight: 'Whole Beast Standard (~200kg dressed yield)', serves: '500+ family meals', pricePlaceholder: '3450.00' },
-      { weight: 'Whole Beast Heavy (~230kg dressed yield)', serves: '580+ family meals', pricePlaceholder: '3890.00' }
+      { weight: 'Whole Beast Standard (~200kg dressed yield)', serves: '500+ family meals', pricePlaceholder: '2760.00' },
+      { weight: 'Whole Beast Heavy (~230kg dressed yield)', serves: '580+ family meals', pricePlaceholder: '3112.00' }
     ],
     stockStatus: 'Available for Whole Beast Reserve',
     cutInformation: 'Entire steer whole carcass aged 21 days. Full artisan breakdown yielding all prime tenderloins, ribeyes, striploins, rump, brisket, ribs, chuck, silverside, shanks, and mince.',
@@ -380,10 +406,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Exquisite F1 Wagyu quarter share with high intramuscular marbling (MB 5-7+). Incomparable tenderness, buttery flavor, and juiciness.',
     fullDescription: 'Sourced from prestigious Australian F1 Wagyu cattle (minimum 350-day grain fed in Riverina NSW). Exceptional marbling score (MB 5-7+). Hand-butchered into Wagyu Scotch Fillet, Wagyu Striploin, Marbled Rump, Wagyu Brisket, Wagyu Short Ribs, and Wagyu Gourmet Burger Mince. Individually vacuum-sealed in heavy puncture-resistant barrier film for zero freezer burn.',
     image: '/hero/home2_hd.webp',
-    defaultPrice: '1690.00',
+    defaultPrice: '1352.00',
     weightOptions: [
-      { weight: 'Standard 1/4 Wagyu Share (~50kg dressed yield)', serves: '120–140 luxury meals', pricePlaceholder: '1690.00' },
-      { weight: 'Heavy 1/4 Wagyu Share (~60kg dressed yield)', serves: '150–170 luxury meals', pricePlaceholder: '1980.00' }
+      { weight: 'Standard 1/4 Wagyu Share (~50kg dressed yield)', serves: '120–140 luxury meals', pricePlaceholder: '1352.00' },
+      { weight: 'Heavy 1/4 Wagyu Share (~60kg dressed yield)', serves: '150–170 luxury meals', pricePlaceholder: '1584.00' }
     ],
     stockStatus: 'Limited Allocation • In Stock',
     cutInformation: 'First-generation Wagyu x Black Angus cross (minimum 350 days grain fed). Verified Marble Score 5-7+. Hand-butchered into Wagyu Scotch Fillet, Striploin, Picanha, Marbled Brisket, Short Ribs, and Gourmet Wagyu Mince.',
@@ -402,10 +428,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'A full half side of elite Australian F1 Wagyu beef. Melt-in-your-mouth marbling across all prime steak, roast, and slow-cook cuts.',
     fullDescription: 'The pinnacle of luxury home beef supply. An entire half carcass of F1 Wagyu beef showcasing rich intramuscular marbling (MB 5-7+). Cut by master butchers to your preferred thickness and roast sizing, labeled, and dispatched cold-chain direct to your door.',
     image: '/hero/home_hd.webp',
-    defaultPrice: '3150.00',
+    defaultPrice: '2520.00',
     weightOptions: [
-      { weight: 'Standard 1/2 Side Wagyu (~100kg dressed yield)', serves: '250–280 luxury meals', pricePlaceholder: '3150.00' },
-      { weight: 'Heavy 1/2 Side Wagyu (~120kg dressed yield)', serves: '300–340 luxury meals', pricePlaceholder: '3780.00' }
+      { weight: 'Standard 1/2 Side Wagyu (~100kg dressed yield)', serves: '250–280 luxury meals', pricePlaceholder: '2520.00' },
+      { weight: 'Heavy 1/2 Side Wagyu (~120kg dressed yield)', serves: '300–340 luxury meals', pricePlaceholder: '3024.00' }
     ],
     stockStatus: 'Limited Allocation • Reserve Now',
     cutInformation: 'Complete half side of elite Australian F1 Wagyu with certified high intramuscular marbling. Cut by master butchers to your custom thickness specifications.',
@@ -424,9 +450,9 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Whole beast luxury Australian F1 Wagyu carcass (MB 5-7+). The ultimate bulk reserve for connoisseurs, catering, and serious meat lovers.',
     fullDescription: 'Maximum yield, wholesale-tier pricing on whole beast F1 Wagyu. The entire animal including premium marbled fillets, ribeyes, striploins, brisket point/flat, beef ribs, chuck, and artisan burger mince. Fully cryovac-packaged in cold-chain containers.',
     image: '/hero/home3_hd.webp',
-    defaultPrice: '5890.00',
+    defaultPrice: '4712.00',
     weightOptions: [
-      { weight: 'Whole Beast Wagyu (~200kg dressed yield)', serves: '500+ luxury meals', pricePlaceholder: '5890.00' }
+      { weight: 'Whole Beast Wagyu (~200kg dressed yield)', serves: '500+ luxury meals', pricePlaceholder: '4712.00' }
     ],
     stockStatus: 'Available for Whole Beast Wagyu Reserve',
     cutInformation: 'Full whole beast carcass of F1 Wagyu. Yields full tenderloins, ribeye blocks, striploins, tri-tips, briskets, short ribs, and gourmet Wagyu burger trim.',
@@ -445,12 +471,12 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Juicy, rich, and naturally tender with distinct central marbling seam. 21 days dry-aged.',
     fullDescription: 'Often considered the king of steaks in Australia, the Scotch Fillet / Ribeye delivers exceptional tenderness and succulent moisture thanks to its natural eye of marbling. Prepared by our experienced butchers from 21-day dry-aged Black Angus beef.',
     image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '24.50',
+    defaultPrice: '19.60',
     weightOptions: [
-      { weight: '1 x 350g Thick-Cut Steak', serves: '1 generous serve', pricePlaceholder: '24.50' },
-      { weight: '2 x 350g Steaks (700g Pack)', serves: '2 serves', pricePlaceholder: '48.00' },
-      { weight: '4 x 350g Steaks (1.4kg Family Pack)', serves: '4 serves', pricePlaceholder: '92.00' },
-      { weight: 'Whole Ribeye Primal (~2.5kg Uncut Roast)', serves: '8–10 serves', pricePlaceholder: '160.00' }
+      { weight: '1 x 350g Thick-Cut Steak', serves: '1 generous serve', pricePlaceholder: '19.60' },
+      { weight: '2 x 350g Steaks (700g Pack)', serves: '2 serves', pricePlaceholder: '38.40' },
+      { weight: '4 x 350g Steaks (1.4kg Family Pack)', serves: '4 serves', pricePlaceholder: '73.60' },
+      { weight: 'Whole Ribeye Primal (~2.5kg Uncut Roast)', serves: '8–10 serves', pricePlaceholder: '128.00' }
     ],
     stockStatus: 'Fresh Cut Daily • In Stock',
     cutInformation: 'Cut from the prime rib primal (ribs 6–12). Hand-trimmed with natural eye of fat for self-basting tenderness.',
@@ -469,11 +495,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Elite Australian F1 Wagyu Scotch Fillet with dense intramuscular marbling (MBS 7+). Ultra buttery.',
     fullDescription: 'First-generation Wagyu cross with intensive intramuscular marbling (MBS 7+). Sourced from long-fed cattle in NSW. Delicate web of fine fat ribbons renders during cooking to deliver unparalleled tenderness and deep umami richness.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '39.00',
+    defaultPrice: '31.20',
     weightOptions: [
-      { weight: '1 x 300g Wagyu Steak', serves: '1 luxury serve', pricePlaceholder: '39.00' },
-      { weight: '2 x 300g Wagyu Steaks (600g)', serves: '2 serves', pricePlaceholder: '76.00' },
-      { weight: '4 x 300g Wagyu Steaks (1.2kg)', serves: '4 serves', pricePlaceholder: '148.00' }
+      { weight: '1 x 300g Wagyu Steak', serves: '1 luxury serve', pricePlaceholder: '31.20' },
+      { weight: '2 x 300g Wagyu Steaks (600g)', serves: '2 serves', pricePlaceholder: '60.80' },
+      { weight: '4 x 300g Wagyu Steaks (1.2kg)', serves: '4 serves', pricePlaceholder: '118.40' }
     ],
     stockStatus: 'In Stock • Steakhouse Grade',
     cutInformation: 'Ribeye muscle from certified F1 Wagyu (MBS 7+). Cleanly trimmed of excess exterior fat.',
@@ -492,11 +518,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'The leanest and most tender cut of beef. Hand-trimmed Chateaubriand steaks and roasts.',
     fullDescription: 'The absolute pinnacle of tenderness. Cut from the non-working tenderloin muscle, our Black Angus Eye Fillets are completely denuded of silver skin and excess fat. Offers a delicate, buttery texture that cuts effortlessly with a butter knife.',
     image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '38.00',
+    defaultPrice: '30.40',
     weightOptions: [
-      { weight: '2 x 200g Steaks (400g Pack)', serves: '2 serves', pricePlaceholder: '38.00' },
-      { weight: '4 x 200g Steaks (800g Pack)', serves: '4 serves', pricePlaceholder: '74.00' },
-      { weight: 'Whole Centre-Cut Chateaubriand (~1.2kg Roast)', serves: '6 serves', pricePlaceholder: '110.00' }
+      { weight: '2 x 200g Steaks (400g Pack)', serves: '2 serves', pricePlaceholder: '30.40' },
+      { weight: '4 x 200g Steaks (800g Pack)', serves: '4 serves', pricePlaceholder: '59.20' },
+      { weight: 'Whole Centre-Cut Chateaubriand (~1.2kg Roast)', serves: '6 serves', pricePlaceholder: '88.00' }
     ],
     stockStatus: 'In Stock • Hand-Trimmed Center Cut',
     cutInformation: 'Center-cut beef tenderloin (psoas major). 100% lean with silver skin fully removed.',
@@ -515,11 +541,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Signature New York strip cut from F1 Wagyu cattle with rich intramuscular marbling (MBS 6-7+).',
     fullDescription: 'Cut from the shortloin with a thin fat strip on the edge. High marbling score MBS 6-7+ throughout the whole muscle provides a robust beefy punch paired with luxurious melt-in-the-mouth texture.',
     image: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '34.50',
+    defaultPrice: '27.60',
     weightOptions: [
-      { weight: '1 x 300g Wagyu Striploin', serves: '1 luxury serve', pricePlaceholder: '34.50' },
-      { weight: '2 x 300g Wagyu Striploins (600g)', serves: '2 serves', pricePlaceholder: '67.00' },
-      { weight: '4 x 300g Wagyu Striploins (1.2kg)', serves: '4 serves', pricePlaceholder: '130.00' }
+      { weight: '1 x 300g Wagyu Striploin', serves: '1 luxury serve', pricePlaceholder: '27.60' },
+      { weight: '2 x 300g Wagyu Striploins (600g)', serves: '2 serves', pricePlaceholder: '53.60' },
+      { weight: '4 x 300g Wagyu Striploins (1.2kg)', serves: '4 serves', pricePlaceholder: '104.00' }
     ],
     stockStatus: 'In Stock • Next Day Dispatch',
     cutInformation: 'Striploin / Porterhouse primal from Australian F1 Wagyu with certified MBS 6-7+ marbling.',
@@ -538,11 +564,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'The best of both worlds: tender eye fillet on one side, robust sirloin on the other.',
     fullDescription: 'Cut with the classic bone-in signature, the T-bone offers two distinct steak textures in a single cut. The central T-bone conducts heat and imparts rich marrow depth during grilling, making it an iconic Australian steakhouse experience at home.',
     image: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '23.50',
+    defaultPrice: '18.80',
     weightOptions: [
-      { weight: '1 x 450g King Cut T-Bone', serves: '1 large serve', pricePlaceholder: '23.50' },
-      { weight: '2 x 450g King Cut T-Bones (900g)', serves: '2 serves', pricePlaceholder: '45.00' },
-      { weight: '4 x 450g King Cut T-Bones (1.8kg)', serves: '4 serves', pricePlaceholder: '88.00' }
+      { weight: '1 x 450g King Cut T-Bone', serves: '1 large serve', pricePlaceholder: '18.80' },
+      { weight: '2 x 450g King Cut T-Bones (900g)', serves: '2 serves', pricePlaceholder: '36.00' },
+      { weight: '4 x 450g King Cut T-Bones (1.8kg)', serves: '4 serves', pricePlaceholder: '70.40' }
     ],
     stockStatus: 'In Stock • Classic Aussie Cut',
     cutInformation: 'Short loin cut featuring a T-shaped lumbar vertebra with striploin and tenderloin muscles.',
@@ -561,10 +587,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Long-bone French-trimmed Wagyu ribeye steak (MBS 6+). The ultimate visual and culinary showstopper.',
     fullDescription: 'A colossal 1.3kg bone-in ribeye with the rib bone cleaned and French-trimmed to perfection. Showcasing Marble Score 6+ Wagyu fat distribution, this cut commands the table at dinner parties, barbecues, and celebratory feasts.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '118.00',
+    defaultPrice: '94.40',
     weightOptions: [
-      { weight: '1 x 1.2kg–1.4kg French-Trimmed Tomahawk', serves: '2–3 serves (Feast)', pricePlaceholder: '118.00' },
-      { weight: '2 x 1.3kg Tomahawks (2.6kg Twin Pack)', serves: '5–6 serves', pricePlaceholder: '225.00' }
+      { weight: '1 x 1.2kg–1.4kg French-Trimmed Tomahawk', serves: '2–3 serves (Feast)', pricePlaceholder: '94.40' },
+      { weight: '2 x 1.3kg Tomahawks (2.6kg Twin Pack)', serves: '5–6 serves', pricePlaceholder: '180.00' }
     ],
     stockStatus: 'In Stock • Showstopper Cut',
     cutInformation: 'Long-bone ribeye with French-trimmed rib bone (approx. 30cm). High intramuscular marbling MBS 6+.',
@@ -583,10 +609,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Ideal for low-and-slow smoking, Texas-style BBQ, or tender braised pot roasts.',
     fullDescription: 'The ultimate pitmaster cut. Rich in collagen and connective tissue that breaks down during slow smoking or braising into fork-tender, gelatinous goodness. Offered in trimmed half brisket or full whole packer options with 6mm competition fat cap.',
     image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '42.00',
+    defaultPrice: '33.60',
     weightOptions: [
-      { weight: 'Half Brisket Flat (~1.8kg Trimmed)', serves: '4–6 serves', pricePlaceholder: '42.00' },
-      { weight: 'Whole Pitmaster Packer Brisket (~4.5kg - 5.0kg)', serves: '12–16 serves', pricePlaceholder: '98.00' }
+      { weight: 'Half Brisket Flat (~1.8kg Trimmed)', serves: '4–6 serves', pricePlaceholder: '33.60' },
+      { weight: 'Whole Pitmaster Packer Brisket (~4.5kg - 5.0kg)', serves: '12–16 serves', pricePlaceholder: '78.40' }
     ],
     stockStatus: 'In Stock • Pitmaster 6mm Fat Cap Trim',
     cutInformation: 'Beef breast/pectoral cut with an even 6mm fat cap left intact for thermal protection during smoking.',
@@ -605,11 +631,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Thick-cut 3-bone beef short rib racks loaded with rich marbling and deep beef flavour.',
     fullDescription: 'Known as Jacob\'s Ladder or Asado ribs. Cut from the beef forequarter ribs 6–8, featuring substantial meat thickness over 3 robust bones. The extensive marbling renders into luscious gelatin during smoking or red-wine braising.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '32.00',
+    defaultPrice: '25.60',
     weightOptions: [
-      { weight: 'Flanken-Style Thin-Cut Cross Ribs (1kg Tray)', serves: '3–4 serves', pricePlaceholder: '32.00' },
-      { weight: '3-Bone English-Cut Rack (~1.2kg)', serves: '2–3 serves', pricePlaceholder: '36.00' },
-      { weight: '2 x 3-Bone Racks (~2.4kg Smoker Pack)', serves: '5–6 serves', pricePlaceholder: '69.00' }
+      { weight: 'Flanken-Style Thin-Cut Cross Ribs (1kg Tray)', serves: '3–4 serves', pricePlaceholder: '25.60' },
+      { weight: '3-Bone English-Cut Rack (~1.2kg)', serves: '2–3 serves', pricePlaceholder: '28.80' },
+      { weight: '2 x 3-Bone Racks (~2.4kg Smoker Pack)', serves: '5–6 serves', pricePlaceholder: '55.20' }
     ],
     stockStatus: 'In Stock • Dense Collagen & Marbling',
     cutInformation: 'Cut from ribs 6–8 of the beef forequarter. Thick meat layer over 3 substantial bones with deep internal marbling.',
@@ -628,11 +654,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Prized Brazilian barbecue cut with a thick, juicy fat cap that melts over tender rump meat.',
     fullDescription: 'The crowning glory of the beef hindquarter. Our Black Angus Rump Cap (Picanha) retains the full traditional fat cap. As it roasts or grills over embers, the fat cap bastes the tender, richly flavoured rump meat underneath.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '34.00',
+    defaultPrice: '27.20',
     weightOptions: [
-      { weight: 'Sliced Picanha Steaks (4 x 250g / 1kg Pack)', serves: '4 serves', pricePlaceholder: '34.00' },
-      { weight: 'Whole Picanha Rump Cap (~1.2kg Whole Roast)', serves: '4–6 serves', pricePlaceholder: '38.00' },
-      { weight: '2 x Whole Rump Caps (~2.4kg Bundle)', serves: '8–12 serves', pricePlaceholder: '72.00' }
+      { weight: 'Sliced Picanha Steaks (4 x 250g / 1kg Pack)', serves: '4 serves', pricePlaceholder: '27.20' },
+      { weight: 'Whole Picanha Rump Cap (~1.2kg Whole Roast)', serves: '4–6 serves', pricePlaceholder: '30.40' },
+      { weight: '2 x Whole Rump Caps (~2.4kg Bundle)', serves: '8–12 serves', pricePlaceholder: '57.60' }
     ],
     stockStatus: 'In Stock • Authentic Thick Fat Cap',
     cutInformation: 'The top cap of the beef rump (culotte/picanha). Prized for its buttery, rendered fat cap that bastes the meat.',
@@ -651,11 +677,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Generous, full-flavoured beef rump steak with a hearty bite and lean profile.',
     fullDescription: 'Rump steak is beloved across Australian households for its robust, classic beef profile and versatility. Great for sizzling on a smoking-hot BBQ, slicing thin for warm steak salads, or cutting into hearty skewers.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.50',
+    defaultPrice: '13.20',
     weightOptions: [
-      { weight: '2 x 250g Steaks (500g)', serves: '2 serves', pricePlaceholder: '16.50' },
-      { weight: '4 x 250g Steaks (1kg Family Pack)', serves: '4 serves', pricePlaceholder: '31.00' },
-      { weight: 'Whole Rump Roast (~2.0kg Centre-Cut)', serves: '8+ serves', pricePlaceholder: '58.00' }
+      { weight: '2 x 250g Steaks (500g)', serves: '2 serves', pricePlaceholder: '13.20' },
+      { weight: '4 x 250g Steaks (1kg Family Pack)', serves: '4 serves', pricePlaceholder: '24.80' },
+      { weight: 'Whole Rump Roast (~2.0kg Centre-Cut)', serves: '8+ serves', pricePlaceholder: '46.40' }
     ],
     stockStatus: 'In Stock • Everyday Aussie Classic',
     cutInformation: 'Primal beef rump (hindquarter cut), trimmed with an even thin fat ribbon for natural basting.',
@@ -674,11 +700,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Cross-cut beef shin steaks with nutrient-dense central marrow bone. Rich gelatin for stews.',
     fullDescription: 'A winter cooking treasure. Cross-cut from pasture-fed Black Angus beef shins. The central bone is filled with rich marrow that melts into braising sauces while the surrounding collagen transforms into unctuous, spoon-tender beef.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '15.50',
+    defaultPrice: '12.40',
     weightOptions: [
-      { weight: '2 x Thick-Cut Slices (~600g)', serves: '2 serves', pricePlaceholder: '15.50' },
-      { weight: '4 x Thick-Cut Slices (~1.2kg Family Pack)', serves: '4 serves', pricePlaceholder: '29.50' },
-      { weight: 'Whole Beef Shank on the Bone (~1.8kg Thor Hammer)', serves: '4–6 serves', pricePlaceholder: '42.00' }
+      { weight: '2 x Thick-Cut Slices (~600g)', serves: '2 serves', pricePlaceholder: '12.40' },
+      { weight: '4 x Thick-Cut Slices (~1.2kg Family Pack)', serves: '4 serves', pricePlaceholder: '23.60' },
+      { weight: 'Whole Beef Shank on the Bone (~1.8kg Thor Hammer)', serves: '4–6 serves', pricePlaceholder: '33.60' }
     ],
     stockStatus: 'In Stock • Collagen & Rich Bone Marrow',
     cutInformation: 'Cross-cut beef shin containing rich marrow in the center bone and collagen-rich connective muscle tissue.',
@@ -697,11 +723,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Versatile, finely ground lean Australian beef mince ideal for bolognese, burgers, and family meals.',
     fullDescription: 'Our Premium Beef Mince is ground daily from quality trimmed whole-muscle chuck and topside cuts to achieve a 90/10 lean-to-fat ratio. Never loaded with excess gristle, off-cuts, water, or preservatives. Provides clean, rich beef flavor for cottage pies, lasagnes, meatballs, and tacos.',
     image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '9.90',
+    defaultPrice: '7.92',
     weightOptions: [
-      { weight: '500g Vacuum Pack', serves: '2–3 serves', pricePlaceholder: '9.90' },
-      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '18.50' },
-      { weight: '2kg Bulk Value Pack (2 x 1kg)', serves: '8–12 serves', pricePlaceholder: '35.00' }
+      { weight: '500g Vacuum Pack', serves: '2–3 serves', pricePlaceholder: '7.92' },
+      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '14.80' },
+      { weight: '2kg Bulk Value Pack (2 x 1kg)', serves: '8–12 serves', pricePlaceholder: '28.00' }
     ],
     stockStatus: 'Freshly Ground Daily • In Stock',
     cutInformation: 'Freshly ground from select beef trims and chuck primal cuts. Strict 90/10 lean balance.',
@@ -720,11 +746,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Thick, seasoned beef burger patties engineered for maximum juiciness on the grill.',
     fullDescription: 'Crafted from coarse-ground Australian Black Angus chuck and rich Wagyu brisket trims with minimal seasoning to let pure beef flavours shine. These patties hold their structure under high grill temperatures while retaining delicious internal moisture.',
     image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.50',
+    defaultPrice: '13.20',
     weightOptions: [
-      { weight: '4 x 160g Hand-Pressed Patties (640g)', serves: '4 burgers', pricePlaceholder: '16.50' },
-      { weight: '8 x 160g Burger Pack (1.28kg)', serves: '8 burgers', pricePlaceholder: '31.00' },
-      { weight: '16 x 160g Party BBQ Pack (2.56kg)', serves: '16 burgers', pricePlaceholder: '59.00' }
+      { weight: '4 x 160g Hand-Pressed Patties (640g)', serves: '4 burgers', pricePlaceholder: '13.20' },
+      { weight: '8 x 160g Burger Pack (1.28kg)', serves: '8 burgers', pricePlaceholder: '24.80' },
+      { weight: '16 x 160g Party BBQ Pack (2.56kg)', serves: '16 burgers', pricePlaceholder: '47.20' }
     ],
     stockStatus: 'In Stock • Juicy 80/20 Ratio',
     cutInformation: 'Blend of beef chuck, brisket, and flank for the optimal 80/20 lean-to-fat balance.',
@@ -743,11 +769,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Lean, tender beef strips sliced across the grain for quick high-heat wok cooking.',
     fullDescription: 'Spend less time prepping and more time enjoying dinner. Sliced from tender beef cuts across the muscle grain, these uniform strips cook evenly in minutes, absorbing marinades and wok aromas cleanly without drying out.',
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '14.50',
+    defaultPrice: '11.60',
     weightOptions: [
-      { weight: '500g Vacuum Tray', serves: '2–3 serves', pricePlaceholder: '14.50' },
-      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '27.50' },
-      { weight: '2kg Meal Prep Bulk', serves: '8–12 serves', pricePlaceholder: '52.00' }
+      { weight: '500g Vacuum Tray', serves: '2–3 serves', pricePlaceholder: '11.60' },
+      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '22.00' },
+      { weight: '2kg Meal Prep Bulk', serves: '8–12 serves', pricePlaceholder: '41.60' }
     ],
     stockStatus: 'In Stock • Hand-Sliced Daily',
     cutInformation: 'Sliced across the grain from select rump or topside primal beef cuts.',
@@ -766,11 +792,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Rich, collagen-dense beef shoulder cut ideal for slow cooker casseroles, beef bourguignon, and pot roasts.',
     fullDescription: 'Cut from the forequarter shoulder, our Black Angus Chuck is marbling-rich with connective tissue that dissolves into luxurious sauce during long, slow braising. Hand-trimmed and diced into generous bite-sized chunks or whole roast pieces.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '13.50',
+    defaultPrice: '10.80',
     weightOptions: [
-      { weight: '500g Diced Casserole Pack', serves: '2–3 serves', pricePlaceholder: '13.50' },
-      { weight: '1kg Family Casserole Pack', serves: '4–6 serves', pricePlaceholder: '25.00' },
-      { weight: 'Whole Chuck Roast Piece (~1.8kg)', serves: '6–8 serves', pricePlaceholder: '44.00' }
+      { weight: '500g Diced Casserole Pack', serves: '2–3 serves', pricePlaceholder: '10.80' },
+      { weight: '1kg Family Casserole Pack', serves: '4–6 serves', pricePlaceholder: '20.00' },
+      { weight: 'Whole Chuck Roast Piece (~1.8kg)', serves: '6–8 serves', pricePlaceholder: '35.20' }
     ],
     stockStatus: 'In Stock • Deep Braising Flavour',
     cutInformation: 'Chuck primal cut with extensive natural collagen for slow braising.',
@@ -789,10 +815,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Artisan brine-cured Black Angus silverside with traditional butcher aromatics. Ideal for family boiling dinners.',
     fullDescription: 'A nostalgic Australian family classic. We cure select Black Angus silverside pieces in our mild brine infused with whole cloves, bay leaves, and black peppercorns. Boils up exceptionally tender, yielding delicious warm slices for dinner and cold cuts for lunch sandwiches.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '25.50',
+    defaultPrice: '20.40',
     weightOptions: [
-      { weight: '1.5kg Traditional Corned Piece', serves: '5–6 serves', pricePlaceholder: '25.50' },
-      { weight: '2.5kg Large Family Piece', serves: '8–10 serves', pricePlaceholder: '40.00' }
+      { weight: '1.5kg Traditional Corned Piece', serves: '5–6 serves', pricePlaceholder: '20.40' },
+      { weight: '2.5kg Large Family Piece', serves: '8–10 serves', pricePlaceholder: '32.00' }
     ],
     stockStatus: 'In Stock • Artisan Brine Cured',
     cutInformation: 'Lean beef silverside cured in our butcher recipe mild brine with bay leaves, cloves, and whole peppercorns.',
@@ -814,10 +840,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Balanced quarter share of Australian pasture-raised poultry: 2 whole roasting birds, breast fillets, juicy thighs, wings, drumsticks & schnitzels.',
     fullDescription: 'Our 1/4 Free-Range Poultry Farm Share provides exceptional farm-direct wholesale value for households and healthy meal prep. Sourced from certified Australian free-range farms in NSW 2642. Yields ~12.5kg of premium poultry: 2 x Whole Roasting Chickens (~1.8kg each), 2.5kg Skinless Breast Fillets, 2.5kg Boneless Thigh Fillets, 2kg Party Wings & Drumettes, 2kg Drumsticks, and 1kg Hand-Crumbed Herb Schnitzels. Portioned into vacuum-sealed cryovac barrier pouches (500g–1kg packs) and labeled for easy freezer organization.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '195.00',
+    defaultPrice: '156.00',
     weightOptions: [
-      { weight: 'Standard 1/4 Poultry Share (~12.5kg Mixed Cuts & 2 Whole Birds)', serves: '35–40 family meals', pricePlaceholder: '195.00' },
-      { weight: 'Heavy 1/4 Poultry Share (~15.0kg Meal Prep Reserve)', serves: '45–50 family meals', pricePlaceholder: '230.00' }
+      { weight: 'Standard 1/4 Poultry Share (~12.5kg Mixed Cuts & 2 Whole Birds)', serves: '35–40 family meals', pricePlaceholder: '156.00' },
+      { weight: 'Heavy 1/4 Poultry Share (~15.0kg Meal Prep Reserve)', serves: '45–50 family meals', pricePlaceholder: '184.00' }
     ],
     stockStatus: 'In Stock • Farm Direct Bulk Pack',
     cutInformation: 'Farm-direct allocation of pasture-raised poultry. Includes 2 whole birds, breast fillets, thigh fillets, wings, drumsticks, and schnitzels in leak-proof cryovac packs.',
@@ -836,10 +862,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Complete half farm share of Australian free-range poultry: 4 whole roasting birds, 5kg breasts, 5kg thighs, 4kg wings, drumsticks & schnitzels.',
     fullDescription: 'The ultimate freezer supply for busy families, fitness athletes, and home cooks. A full half farm flock allocation yielding ~25kg of premium free-range chicken: 4 x Whole Roasting Chickens (~1.8kg each), 5kg Skinless Breast Fillets, 5kg Boneless Thigh Fillets, 4kg Wings & Drumettes, 3kg Drumsticks, and 2kg Hand-Crumbed Herb Schnitzels. Packed in modular vacuum pouches (approx. 500g–1kg packs) ready for immediate domestic freezing.',
     image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '375.00',
+    defaultPrice: '300.00',
     weightOptions: [
-      { weight: 'Standard 1/2 Poultry Share (~25kg Mixed Cuts & 4 Whole Birds)', serves: '70–80 family meals', pricePlaceholder: '375.00' },
-      { weight: 'Heavy 1/2 Poultry Share (~30kg Bulk Pack)', serves: '85–95 family meals', pricePlaceholder: '440.00' }
+      { weight: 'Standard 1/2 Poultry Share (~25kg Mixed Cuts & 4 Whole Birds)', serves: '70–80 family meals', pricePlaceholder: '300.00' },
+      { weight: 'Heavy 1/2 Poultry Share (~30kg Bulk Pack)', serves: '85–95 family meals', pricePlaceholder: '352.00' }
     ],
     stockStatus: 'In Stock • Farm Direct Bulk Pack',
     cutInformation: 'Comprehensive half-flock allocation of pasture-raised poultry. Vacuum packed in modular family portions.',
@@ -858,10 +884,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Wholesale whole flock farm reserve: 8 whole roasting birds, 10kg breasts, 10kg thighs, 8kg wings, 6kg drumsticks, and schnitzels.',
     fullDescription: 'Commercial homestead and volume buying direct from Australian free-range farms in NSW 2642. Yields ~50kg of prime, pasture-raised poultry: 8 x Whole Roasting Chickens, 10kg Skinless Breast Fillets, 10kg Boneless Thigh Fillets, 8kg Wings & Drumettes, 6kg Drumsticks, and 4kg Artisan Schnitzels. Hand-trimmed under strict HACCP cold-chain hygiene, vacuum-packed, and shipped in multi-carton insulated refrigerated containers.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '710.00',
+    defaultPrice: '568.00',
     weightOptions: [
-      { weight: 'Whole Flock Farm Carton (~50kg Commercial & Home Reserve)', serves: '150–170 family meals', pricePlaceholder: '710.00' },
-      { weight: 'Heavy Whole Flock Carton (~60kg Hospitality Reserve)', serves: '180–200 family meals', pricePlaceholder: '840.00' }
+      { weight: 'Whole Flock Farm Carton (~50kg Commercial & Home Reserve)', serves: '150–170 family meals', pricePlaceholder: '568.00' },
+      { weight: 'Heavy Whole Flock Carton (~60kg Hospitality Reserve)', serves: '180–200 family meals', pricePlaceholder: '672.00' }
     ],
     stockStatus: 'Available for Farm Reserve',
     cutInformation: 'Full farm flock allocation of free-range chicken. All primal portions vacuum-sealed in labeled 1kg bags.',
@@ -880,10 +906,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Half free-range chicken butterflied flat for rapid, even barbecue grilling or crisp oven roasting.',
     fullDescription: 'Half bird split lengthwise with breast, wing, thigh, and drumstick intact. Flattened flat to cook in half the time of a whole bird while ensuring crisp golden skin and succulent, moist breast meat.',
     image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '12.50',
+    defaultPrice: '10.00',
     weightOptions: [
-      { weight: 'Single Half Bird (~900g)', serves: '2 serves', pricePlaceholder: '12.50' },
-      { weight: 'Twin Half Birds (2 x ~900g)', serves: '4 serves', pricePlaceholder: '23.00' }
+      { weight: 'Single Half Bird (~900g)', serves: '2 serves', pricePlaceholder: '10.00' },
+      { weight: 'Twin Half Birds (2 x ~900g)', serves: '4 serves', pricePlaceholder: '18.40' }
     ],
     stockStatus: 'In Stock • Spatchcocked & Ready',
     cutInformation: 'Half bird with bone intact, flattened for fast, uniform barbecue cooking.',
@@ -902,10 +928,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Traditional butcher quarter chicken cuts: bone-in chicken maryland (thigh + drumstick) and bone-in breast with wing.',
     fullDescription: 'Portioned from whole Australian free-range chickens. Provides bone-in, skin-on chicken quarters for deep roasting flavor and maximum moisture retention.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '11.00',
+    defaultPrice: '8.80',
     weightOptions: [
-      { weight: '2 Quarter Cuts (~900g Pack)', serves: '2 serves', pricePlaceholder: '11.00' },
-      { weight: '4 Quarter Cuts (~1.8kg Family Pack)', serves: '4 serves', pricePlaceholder: '20.00' }
+      { weight: '2 Quarter Cuts (~900g Pack)', serves: '2 serves', pricePlaceholder: '8.80' },
+      { weight: '4 Quarter Cuts (~1.8kg Family Pack)', serves: '4 serves', pricePlaceholder: '16.00' }
     ],
     stockStatus: 'In Stock • Traditional Quarter Cut',
     cutInformation: '1/4 chicken portions with bone and skin intact for roasting.',
@@ -924,11 +950,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender, skinless and boneless chicken breast fillets from Australian free-range farms.',
     fullDescription: 'Hand-trimmed free-range chicken breasts with zero added hormones or growth promoters. Sourced from certified Australian free-range farms where birds roam freely outdoors. Exceptionally tender, lean, and vacuum-sealed in leak-proof cold-chain pouches.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '11.50',
+    defaultPrice: '9.20',
     weightOptions: [
-      { weight: '500g Pack (~2–3 Fillets)', serves: '2–3 serves', pricePlaceholder: '11.50' },
-      { weight: '1kg Family Pack (~4–5 Fillets)', serves: '4–6 serves', pricePlaceholder: '21.00' },
-      { weight: '2kg Bulk Meal Prep Pack (~8–10 Fillets)', serves: '8–12 serves', pricePlaceholder: '39.00' }
+      { weight: '500g Pack (~2–3 Fillets)', serves: '2–3 serves', pricePlaceholder: '9.20' },
+      { weight: '1kg Family Pack (~4–5 Fillets)', serves: '4–6 serves', pricePlaceholder: '16.80' },
+      { weight: '2kg Bulk Meal Prep Pack (~8–10 Fillets)', serves: '8–12 serves', pricePlaceholder: '31.20' }
     ],
     stockStatus: 'Fresh Daily • In Stock',
     cutInformation: 'Premium skinless, boneless single breast fillets with tenderloins intact. Fat cleanly trimmed.',
@@ -947,11 +973,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Ultra-succulent skinless, boneless chicken thigh fillets that stay moist under high heat.',
     fullDescription: 'The chef\'s secret for curry, stir-fries, and char-grilling. Thigh meat has slightly higher natural intramuscular fat that prevents drying out, delivering maximum succulence and deep chicken flavor.',
     image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '12.50',
+    defaultPrice: '10.00',
     weightOptions: [
-      { weight: '500g Pack (~3–4 Fillets)', serves: '2–3 serves', pricePlaceholder: '12.50' },
-      { weight: '1kg Family Pack (~6–8 Fillets)', serves: '4–6 serves', pricePlaceholder: '23.00' },
-      { weight: '2kg Value Pack', serves: '8–12 serves', pricePlaceholder: '43.00' }
+      { weight: '500g Pack (~3–4 Fillets)', serves: '2–3 serves', pricePlaceholder: '10.00' },
+      { weight: '1kg Family Pack (~6–8 Fillets)', serves: '4–6 serves', pricePlaceholder: '18.40' },
+      { weight: '2kg Value Pack', serves: '8–12 serves', pricePlaceholder: '34.40' }
     ],
     stockStatus: 'Fresh Daily • In Stock',
     cutInformation: 'Skinless, boneless thigh fillets trimmed of excess cartilage and surface fat.',
@@ -970,10 +996,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Juicy bone-in chicken thighs with skin on for golden, crispy roasting or grilling.',
     fullDescription: 'Bone-in thigh cutlets lock in natural juices and collagen during slow baking, curries, or barbecue grilling. Sourced from certified Australian pasture-roaming flocks.',
     image: 'https://images.unsplash.com/photo-1604503468506-a8da13d82791?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.90',
+    defaultPrice: '13.52',
     weightOptions: [
-      { weight: '1kg Pack (~4–5 Thighs)', serves: '4 serves', pricePlaceholder: '16.90' },
-      { weight: '2kg Value Pack (~8–10 Thighs)', serves: '8 serves', pricePlaceholder: '32.00' }
+      { weight: '1kg Pack (~4–5 Thighs)', serves: '4 serves', pricePlaceholder: '13.52' },
+      { weight: '2kg Value Pack (~8–10 Thighs)', serves: '8 serves', pricePlaceholder: '25.60' }
     ],
     stockStatus: 'In Stock • Crispy Skin',
     cutInformation: 'Bone-in, skin-on prime thigh cutlets with trimmed edges.',
@@ -992,10 +1018,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Plump, pasture-raised Australian whole roasting bird with giblets removed.',
     fullDescription: 'Ideal for Sunday family roasts, rotisserie, or smoking. Uniformly sized for even cooking, packed fresh with moisture retained and neck/cavity cleaned.',
     image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '22.00',
+    defaultPrice: '17.60',
     weightOptions: [
-      { weight: 'Whole Bird (~1.8kg)', serves: '4–6 serves', pricePlaceholder: '22.00' },
-      { weight: 'Twin Pack (2 x 1.8kg Birds)', serves: '8–12 serves', pricePlaceholder: '40.00' }
+      { weight: 'Whole Bird (~1.8kg)', serves: '4–6 serves', pricePlaceholder: '17.60' },
+      { weight: 'Twin Pack (2 x 1.8kg Birds)', serves: '8–12 serves', pricePlaceholder: '32.00' }
     ],
     stockStatus: 'In Stock • Trussed & Ready',
     cutInformation: 'Whole fresh bird, cavity cleaned and expertly trussed for even roasting.',
@@ -1014,10 +1040,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Plump free-range chicken wings pre-cut into flats and drumettes for crispy buffalo or sticky BBQ wings.',
     fullDescription: 'Freshly portioned Australian chicken wings. High skin-to-meat ratio ensures maximum crunch when baked, air-fried, or smoked on the barbecue.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '12.00',
+    defaultPrice: '9.60',
     weightOptions: [
-      { weight: '1kg Party Pack (~12–14 pieces)', serves: '3–4 serves', pricePlaceholder: '12.00' },
-      { weight: '2kg Value Smoker Pack (~25–28 pieces)', serves: '6–8 serves', pricePlaceholder: '22.00' }
+      { weight: '1kg Party Pack (~12–14 pieces)', serves: '3–4 serves', pricePlaceholder: '9.60' },
+      { weight: '2kg Value Smoker Pack (~25–28 pieces)', serves: '6–8 serves', pricePlaceholder: '17.60' }
     ],
     stockStatus: 'In Stock • Fresh Cut',
     cutInformation: '3-piece wings jointed into flats (mid-wings) and drumettes with wing-tips removed.',
@@ -1036,10 +1062,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Succulent, tender chicken drumsticks ideal for family tray bakes, marinades, and BBQ.',
     fullDescription: 'Affordable, succulent, and family friendly. Sourced from plump pasture-raised birds, these drumsticks brown beautifully with sticky honey-soy or lemon-herb marinades.',
     image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '9.90',
+    defaultPrice: '7.92',
     weightOptions: [
-      { weight: '1kg Pack (~6–8 Drumsticks)', serves: '3–4 serves', pricePlaceholder: '9.90' },
-      { weight: '2kg Family Pack (~14–16 Drumsticks)', serves: '6–8 serves', pricePlaceholder: '18.50' }
+      { weight: '1kg Pack (~6–8 Drumsticks)', serves: '3–4 serves', pricePlaceholder: '7.92' },
+      { weight: '2kg Family Pack (~14–16 Drumsticks)', serves: '6–8 serves', pricePlaceholder: '14.80' }
     ],
     stockStatus: 'In Stock • Great Everyday Value',
     cutInformation: 'Skin-on lower leg cut from free-range chickens, cleanly jointed.',
@@ -1058,10 +1084,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender chicken breast hand-crumbed in our butcher golden breadcrumb with rosemary, garlic & parmesan.',
     fullDescription: 'Made fresh in-house daily. Whole free-range chicken breast fillets gently tenderized and coated in crunchy panko crumbs, sea salt, cracked pepper, garlic, and dried rosemary. Ready to pan-fry for a pub-quality chicken parmigiana at home.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.50',
+    defaultPrice: '13.20',
     weightOptions: [
-      { weight: '4 x 200g Schnitzels (800g Pack)', serves: '4 serves', pricePlaceholder: '16.50' },
-      { weight: '8 x 200g Schnitzels (1.6kg Family Pack)', serves: '8 serves', pricePlaceholder: '31.00' }
+      { weight: '4 x 200g Schnitzels (800g Pack)', serves: '4 serves', pricePlaceholder: '13.20' },
+      { weight: '8 x 200g Schnitzels (1.6kg Family Pack)', serves: '8 serves', pricePlaceholder: '24.80' }
     ],
     stockStatus: 'Fresh Made Daily • In Stock',
     cutInformation: 'Hand-flattened free-range chicken breast coated in artisan herb breadcrumbs.',
@@ -1084,10 +1110,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Balanced quarter carcass of tender Australian pork: scored crackling belly slab, thick loin chops, rolled roast, spare ribs, and mince.',
     fullDescription: 'Our 1/4 Australian Pork Share offers exceptional value for families, smokers, and BBQ enthusiasts. Sourced from Australian high-welfare grain-fed pork in NSW 2642. Hand-butchered into table-ready favorites: machine-scored crackling belly slab (~1.5kg), thick French-trimmed loin cutlets, boneless rolled shoulder roast, St. Louis cut meaty spare ribs, and freshly minced lean pork. All portions are vacuum-sealed in durable cryovac barrier packs and labeled for your freezer.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '245.00',
+    defaultPrice: '196.00',
     weightOptions: [
-      { weight: 'Standard 1/4 Pork Share (~15kg–18kg dressed yield)', serves: '40–50 family meals', pricePlaceholder: '245.00' },
-      { weight: 'Heavy 1/4 Pork Share (~20kg–22kg dressed yield)', serves: '55–65 family meals', pricePlaceholder: '295.00' }
+      { weight: 'Standard 1/4 Pork Share (~15kg–18kg dressed yield)', serves: '40–50 family meals', pricePlaceholder: '196.00' },
+      { weight: 'Heavy 1/4 Pork Share (~20kg–22kg dressed yield)', serves: '55–65 family meals', pricePlaceholder: '236.00' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Artisan breakdown from premium Australian market pig. Includes scored crackling belly, thick loin cutlets, rolled shoulder roast, spare ribs, and lean pork mince.',
@@ -1106,10 +1132,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Complete half side of Australian pork: full scored belly, French-trimmed loin cutlets, scotch collar roast, leg roast, spare ribs, and mince.',
     fullDescription: 'The complete pork lover\'s freezer supply. A full half side of prime Australian pork, hung and custom portioned to your butchery requests. Delivers a generous whole scored belly sheet (for succulent roasts or homemade bacon), thick French-trimmed loin cutlets, pork scotch fillet collar butt (for championship pulled pork), whole leg roast, meaty St. Louis ribs, pork hock for pea-and-ham soup, and lean mince. Individually cryovaced and labeled.',
     image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '465.00',
+    defaultPrice: '372.00',
     weightOptions: [
-      { weight: 'Standard 1/2 Pork Side (~32kg–36kg dressed yield)', serves: '85–100 family meals', pricePlaceholder: '465.00' },
-      { weight: 'Heavy 1/2 Pork Side (~40kg–45kg dressed yield)', serves: '110–125 family meals', pricePlaceholder: '575.00' }
+      { weight: 'Standard 1/2 Pork Side (~32kg–36kg dressed yield)', serves: '85–100 family meals', pricePlaceholder: '372.00' },
+      { weight: 'Heavy 1/2 Pork Side (~40kg–45kg dressed yield)', serves: '110–125 family meals', pricePlaceholder: '460.00' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Complete side of prime Australian pork. Custom broken down into belly roasts, loin chops, collar roast, leg roasts, ribs, hock, and mince.',
@@ -1128,11 +1154,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Whole Australian pork carcass. Available custom-butchered into individual cuts or prepared whole for traditional spit roasting.',
     fullDescription: 'Wholesale-rate whole pig purchasing direct from Australian regional farms. Sourced from high-health, high-welfare farms in NSW 2642. Options include: (A) Full master butcher breakdown into vacuum-sealed table cuts (2 full belly slabs, 2 racks of ribs, dozens of loin chops, 2 scotch collar butts, 2 leg roasts, 2 shoulder roasts, hocks, and bulk mince), OR (B) Whole dressed suckling/market pig prepped, cleaned, and trussed ready for a traditional charcoal spit roast event. Dispatched cold-chain across Australia.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '880.00',
+    defaultPrice: '704.00',
     weightOptions: [
-      { weight: 'Whole Pig Butcher Breakdown (~65kg–72kg dressed yield)', serves: '180–200 family meals', pricePlaceholder: '880.00' },
-      { weight: 'Whole Pig Heavy Butchered (~78kg–85kg dressed yield)', serves: '220–240 family meals', pricePlaceholder: '990.00' },
-      { weight: 'Whole Spit Roast Pig (~22kg–25kg whole carcass unportioned)', serves: '45–55 event guests', pricePlaceholder: '490.00' }
+      { weight: 'Whole Pig Butcher Breakdown (~65kg–72kg dressed yield)', serves: '180–200 family meals', pricePlaceholder: '704.00' },
+      { weight: 'Whole Pig Heavy Butchered (~78kg–85kg dressed yield)', serves: '220–240 family meals', pricePlaceholder: '792.00' },
+      { weight: 'Whole Spit Roast Pig (~22kg–25kg whole carcass unportioned)', serves: '45–55 event guests', pricePlaceholder: '392.00' }
     ],
     stockStatus: 'Available for Whole Beast Reserve',
     cutInformation: 'Whole pig carcass dressed and inspected. Delivered fully portioned and vacuum packed, or whole for spit roasters.',
@@ -1151,11 +1177,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender pork belly with fine fat layers and butcher-scored rind for guaranteed crackling.',
     fullDescription: 'Prepared from prime Australian pork sides. Precision machine-scored at 5mm intervals so salt and oil penetrate deeply, creating crunchy blistered crackling while the luscious layers of belly meat remain meltingly tender.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '26.50',
+    defaultPrice: '21.20',
     weightOptions: [
-      { weight: '1kg Roast Slab', serves: '3–4 serves', pricePlaceholder: '26.50' },
-      { weight: '2kg Large Slab', serves: '6–8 serves', pricePlaceholder: '49.90' },
-      { weight: '3kg Whole Sheet (Feast)', serves: '10–12 serves', pricePlaceholder: '72.00' }
+      { weight: '1kg Roast Slab', serves: '3–4 serves', pricePlaceholder: '21.20' },
+      { weight: '2kg Large Slab', serves: '6–8 serves', pricePlaceholder: '39.92' },
+      { weight: '3kg Whole Sheet (Feast)', serves: '10–12 serves', pricePlaceholder: '57.60' }
     ],
     stockStatus: 'In Stock • Precision Scored',
     cutInformation: 'Belly roast with rind on, scored by butcher at 5mm intervals.',
@@ -1174,11 +1200,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Succulent French-trimmed bone-in pork loin chops with an edge ribbon of fat.',
     fullDescription: 'Cut thick (approx. 25mm) to prevent drying out. Free-range grain-fed pork from regional farms, delivering clean pork sweetness on the barbecue or cast iron skillet.',
     image: 'https://images.unsplash.com/photo-1432139555190-58524dae6a55?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '14.50',
+    defaultPrice: '11.60',
     weightOptions: [
-      { weight: '2 x 250g Cutlets (500g)', serves: '2 serves', pricePlaceholder: '14.50' },
-      { weight: '4 x 250g Cutlets (1kg)', serves: '4 serves', pricePlaceholder: '26.90' },
-      { weight: '6 x 250g Cutlets (1.5kg Pack)', serves: '6 serves', pricePlaceholder: '39.00' }
+      { weight: '2 x 250g Cutlets (500g)', serves: '2 serves', pricePlaceholder: '11.60' },
+      { weight: '4 x 250g Cutlets (1kg)', serves: '4 serves', pricePlaceholder: '21.52' },
+      { weight: '6 x 250g Cutlets (1.5kg Pack)', serves: '6 serves', pricePlaceholder: '31.20' }
     ],
     stockStatus: 'In Stock • Thick Cut',
     cutInformation: 'Loin cutlets on the rib bone, French trimmed for clean presentation.',
@@ -1197,11 +1223,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Marbling-rich pork collar neck roast. The supreme cut for juicy pulled pork and tender steaks.',
     fullDescription: 'Also known as Boston Butt or Collar. Packed with natural intramuscular marbling that renders completely into gelatinous tenderness during low-and-slow smoking or slow roasting.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '28.00',
+    defaultPrice: '22.40',
     weightOptions: [
-      { weight: 'Sliced Pork Scotch Steaks (4 x 250g / 1kg)', serves: '4 serves', pricePlaceholder: '24.00' },
-      { weight: 'Whole Collar Roast (~1.5kg)', serves: '6–8 serves', pricePlaceholder: '28.00' },
-      { weight: 'Whole Smoker Boston Butt (~3.0kg)', serves: '12–15 serves', pricePlaceholder: '54.00' }
+      { weight: 'Sliced Pork Scotch Steaks (4 x 250g / 1kg)', serves: '4 serves', pricePlaceholder: '19.20' },
+      { weight: 'Whole Collar Roast (~1.5kg)', serves: '6–8 serves', pricePlaceholder: '22.40' },
+      { weight: 'Whole Smoker Boston Butt (~3.0kg)', serves: '12–15 serves', pricePlaceholder: '43.20' }
     ],
     stockStatus: 'In Stock • Pitmaster Spec',
     cutInformation: 'Pork neck/collar primal with dense internal marbling and no bone.',
@@ -1220,10 +1246,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Full St. Louis cut pork spare ribs with brisket bone trimmed away for uniform meat thickness.',
     fullDescription: 'The champion barbecue cut. Trimmed flat and square with thick, meaty coverage across the entire rack. Membrane removed from the bone side for maximum smoke absorption.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '29.50',
+    defaultPrice: '23.60',
     weightOptions: [
-      { weight: '1 x Full Rack (~1.2kg)', serves: '2–3 serves', pricePlaceholder: '29.50' },
-      { weight: '2 x Full Racks (~2.4kg Smoker Pack)', serves: '5–6 serves', pricePlaceholder: '56.00' }
+      { weight: '1 x Full Rack (~1.2kg)', serves: '2–3 serves', pricePlaceholder: '23.60' },
+      { weight: '2 x Full Racks (~2.4kg Smoker Pack)', serves: '5–6 serves', pricePlaceholder: '44.80' }
     ],
     stockStatus: 'In Stock • Membrane Removed',
     cutInformation: 'St. Louis square-trimmed pork belly rib rack with membrane peeled.',
@@ -1242,11 +1268,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Freshly minced Australian pork shoulder trim. Essential for dumplings, pork meatballs, and san choy bau.',
     fullDescription: 'Ground fresh daily from trimmed pork shoulder cuts with an optimal 85/15 meat-to-fat balance. Clean sweetness with zero fillers, binders, or preservatives.',
     image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '9.90',
+    defaultPrice: '7.92',
     weightOptions: [
-      { weight: '500g Vacuum Pack', serves: '2–3 serves', pricePlaceholder: '9.90' },
-      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '18.90' },
-      { weight: '2kg Bulk Pack', serves: '8–10 serves', pricePlaceholder: '35.00' }
+      { weight: '500g Vacuum Pack', serves: '2–3 serves', pricePlaceholder: '7.92' },
+      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '15.12' },
+      { weight: '2kg Bulk Pack', serves: '8–10 serves', pricePlaceholder: '28.00' }
     ],
     stockStatus: 'In Stock • Fresh Ground Daily',
     cutInformation: 'Freshly ground from boneless pork shoulder muscle trims.',
@@ -1269,10 +1295,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Balanced quarter carcass of tender Australian pasture-fed lamb: cutlets, loin chops, leg/shoulder roast, shanks, and mince.',
     fullDescription: 'Our 1/4 Pasture-Fed Lamb Share offers outstanding farm-direct value and freezer convenience. Selected from young prime Australian lambs raised on native pastures in NSW 2642. Custom portioned into table-ready cuts: French-trimmed rib cutlets, sweet loin chops, boneless butterflied or bone-in leg roast, succulent forequarter shoulder chops, meaty slow-cook shanks, and lean lamb mince. All cuts are individually vacuum-sealed in heavy barrier cryovac pouches and clearly labeled.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '165.00',
+    defaultPrice: '132.00',
     weightOptions: [
-      { weight: 'Standard 1/4 Lamb Share (~6kg–7kg dressed yield)', serves: '18–22 family meals', pricePlaceholder: '165.00' },
-      { weight: 'Heavy 1/4 Lamb Share (~8kg–9kg dressed yield)', serves: '24–28 family meals', pricePlaceholder: '198.00' }
+      { weight: 'Standard 1/4 Lamb Share (~6kg–7kg dressed yield)', serves: '18–22 family meals', pricePlaceholder: '132.00' },
+      { weight: 'Heavy 1/4 Lamb Share (~8kg–9kg dressed yield)', serves: '24–28 family meals', pricePlaceholder: '158.40' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Artisan portioned from young pasture-fed Australian prime lamb. Includes French-trimmed cutlets, mid-loin chops, leg roast piece, shoulder chops, shank, and gourmet lean mince.',
@@ -1291,10 +1317,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Complete half side of Australian pasture-fed lamb: full rack of cutlets, loin chops, whole leg roast, shoulder, shanks, ribs, and mince.',
     fullDescription: 'The ultimate lamb freezer-filler for Australian families. A full half carcass (forequarter, loin, and hindquarter) of pasture-fed prime lamb. Aged and custom butchered into: 8-bone French-trimmed rack/cutlets, prime T-bone loin chops, chump steaks, whole leg roast (bone-in or butterflied), whole shoulder roast (bone-in or rolled boneless), 2 hindquarter shanks, breast ribs, and freshly ground lamb mince. Vacuum sealed and labeled.',
     image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '295.00',
+    defaultPrice: '236.00',
     weightOptions: [
-      { weight: 'Standard 1/2 Lamb Side (~12kg–14kg dressed yield)', serves: '35–42 family meals', pricePlaceholder: '295.00' },
-      { weight: 'Heavy 1/2 Lamb Side (~16kg–18kg dressed yield)', serves: '45–54 family meals', pricePlaceholder: '365.00' }
+      { weight: 'Standard 1/2 Lamb Side (~12kg–14kg dressed yield)', serves: '35–42 family meals', pricePlaceholder: '236.00' },
+      { weight: 'Heavy 1/2 Lamb Side (~16kg–18kg dressed yield)', serves: '45–54 family meals', pricePlaceholder: '292.00' }
     ],
     stockStatus: 'In Stock • Custom Butchery Order',
     cutInformation: 'Complete side of prime Australian lamb. Custom butchered into cutlets, loin chops, leg roast, shoulder roast, 2 shanks, spare ribs, and mince. All packaged in modular vacuum pouches.',
@@ -1313,11 +1339,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Whole pasture-fed Australian lamb carcass. Available custom-butchered into individual cuts or prepared whole for spit roasting.',
     fullDescription: 'Direct farm-to-table whole lamb buying. Sourced from prime Australian pasture-fed lambs in NSW 2642. You can choose either: (A) Full artisan butcher breakdown into vacuum-sealed table-ready cuts (16 French cutlets, 16+ loin chops, 2 whole leg roasts, 2 whole shoulder roasts, 4 shanks, ribs, neck chops, and bulk mince), OR (B) Whole dressed carcass prepared and secured for festive Greek/Cypriot charcoal spit roasting. Dispatched in temperature-controlled cold-chain packaging.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '540.00',
+    defaultPrice: '432.00',
     weightOptions: [
-      { weight: 'Whole Lamb Custom Butchered (~24kg–26kg dressed yield)', serves: '75–90 family meals', pricePlaceholder: '540.00' },
-      { weight: 'Whole Lamb Heavy Butchered (~30kg–34kg dressed yield)', serves: '95–110 family meals', pricePlaceholder: '670.00' },
-      { weight: 'Whole Lamb Spit Roast Ready (~22kg–25kg whole carcass)', serves: '50–60 event guests', pricePlaceholder: '495.00' }
+      { weight: 'Whole Lamb Custom Butchered (~24kg–26kg dressed yield)', serves: '75–90 family meals', pricePlaceholder: '432.00' },
+      { weight: 'Whole Lamb Heavy Butchered (~30kg–34kg dressed yield)', serves: '95–110 family meals', pricePlaceholder: '536.00' },
+      { weight: 'Whole Lamb Spit Roast Ready (~22kg–25kg whole carcass)', serves: '50–60 event guests', pricePlaceholder: '396.00' }
     ],
     stockStatus: 'Available for Whole Beast Reserve',
     cutInformation: 'Whole lamb carcass hung and dressed. Available fully broken down into vacuum-sealed retail cuts, or whole spit-ready trussed on request.',
@@ -1336,11 +1362,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'The pinnacle of tender Australian lamb—sweet, tender, and meticulously trimmed.',
     fullDescription: 'Expertly prepared by our master butchers with clean bone handles. Sourced from lush pasturelands in NSW and regional Australia for unbeatable tenderness and delicate, sweet lamb flavor.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '26.90',
+    defaultPrice: '21.52',
     weightOptions: [
-      { weight: '6 Cutlets (~500g Pack)', serves: '2 serves', pricePlaceholder: '26.90' },
-      { weight: '12 Cutlets (~1kg Family Pack)', serves: '4 serves', pricePlaceholder: '52.00' },
-      { weight: 'Whole 8-Bone French Rack (~800g Roast)', serves: '3–4 serves', pricePlaceholder: '44.00' }
+      { weight: '6 Cutlets (~500g Pack)', serves: '2 serves', pricePlaceholder: '21.52' },
+      { weight: '12 Cutlets (~1kg Family Pack)', serves: '4 serves', pricePlaceholder: '41.60' },
+      { weight: 'Whole 8-Bone French Rack (~800g Roast)', serves: '3–4 serves', pricePlaceholder: '35.20' }
     ],
     stockStatus: 'In Stock • Hand French-Trimmed',
     cutInformation: 'Rib cutlets French trimmed to the eye with bone handles cleanly denuded.',
@@ -1359,11 +1385,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Meaty, collagen-rich hindquarter lamb shanks ready for rich winter braises.',
     fullDescription: 'Generous hindquarter shanks trimmed of excessive external fat while keeping the connective tissues intact. Melts into fork-tender succulence when braised with wine and herbs.',
     image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '27.50',
+    defaultPrice: '22.00',
     weightOptions: [
-      { weight: '2 Shanks (~800g Pack)', serves: '2 serves', pricePlaceholder: '27.50' },
-      { weight: '4 Shanks (~1.6kg Family Pack)', serves: '4 serves', pricePlaceholder: '52.00' },
-      { weight: '6 Shanks (~2.4kg Feast Pack)', serves: '6 serves', pricePlaceholder: '76.00' }
+      { weight: '2 Shanks (~800g Pack)', serves: '2 serves', pricePlaceholder: '22.00' },
+      { weight: '4 Shanks (~1.6kg Family Pack)', serves: '4 serves', pricePlaceholder: '41.60' },
+      { weight: '6 Shanks (~2.4kg Feast Pack)', serves: '6 serves', pricePlaceholder: '60.80' }
     ],
     stockStatus: 'In Stock • Large Hindquarter Shanks',
     cutInformation: 'Primal hindquarter shank with bone marrow exposed and clean frenched knuckle.',
@@ -1382,11 +1408,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Boneless pasture-fed lamb leg flattened for even, rapid barbecue cooking or oven roasting.',
     fullDescription: 'Our butchers remove the pelvic and femur bones, opening out the leg to an even thickness. Creates caramelized charred edges on the outside while maintaining juicy pink meat through the center.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '38.00',
+    defaultPrice: '30.40',
     weightOptions: [
-      { weight: 'Butterflied Leg (~1.5kg)', serves: '5–6 serves', pricePlaceholder: '38.00' },
-      { weight: 'Large Butterflied Leg (~2.2kg)', serves: '8–10 serves', pricePlaceholder: '54.00' },
-      { weight: 'Traditional Bone-In Leg Roast (~2.5kg)', serves: '8–10 serves', pricePlaceholder: '48.00' }
+      { weight: 'Butterflied Leg (~1.5kg)', serves: '5–6 serves', pricePlaceholder: '30.40' },
+      { weight: 'Large Butterflied Leg (~2.2kg)', serves: '8–10 serves', pricePlaceholder: '43.20' },
+      { weight: 'Traditional Bone-In Leg Roast (~2.5kg)', serves: '8–10 serves', pricePlaceholder: '38.40' }
     ],
     stockStatus: 'In Stock • Boned & Flattened',
     cutInformation: 'Whole lamb leg with bone removed and scored for even heat distribution.',
@@ -1405,10 +1431,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender miniature T-bone chops combining the sweet loin eye and tenderloin fillet.',
     fullDescription: 'The classic Australian weekday chop. Cut from the mid-loin section, featuring the characteristic T-bone bone structure that imparts rich roasted marrow depth when cooked over hot coals.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '18.50',
+    defaultPrice: '14.80',
     weightOptions: [
-      { weight: '4 Chops (~500g Pack)', serves: '2 serves', pricePlaceholder: '18.50' },
-      { weight: '8 Chops (~1kg Family Pack)', serves: '4 serves', pricePlaceholder: '35.00' }
+      { weight: '4 Chops (~500g Pack)', serves: '2 serves', pricePlaceholder: '14.80' },
+      { weight: '8 Chops (~1kg Family Pack)', serves: '4 serves', pricePlaceholder: '28.00' }
     ],
     stockStatus: 'In Stock • Classic Aussie Cut',
     cutInformation: 'Mid-loin chops with central T-bone and thin fat ribbon for natural basting.',
@@ -1427,10 +1453,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Richly marbled bone-in lamb shoulder. The ultimate cut for fork-shredded Greek lamb roasts.',
     fullDescription: 'The forequarter oyster cut retains the blade bone, providing internal structure while rendering deep collagen throughout long, slow roasting. Seasoned simply with garlic and oregano, the meat collapses into tender shreds under a fork.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '36.00',
+    defaultPrice: '28.80',
     weightOptions: [
-      { weight: 'Bone-In Shoulder (~1.8kg)', serves: '5–6 serves', pricePlaceholder: '36.00' },
-      { weight: 'Large Bone-In Shoulder (~2.4kg)', serves: '7–8 serves', pricePlaceholder: '47.00' }
+      { weight: 'Bone-In Shoulder (~1.8kg)', serves: '5–6 serves', pricePlaceholder: '28.80' },
+      { weight: 'Large Bone-In Shoulder (~2.4kg)', serves: '7–8 serves', pricePlaceholder: '37.60' }
     ],
     stockStatus: 'In Stock • High Natural Collagen',
     cutInformation: 'Oyster cut lamb forequarter shoulder with bone intact and fat cap lightly scored.',
@@ -1449,11 +1475,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Freshly minced Australian pasture-fed lamb trims. Ideal for moussaka, koftas, and shepherd\'s pie.',
     fullDescription: 'Ground fresh daily from trimmed lamb leg and shoulder cuts. Clean, sweet lamb flavor without excessive grease. Perfect for Greek koftas, Middle Eastern kibbeh, and homemade burgers.',
     image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '13.50',
+    defaultPrice: '10.80',
     weightOptions: [
-      { weight: '500g Pack', serves: '2–3 serves', pricePlaceholder: '13.50' },
-      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '25.50' },
-      { weight: '2kg Bulk Pack', serves: '8–10 serves', pricePlaceholder: '48.00' }
+      { weight: '500g Pack', serves: '2–3 serves', pricePlaceholder: '10.80' },
+      { weight: '1kg Family Pack', serves: '4–6 serves', pricePlaceholder: '20.40' },
+      { weight: '2kg Bulk Pack', serves: '8–10 serves', pricePlaceholder: '38.40' }
     ],
     stockStatus: 'In Stock • Fresh Ground Daily',
     cutInformation: 'Trimmed lamb shoulder and leg muscle ground to medium coarse consistency.',
@@ -1476,11 +1502,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Pristine ocean salmon portions rich in healthy Omega-3 oils with crispy skin potential.',
     fullDescription: 'Portion-cut from ocean-farmed Tasmanian Atlantic salmon. Pin-bone removed and scaled, vacuum-packed fresh to preserve vibrant orange colour, delicate flaky texture, and rich taste.',
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '19.50',
+    defaultPrice: '15.60',
     weightOptions: [
-      { weight: '2 x 200g Portions (400g Pack)', serves: '2 serves', pricePlaceholder: '19.50' },
-      { weight: '4 x 200g Portions (800g Family Pack)', serves: '4 serves', pricePlaceholder: '36.50' },
-      { weight: 'Whole Side Fillet (~1.2kg Side)', serves: '6–8 serves', pricePlaceholder: '52.00' }
+      { weight: '2 x 200g Portions (400g Pack)', serves: '2 serves', pricePlaceholder: '15.60' },
+      { weight: '4 x 200g Portions (800g Family Pack)', serves: '4 serves', pricePlaceholder: '29.20' },
+      { weight: 'Whole Side Fillet (~1.2kg Side)', serves: '6–8 serves', pricePlaceholder: '41.60' }
     ],
     stockStatus: 'Fresh Catch • In Stock',
     cutInformation: 'Centre-cut salmon portions, skin-on, scaled, and 100% pin-bone free.',
@@ -1499,10 +1525,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Sweet, buttery Australian Barramundi fillets with tender flaky white flesh.',
     fullDescription: 'Iconic Australian saltwater fish raised in high-tidal ocean pens. Known for delicate sweetness, firm white flakes, and zero muddy undertones. Cleanly portioned with skin on for pan-frying or oven baking.',
     image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '21.50',
+    defaultPrice: '17.20',
     weightOptions: [
-      { weight: '2 x 200g Portions (400g Pack)', serves: '2 serves', pricePlaceholder: '21.50' },
-      { weight: '4 x 200g Portions (800g Pack)', serves: '4 serves', pricePlaceholder: '39.90' }
+      { weight: '2 x 200g Portions (400g Pack)', serves: '2 serves', pricePlaceholder: '17.20' },
+      { weight: '4 x 200g Portions (800g Pack)', serves: '4 serves', pricePlaceholder: '31.92' }
     ],
     stockStatus: 'In Stock • Saltwater Farmed',
     cutInformation: 'Ocean-farmed saltwater barramundi fillets, boneless and scaled.',
@@ -1521,10 +1547,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Line-caught Australian pink snapper with mild, sweet white flesh and moist flakes.',
     fullDescription: 'Wild-caught from clean coastal reef waters. Hand-filleted by fishmongers, boneless with skin on. Highly versatile for steaming with ginger-shallot oil, grilling, or baking with Mediterranean tomatoes.',
     image: 'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '24.00',
+    defaultPrice: '19.20',
     weightOptions: [
-      { weight: '2 x 180g Fillets (360g Pack)', serves: '2 serves', pricePlaceholder: '24.00' },
-      { weight: '4 x 180g Fillets (720g Pack)', serves: '4 serves', pricePlaceholder: '45.00' }
+      { weight: '2 x 180g Fillets (360g Pack)', serves: '2 serves', pricePlaceholder: '19.20' },
+      { weight: '4 x 180g Fillets (720g Pack)', serves: '4 serves', pricePlaceholder: '36.00' }
     ],
     stockStatus: 'In Stock • Line Caught',
     cutInformation: 'Boneless snapper fillets, scaled with skin on.',
@@ -1543,10 +1569,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Deep ruby-red Yellowfin Tuna steaks with firm meaty texture. Ideal for quick searing or poke bowls.',
     fullDescription: 'Sashimi-grade Yellowfin Tuna cut into thick loin steaks. Dense, meaty texture reminiscent of beef steak, with clean ocean flavor. Best enjoyed rare or medium-rare.',
     image: 'https://images.unsplash.com/photo-1534939561126-855b8675edd7?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '26.00',
+    defaultPrice: '20.80',
     weightOptions: [
-      { weight: '2 x 200g Steaks (400g Pack)', serves: '2 serves', pricePlaceholder: '26.00' },
-      { weight: '4 x 200g Steaks (800g Pack)', serves: '4 serves', pricePlaceholder: '49.00' }
+      { weight: '2 x 200g Steaks (400g Pack)', serves: '2 serves', pricePlaceholder: '20.80' },
+      { weight: '4 x 200g Steaks (800g Pack)', serves: '4 serves', pricePlaceholder: '39.20' }
     ],
     stockStatus: 'In Stock • Sashimi Grade',
     cutInformation: 'Center-cut loin portion with all dark bloodline muscle trimmed away.',
@@ -1569,10 +1595,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Jumbo wild ocean king prawns with firm, sweet meat and rich oceanic flavour.',
     fullDescription: 'Trawled from pristine Australian ocean currents and snap chilled to preserve crunch and natural sea sweetness. Thick shells and generous meat make these the ultimate prawn for sizzling garlic BBQ skewers or festive platters.',
     image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '46.00',
+    defaultPrice: '36.80',
     weightOptions: [
-      { weight: '1kg Box (Raw U10 Jumbo ~16–20 prawns)', serves: '3–4 serves', pricePlaceholder: '46.00' },
-      { weight: '2kg Bulk Pack', serves: '6–8 serves', pricePlaceholder: '88.00' }
+      { weight: '1kg Box (Raw U10 Jumbo ~16–20 prawns)', serves: '3–4 serves', pricePlaceholder: '36.80' },
+      { weight: '2kg Bulk Pack', serves: '6–8 serves', pricePlaceholder: '70.40' }
     ],
     stockStatus: 'In Stock • Jumbo U10 Grade',
     cutInformation: 'Whole shell-on raw jumbo king prawns with head intact.',
@@ -1591,10 +1617,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Plump, tender wild scallops harvested from pure cool Tasmanian coastal bays.',
     fullDescription: 'Chemical-free sea scallops with clean, translucent meat that caramelises beautifully in foaming butter without leaching water. No added water or chemical phosphates.',
     image: 'https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '26.00',
+    defaultPrice: '20.80',
     weightOptions: [
-      { weight: '500g Tub (~20–25 Scallops)', serves: '2–3 serves', pricePlaceholder: '26.00' },
-      { weight: '1kg Value Tub (~40–50 Scallops)', serves: '4–6 serves', pricePlaceholder: '48.00' }
+      { weight: '500g Tub (~20–25 Scallops)', serves: '2–3 serves', pricePlaceholder: '20.80' },
+      { weight: '1kg Value Tub (~40–50 Scallops)', serves: '4–6 serves', pricePlaceholder: '38.40' }
     ],
     stockStatus: 'In Stock • Dry Packed (No Water Added)',
     cutInformation: 'Fresh shucked sea scallops, dry-packed with roe removed.',
@@ -1613,10 +1639,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender wild-caught Australian calamari tubes, cleaned and ready for salt & pepper dusting.',
     fullDescription: 'Freshly cleaned calamari with membrane and wings removed. Sliced into rings or scored into diamond patterns for flash frying. Naturally tender with zero rubberiness when cooked rapidly.',
     image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '18.50',
+    defaultPrice: '14.80',
     weightOptions: [
-      { weight: '500g Cleaned Tubes', serves: '2–3 serves', pricePlaceholder: '18.50' },
-      { weight: '1kg Value Pack', serves: '4–6 serves', pricePlaceholder: '34.00' }
+      { weight: '500g Cleaned Tubes', serves: '2–3 serves', pricePlaceholder: '14.80' },
+      { weight: '1kg Value Pack', serves: '4–6 serves', pricePlaceholder: '27.20' }
     ],
     stockStatus: 'In Stock • Hand Cleaned',
     cutInformation: 'Cleaned calamari tubes with quill and ink sac removed.',
@@ -1635,10 +1661,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Premium ocean mix of king prawn pieces, tender calamari rings, salmon chunks, and plump scallops.',
     fullDescription: 'Hand-blended seafood medley prepared with real fillet chunks and whole shellfish. Perfect for rich tomato marinara pasta, Spanish paella, and seafood chowders.',
     image: 'https://images.unsplash.com/photo-1565680018434-b513d5e5fd47?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '22.50',
+    defaultPrice: '18.00',
     weightOptions: [
-      { weight: '500g Fresh Medley Pack', serves: '2–3 serves', pricePlaceholder: '22.50' },
-      { weight: '1kg Family Pasta Pack', serves: '4–6 serves', pricePlaceholder: '41.00' }
+      { weight: '500g Fresh Medley Pack', serves: '2–3 serves', pricePlaceholder: '18.00' },
+      { weight: '1kg Family Pasta Pack', serves: '4–6 serves', pricePlaceholder: '32.80' }
     ],
     stockStatus: 'In Stock • Hand Blended Fresh',
     cutInformation: 'Combination of salmon fillet bites, wild calamari rings, prawn cutlets, and sea scallops.',
@@ -1661,11 +1687,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Australian butcher sausages made with coarse-ground beef in natural hog casings.',
     fullDescription: 'The quintessential Aussie barbecue staple. Coarsely ground Australian beef trim with cracked pepper, sea salt, and minimal breadcrumb in natural casings for great snap and zero bursting.',
     image: 'https://images.unsplash.com/photo-1597652758151-512918809489?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.50',
+    defaultPrice: '13.20',
     weightOptions: [
-      { weight: '1kg Pack (~12 Sausages)', serves: '4–6 serves', pricePlaceholder: '16.50' },
-      { weight: '2kg Family BBQ Pack (~24 Sausages)', serves: '8–12 serves', pricePlaceholder: '30.00' },
-      { weight: '5kg Club & Catering Box (~60 Sausages)', serves: '25+ serves', pricePlaceholder: '68.00' }
+      { weight: '1kg Pack (~12 Sausages)', serves: '4–6 serves', pricePlaceholder: '13.20' },
+      { weight: '2kg Family BBQ Pack (~24 Sausages)', serves: '8–12 serves', pricePlaceholder: '24.00' },
+      { weight: '5kg Club & Catering Box (~60 Sausages)', serves: '25+ serves', pricePlaceholder: '54.40' }
     ],
     stockStatus: 'In Stock • Hand Linked Daily',
     cutInformation: 'Natural hog casings linked by hand with coarse beef mince.',
@@ -1684,10 +1710,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Rustic coarse pork sausages seasoned with whole toasted fennel seed and garlic.',
     fullDescription: 'Handcrafted artisan Italian snags. Made from prime Australian pork shoulder and belly cuts with cracked black pepper, toasted fennel seeds, and fresh garlic in natural casings.',
     image: 'https://images.unsplash.com/photo-1585325701165-351af916e581?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '18.90',
+    defaultPrice: '15.12',
     weightOptions: [
-      { weight: '1kg Pack (~10 Thick Sausages)', serves: '4–5 serves', pricePlaceholder: '18.90' },
-      { weight: '2kg Pack (~20 Thick Sausages)', serves: '8–10 serves', pricePlaceholder: '35.00' }
+      { weight: '1kg Pack (~10 Thick Sausages)', serves: '4–5 serves', pricePlaceholder: '15.12' },
+      { weight: '2kg Pack (~20 Thick Sausages)', serves: '8–10 serves', pricePlaceholder: '28.00' }
     ],
     stockStatus: 'In Stock • Artisan Tuscan Recipe',
     cutInformation: '100% Australian pork shoulder, natural casing, coarse grind.',
@@ -1706,10 +1732,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Sweet Australian lamb blended with fresh garden rosemary and roasted garlic cloves.',
     fullDescription: 'A sophisticated gourmet sausage. Ground from pasture-fed Australian lamb trim with aromatic rosemary, roasted garlic, and cracked pepper in natural sheep casings.',
     image: 'https://images.unsplash.com/photo-1597652758151-512918809489?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '19.50',
+    defaultPrice: '15.60',
     weightOptions: [
-      { weight: '1kg Pack (~10 Sausages)', serves: '4–5 serves', pricePlaceholder: '19.50' },
-      { weight: '2kg Value Pack (~20 Sausages)', serves: '8–10 serves', pricePlaceholder: '36.50' }
+      { weight: '1kg Pack (~10 Sausages)', serves: '4–5 serves', pricePlaceholder: '15.60' },
+      { weight: '2kg Value Pack (~20 Sausages)', serves: '8–10 serves', pricePlaceholder: '29.20' }
     ],
     stockStatus: 'In Stock • Gourmet Blend',
     cutInformation: 'Coarsely minced Australian lamb trim in natural casings.',
@@ -1728,10 +1754,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Thin breakfast chipolatas lightly sweetened with pure Australian honey.',
     fullDescription: 'A weekend breakfast and kid-friendly favorite. Thinly linked in delicate sheep casings with pure Australian clover honey and mild herbs.',
     image: 'https://images.unsplash.com/photo-1585325701165-351af916e581?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '17.50',
+    defaultPrice: '14.00',
     weightOptions: [
-      { weight: '1kg Pack (~18–20 Chipolatas)', serves: '5–6 serves', pricePlaceholder: '17.50' },
-      { weight: '2kg Family Pack (~38–40 Chipolatas)', serves: '10–12 serves', pricePlaceholder: '32.00' }
+      { weight: '1kg Pack (~18–20 Chipolatas)', serves: '5–6 serves', pricePlaceholder: '14.00' },
+      { weight: '2kg Family Pack (~38–40 Chipolatas)', serves: '10–12 serves', pricePlaceholder: '25.60' }
     ],
     stockStatus: 'In Stock • Kid-Friendly',
     cutInformation: 'Thin sheep casing chipolatas with lean Australian pork and natural honey.',
@@ -1754,10 +1780,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Curated value box of everyday Australian butcher cuts for two weeks of family meals.',
     fullDescription: 'Includes: 2.0kg Grass-Fed Black Angus Beef Mince, 1.0kg Black Angus Rump Steaks (4 x 250g), 1.5kg Free-Range Chicken Breast Fillets, 1.0kg Traditional Beef BBQ Sausages, and 2.0kg Australian Pork Loin Cutlets. All cuts individually vacuum-sealed for modular freezer storage.',
     image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '169.00',
+    defaultPrice: '135.20',
     weightOptions: [
-      { weight: 'Standard Family Box (~7.5kg)', serves: '14+ family dinners', pricePlaceholder: '169.00' },
-      { weight: 'Jumbo Mega Box (~12.5kg)', serves: '25+ family dinners', pricePlaceholder: '265.00' }
+      { weight: 'Standard Family Box (~7.5kg)', serves: '14+ family dinners', pricePlaceholder: '135.20' },
+      { weight: 'Jumbo Mega Box (~12.5kg)', serves: '25+ family dinners', pricePlaceholder: '212.00' }
     ],
     stockStatus: 'In Stock • Best Value Box',
     cutInformation: 'Multi-cut bundle, individually labelled and vacuum sealed in leak-proof cryovac barrier pouches.',
@@ -1776,10 +1802,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Everything needed to feed a hungry gathering: burgers, steaks, wings, and sausages.',
     fullDescription: 'Includes: 4 x 350g Black Angus Ribeye Steaks (1.4kg), 8 x 160g Handcrafted Beef Burger Patties (1.28kg), 1.0kg Gourmet Italian Pork & Fennel Sausages, 1.0kg Traditional Beef BBQ Sausages, and 1.5kg Free-Range Chicken Wings & Drumettes. Packed with frozen gel packs for same-day weekend grilling.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '145.00',
+    defaultPrice: '116.00',
     weightOptions: [
-      { weight: 'BBQ Party Box (~6.0kg)', serves: '8–12 people', pricePlaceholder: '145.00' },
-      { weight: 'Mega Entertainer Box (~10.0kg)', serves: '16–20 people', pricePlaceholder: '225.00' }
+      { weight: 'BBQ Party Box (~6.0kg)', serves: '8–12 people', pricePlaceholder: '116.00' },
+      { weight: 'Mega Entertainer Box (~10.0kg)', serves: '16–20 people', pricePlaceholder: '180.00' }
     ],
     stockStatus: 'In Stock • Weekend Ready',
     cutInformation: 'Fresh party portions trimmed for quick high-heat grilling.',
@@ -1798,9 +1824,9 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'The ultimate luxury steak box featuring 21-day dry-aged Scotch Fillets, F1 Wagyu, and King T-Bones.',
     fullDescription: 'Includes: 2 x 350g Black Angus Scotch Fillets (700g), 2 x 300g F1 Wagyu Striploins MBS 6-7+ (600g), 2 x 450g King Cut T-Bone Steaks (900g), 2 x 200g Centre-Cut Eye Fillets (400g), and 1 x 1.3kg Giant F1 Wagyu Tomahawk Steak MBS 6+. Cut by master butchers.',
     image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '249.00',
+    defaultPrice: '199.20',
     weightOptions: [
-      { weight: 'Luxury Tasting Box (~4.5kg Prime Steaks)', serves: '10–12 steak lovers', pricePlaceholder: '249.00' }
+      { weight: 'Luxury Tasting Box (~4.5kg Prime Steaks)', serves: '10–12 steak lovers', pricePlaceholder: '199.20' }
     ],
     stockStatus: 'In Stock • Premium Reserve',
     cutInformation: 'Individually portioned steakhouse grade cuts, wet and dry-aged for optimal tenderness.',
@@ -1819,9 +1845,9 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Ultra-lean proteins for bodybuilders, athletes, and healthy weekly meal preppers.',
     fullDescription: 'Includes: 2.5kg Skinless Free-Range Chicken Breast Fillets, 2.0kg Extra Lean Beef Mince (90/10), 1.0kg Black Angus Beef Stir-Fry Strips, and 1.0kg Tasmanian Atlantic Salmon Portions (5 x 200g). Maximum protein yield, zero excess trim.',
     image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '155.00',
+    defaultPrice: '124.00',
     weightOptions: [
-      { weight: 'Weekly Athlete Box (~6.5kg)', serves: '18–22 high-protein meals', pricePlaceholder: '155.00' }
+      { weight: 'Weekly Athlete Box (~6.5kg)', serves: '18–22 high-protein meals', pricePlaceholder: '124.00' }
     ],
     stockStatus: 'In Stock • Extra Lean Trim',
     cutInformation: '100% skinless, lean-trimmed chicken, ultra-lean beef, and fresh salmon portions.',
@@ -1844,11 +1870,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: '100% preservative-free, chemical-free Australian raw beef pet mince freshly ground from lean trims.',
     fullDescription: 'Crafted specifically for raw-fed canine and feline health. Sourced from 100% Australian grass-fed beef trims with natural fat, sinew, and nutrient balance. Contains zero sulphur dioxide, colour enhancers, fillers, binders, or synthetic preservatives.',
     image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '8.50',
+    defaultPrice: '6.80',
     weightOptions: [
-      { weight: '1kg Roll / Tub', serves: 'Daily pet portion', pricePlaceholder: '8.50' },
-      { weight: '5kg Value Box (5 x 1kg Rolls)', serves: 'Weekly pet supply', pricePlaceholder: '38.00' },
-      { weight: '10kg Breeder Pack (10 x 1kg Rolls)', serves: 'Fortnightly supply', pricePlaceholder: '69.00' }
+      { weight: '1kg Roll / Tub', serves: 'Daily pet portion', pricePlaceholder: '6.80' },
+      { weight: '5kg Value Box (5 x 1kg Rolls)', serves: 'Weekly pet supply', pricePlaceholder: '30.40' },
+      { weight: '10kg Breeder Pack (10 x 1kg Rolls)', serves: 'Fortnightly supply', pricePlaceholder: '55.20' }
     ],
     stockStatus: 'In Stock • Fresh Ground Daily',
     cutInformation: 'Freshly minced Australian beef muscle trims, rich in natural proteins and enzymes with zero chemical washes.',
@@ -1867,10 +1893,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Clean-cut raw beef femur marrow bones for canine dental health, recreation, and mental enrichment.',
     fullDescription: 'Thick-walled Australian beef marrow bones machine-sawn into clean, accessible lengths. Natural raw bones provide essential bioavailable calcium, minerals, and rich marrow, while cleaning tartar and plaque from teeth under human supervision.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '12.00',
+    defaultPrice: '9.60',
     weightOptions: [
-      { weight: 'Pack of 3 Bones (~1.2kg)', serves: 'Recreational chews', pricePlaceholder: '12.00' },
-      { weight: 'Bulk Bag of 8 Bones (~3.2kg)', serves: 'Multi-pet value bag', pricePlaceholder: '28.00' }
+      { weight: 'Pack of 3 Bones (~1.2kg)', serves: 'Recreational chews', pricePlaceholder: '9.60' },
+      { weight: 'Bulk Bag of 8 Bones (~3.2kg)', serves: 'Multi-pet value bag', pricePlaceholder: '22.40' }
     ],
     stockStatus: 'In Stock • Sawn Daily',
     cutInformation: 'Centre-cut beef femur bones containing natural nutritious bone marrow.',
@@ -1889,11 +1915,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Soft, digestible raw poultry bones rich in natural calcium and glucosamine for dogs and cats.',
     fullDescription: 'An ideal source of natural chondroitin, glucosamine, and calcium for puppies, adult dogs, and cats. Free from artificial preservatives and chemical washes, packed fresh daily.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '7.50',
+    defaultPrice: '6.00',
     weightOptions: [
-      { weight: '1kg Bag (~15–20 Necks)', serves: 'Daily raw feeding', pricePlaceholder: '7.50' },
-      { weight: '3kg Bulk Value Pack', serves: 'Multi-meal feeding', pricePlaceholder: '19.50' },
-      { weight: '5kg Breeder Carton', serves: 'Multi-pet supply', pricePlaceholder: '29.00' }
+      { weight: '1kg Bag (~15–20 Necks)', serves: 'Daily raw feeding', pricePlaceholder: '6.00' },
+      { weight: '3kg Bulk Value Pack', serves: 'Multi-meal feeding', pricePlaceholder: '15.60' },
+      { weight: '5kg Breeder Carton', serves: 'Multi-pet supply', pricePlaceholder: '23.20' }
     ],
     stockStatus: 'In Stock • Fresh Arrivals Daily',
     cutInformation: 'Whole fresh Australian chicken necks with soft digestible cartilage and meat.',
@@ -1912,10 +1938,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Fresh diced raw beef liver and heart packed with bioavailable Vitamin A, B-complex, and taurine.',
     fullDescription: 'Essential organ components for complete raw BARF feeding. 50/50 blend of freshly diced Australian grass-fed beef liver and ox heart. Packed with natural vitamins, minerals, and amino acids vital for canine vitality and shiny coats.',
     image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '9.50',
+    defaultPrice: '7.60',
     weightOptions: [
-      { weight: '1kg Diced Organ Tub', serves: '10–14 days raw organ supplement', pricePlaceholder: '9.50' },
-      { weight: '3kg Bulk Value Tub', serves: 'Monthly supply', pricePlaceholder: '25.00' }
+      { weight: '1kg Diced Organ Tub', serves: '10–14 days raw organ supplement', pricePlaceholder: '7.60' },
+      { weight: '3kg Bulk Value Tub', serves: 'Monthly supply', pricePlaceholder: '20.00' }
     ],
     stockStatus: 'In Stock • 100% Pure Organ',
     cutInformation: 'Freshly diced 50% beef liver and 50% beef heart muscle with zero fillers.',
@@ -1938,11 +1964,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Tender, collagen-dense Black Angus beef cheeks, trimmed and ready for slow braising.',
     fullDescription: 'Prized by high-end bistros and home chefs. Rich in natural gelatin and connective tissue that yields melting tenderness when braised low and slow with aromatics, garlic, and red wine for 3.5 to 4 hours.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '14.50',
+    defaultPrice: '11.60',
     weightOptions: [
-      { weight: '500g Pack (~2 Cheeks)', serves: '2 serves', pricePlaceholder: '14.50' },
-      { weight: '1kg Pack (~4 Cheeks)', serves: '4–5 serves', pricePlaceholder: '26.90' },
-      { weight: '2kg Bulk Pack (~8 Cheeks)', serves: '8–10 serves', pricePlaceholder: '51.00' }
+      { weight: '500g Pack (~2 Cheeks)', serves: '2 serves', pricePlaceholder: '11.60' },
+      { weight: '1kg Pack (~4 Cheeks)', serves: '4–5 serves', pricePlaceholder: '21.52' },
+      { weight: '2kg Bulk Pack (~8 Cheeks)', serves: '8–10 serves', pricePlaceholder: '40.80' }
     ],
     stockStatus: 'In Stock • Hand-Trimmed',
     cutInformation: 'Trimmed ox cheek, exterior silver skin cleaned, vacuum-sealed in barrier pouches.',
@@ -1961,10 +1987,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Meaty, cross-cut beef oxtail sections for deeply rich stews, soups, and ragùs.',
     fullDescription: 'Hand-jointed by our butchers into uniform pieces. The center bone and rich marrow infuse cooking liquids with incredible depth, body, and glossy gelatin. The holy grail of cold-weather slow cooking.',
     image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '29.90',
+    defaultPrice: '23.92',
     weightOptions: [
-      { weight: '1kg Cross-Cut Pieces', serves: '3–4 serves', pricePlaceholder: '29.90' },
-      { weight: '2kg Family Stew Pack', serves: '6–8 serves', pricePlaceholder: '57.00' }
+      { weight: '1kg Cross-Cut Pieces', serves: '3–4 serves', pricePlaceholder: '23.92' },
+      { weight: '2kg Family Stew Pack', serves: '6–8 serves', pricePlaceholder: '45.60' }
     ],
     stockStatus: 'In Stock • Meaty Jointed Pieces',
     cutInformation: 'Cross-cut oxtail sections with excess exterior fat cleanly trimmed.',
@@ -1983,11 +2009,11 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Lengthwise split beef femur bones exposing pure, rich culinary bone marrow.',
     fullDescription: 'Lengthwise split (canoe cut) by our master butchers for effortless restaurant-style oven roasting with herbs or making rich, collagen-dense nutrient-packed bone broth.',
     image: 'https://images.unsplash.com/photo-1589924691995-400dc9ecc119?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '16.50',
+    defaultPrice: '13.20',
     weightOptions: [
-      { weight: '2 Split Bones (~700g)', serves: '2 serves', pricePlaceholder: '16.50' },
-      { weight: '4 Split Bones (~1.4kg)', serves: '4 serves', pricePlaceholder: '31.00' },
-      { weight: 'Round Cross-Cut Bones (2kg Soup Pack)', serves: 'Bone broth batch', pricePlaceholder: '19.90' }
+      { weight: '2 Split Bones (~700g)', serves: '2 serves', pricePlaceholder: '13.20' },
+      { weight: '4 Split Bones (~1.4kg)', serves: '4 serves', pricePlaceholder: '24.80' },
+      { weight: 'Round Cross-Cut Bones (2kg Soup Pack)', serves: 'Bone broth batch', pricePlaceholder: '15.92' }
     ],
     stockStatus: 'In Stock • Canoe Split Daily',
     cutInformation: 'Canoe split femur bones, washed and ready to roast.',
@@ -2006,10 +2032,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Thinly sliced, ultra-fresh Australian beef liver packed with bioavailable vitamins and iron.',
     fullDescription: 'The original nutrient superfood. Sourced from 100% grass-fed Australian cattle, membrane-stripped and portioned thinly for quick searing with sweet caramelized onions and bacon.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '12.90',
+    defaultPrice: '10.32',
     weightOptions: [
-      { weight: '500g Thin Slices', serves: '2–3 serves', pricePlaceholder: '12.90' },
-      { weight: '1kg Pack', serves: '4–6 serves', pricePlaceholder: '24.00' }
+      { weight: '500g Thin Slices', serves: '2–3 serves', pricePlaceholder: '10.32' },
+      { weight: '1kg Pack', serves: '4–6 serves', pricePlaceholder: '19.20' }
     ],
     stockStatus: 'In Stock • Membrane Stripped',
     cutInformation: 'Membrane-stripped and thinly sliced across the grain.',
@@ -2028,10 +2054,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Lean, mineral-rich whole muscle meat cut from Australian grass-fed cattle. Excellent for skewers or slow cooking.',
     fullDescription: 'High in natural CoQ10, iron, and lean protein with minimal fat. Cleaned and trimmed of exterior chambers and valves by our butchers. Slices like an ultra-lean steak for Peruvian anticuchos skewers or long, tender braises.',
     image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '11.50',
+    defaultPrice: '9.20',
     weightOptions: [
-      { weight: '500g Sliced Pack', serves: '2–3 serves', pricePlaceholder: '11.50' },
-      { weight: 'Whole Trimmed Heart (~1.4kg)', serves: '5–6 serves', pricePlaceholder: '22.00' }
+      { weight: '500g Sliced Pack', serves: '2–3 serves', pricePlaceholder: '9.20' },
+      { weight: 'Whole Trimmed Heart (~1.4kg)', serves: '5–6 serves', pricePlaceholder: '17.60' }
     ],
     stockStatus: 'In Stock • Clean-Trimmed',
     cutInformation: 'Whole ox heart trimmed of excess fat and valves.',
@@ -2054,10 +2080,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Full vacuum-sealed primal striploin for restaurants, caterers, and steak enthusiasts.',
     fullDescription: 'Whole cryovac primal beef striploin with intact 6mm fat cap. Wet-aged in vacuum barrier film. Ideal for commercial kitchen portioning into NY Strip steaks or whole slow roasting on wood-fired rotisserie spits.',
     image: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '280.00',
+    defaultPrice: '224.00',
     weightOptions: [
-      { weight: 'Whole Striploin (~6.5kg Primal)', serves: 'Food service primal (~20–22 steaks)', pricePlaceholder: '280.00' },
-      { weight: 'Commercial Carton of 2 (~13.0kg)', serves: 'Hospitality volume carton', pricePlaceholder: '530.00' }
+      { weight: 'Whole Striploin (~6.5kg Primal)', serves: 'Food service primal (~20–22 steaks)', pricePlaceholder: '224.00' },
+      { weight: 'Commercial Carton of 2 (~13.0kg)', serves: 'Hospitality volume carton', pricePlaceholder: '424.00' }
     ],
     stockStatus: 'In Stock • Wholesale Carton Rate',
     cutInformation: 'Primal whole striploin (sirloin), vacuum wet-aged in commercial barrier shrink bag.',
@@ -2076,10 +2102,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Whole primal ribeye cube roll for high-end steakhouses, bistros, and bulk buyers.',
     fullDescription: 'The crown jewel of commercial beef primals. 21-day wet-aged Australian Black Angus cube roll. Yields approximately 20–22 thick 350g Scotch Fillet steaks with exceptional center-eye marbling.',
     image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '385.00',
+    defaultPrice: '308.00',
     weightOptions: [
-      { weight: 'Whole Cube Roll Primal (~7.5kg)', serves: '~20–22 Ribeye Steaks', pricePlaceholder: '385.00' },
-      { weight: 'Carton of 2 Primals (~15kg)', serves: 'Commercial Hospitality Carton', pricePlaceholder: '740.00' }
+      { weight: 'Whole Cube Roll Primal (~7.5kg)', serves: '~20–22 Ribeye Steaks', pricePlaceholder: '308.00' },
+      { weight: 'Carton of 2 Primals (~15kg)', serves: 'Commercial Hospitality Carton', pricePlaceholder: '592.00' }
     ],
     stockStatus: 'In Stock • Commercial Primal',
     cutInformation: 'Primal ribeye cube roll, ribs 6–12 denuded of feather bones and backstrap.',
@@ -2098,10 +2124,10 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: '10kg food-service carton of skinless chicken breast fillets for hospitality operators.',
     fullDescription: 'Double-bagged commercial 10kg carton of calibrated free-range chicken breasts. Consistent portion sizing for meal delivery companies, cafes, pubs, and catering kitchens with zero added water.',
     image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '140.00',
+    defaultPrice: '112.00',
     weightOptions: [
-      { weight: '10kg Commercial Carton (Double Liner)', serves: 'Commercial food service', pricePlaceholder: '140.00' },
-      { weight: '2 x 10kg Cartons (20kg Bulk)', serves: 'Volume food service', pricePlaceholder: '265.00' }
+      { weight: '10kg Commercial Carton (Double Liner)', serves: 'Commercial food service', pricePlaceholder: '112.00' },
+      { weight: '2 x 10kg Cartons (20kg Bulk)', serves: 'Volume food service', pricePlaceholder: '212.00' }
     ],
     stockStatus: 'In Stock • Commercial Rate',
     cutInformation: 'Bulk calibrated fillets, double food-grade heavy barrier liner.',
@@ -2120,9 +2146,9 @@ export const ALL_PRODUCTS: Product[] = [
     shortDescription: 'Whole unbroken Australian pork bellies with skin on for smokehouses, butchers, and restaurants.',
     fullDescription: 'Wholesale commercial case containing two full-sheet unbroken Australian pork bellies with flat fat distribution and firm rind. Perfect for artisan bacon curing, roasting, or commercial barbecue pitmasters.',
     image: 'https://images.unsplash.com/photo-1602498456745-e9503b30470b?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '210.00',
+    defaultPrice: '168.00',
     weightOptions: [
-      { weight: 'Commercial Case (~12kg / 2 Whole Bellies)', serves: 'Smokehouses & Caterers', pricePlaceholder: '210.00' }
+      { weight: 'Commercial Case (~12kg / 2 Whole Bellies)', serves: 'Smokehouses & Caterers', pricePlaceholder: '168.00' }
     ],
     stockStatus: 'In Stock • Whole Case',
     cutInformation: 'Two full unbroken pork belly sheets with rind on, vacuum sealed.',
@@ -2490,7 +2516,7 @@ export const BLOG_CONTENT_PLAN = [
 
 export const PLACEHOLDERS_CHECKLIST = [
   { item: '[INSERT BUSINESS NAME]', location: 'Header, Footer, Copy, Schemas', status: 'Pending business input' },
-  { item: '[INSERT DOMAIN]', location: 'Canonical tags, sitemap, OpenGraph URLs', status: 'Pending domain registration' },
+  { item: 'pastureandtide.com.au', location: 'Canonical tags, sitemap, OpenGraph URLs', status: 'Configured (Active Vercel Production Domain)' },
   { item: '[INSERT ABN]', location: 'Footer, Wholesale Page, Tax invoice terms', status: 'Pending ABN registration verification' },
   { item: '[PHONE NUMBER]', location: 'Top slider, Contact page, Header', status: 'Pending Australian telephone line' },
   { item: '[EMAIL ADDRESS]', location: 'Top slider, Footer, Customer support', status: 'Pending domain email setup' },
@@ -2554,19 +2580,22 @@ export const KEYWORD_MAP = [
 ];
 
 export const XML_SITEMAP_ENTRIES = [
-  { loc: 'https://[INSERT DOMAIN]/', changefreq: 'daily', priority: '1.0' },
-  { loc: 'https://[INSERT DOMAIN]/shop', changefreq: 'daily', priority: '0.9' },
-  { loc: 'https://[INSERT DOMAIN]/category/beef', changefreq: 'daily', priority: '0.9' },
-  { loc: 'https://[INSERT DOMAIN]/category/chicken', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/category/pork', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/category/lamb', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/category/seafood', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/category/sausages', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/category/packs', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/wholesale', changefreq: 'weekly', priority: '0.8' },
-  { loc: 'https://[INSERT DOMAIN]/about', changefreq: 'monthly', priority: '0.6' },
-  { loc: 'https://[INSERT DOMAIN]/contact', changefreq: 'monthly', priority: '0.6' },
-  { loc: 'https://[INSERT DOMAIN]/blog', changefreq: 'weekly', priority: '0.7' },
-  { loc: 'https://[INSERT DOMAIN]/delivery-information', changefreq: 'monthly', priority: '0.5' },
-  { loc: 'https://[INSERT DOMAIN]/returns-refunds', changefreq: 'monthly', priority: '0.5' }
+  { loc: 'https://pastureandtide.com.au/', changefreq: 'daily', priority: '1.0' },
+  { loc: 'https://pastureandtide.com.au/shop', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://pastureandtide.com.au/category/beef', changefreq: 'daily', priority: '0.9' },
+  { loc: 'https://pastureandtide.com.au/category/chicken', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/pork', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/lamb', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/fish', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/seafood', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/sausages', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/packs', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/pet-food', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/category/offal', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/wholesale', changefreq: 'weekly', priority: '0.85' },
+  { loc: 'https://pastureandtide.com.au/about', changefreq: 'monthly', priority: '0.7' },
+  { loc: 'https://pastureandtide.com.au/contact', changefreq: 'monthly', priority: '0.7' },
+  { loc: 'https://pastureandtide.com.au/blog', changefreq: 'weekly', priority: '0.8' },
+  { loc: 'https://pastureandtide.com.au/delivery-information', changefreq: 'monthly', priority: '0.6' },
+  { loc: 'https://pastureandtide.com.au/returns-refunds', changefreq: 'monthly', priority: '0.5' }
 ];

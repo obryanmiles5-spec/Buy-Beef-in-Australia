@@ -11,7 +11,6 @@ import {
   Thermometer, 
   Flame, 
   Info, 
-  Code, 
   MapPin, 
   Star 
 } from 'lucide-react';
@@ -37,10 +36,11 @@ export default function ProductDetailModal({
   const [quantity, setQuantity] = useState(1);
   const [postcode, setPostcode] = useState('');
   const [postcodeResult, setPostcodeResult] = useState<string | null>(null);
-  const [showSchema, setShowSchema] = useState(false);
   const [justAdded, setJustAdded] = useState(false);
+  const [activeImage, setActiveImage] = useState(product?.image || '');
 
   if (!product) return null;
+  const currentImage = activeImage || product.image;
 
   const currentOption =
     product.weightOptions.find((w) => w.weight === selectedWeight) || product.weightOptions[0];
@@ -60,30 +60,6 @@ export default function ProductDetailModal({
   };
 
   const relatedProducts = ALL_PRODUCTS.filter((p) => p.id !== product.id).slice(0, 3);
-
-  // Recommended JSON-LD schema markup
-  const jsonLdSchema = {
-    '@context': 'https://schema.org/',
-    '@type': 'Product',
-    name: product.name,
-    image: [product.image],
-    description: product.fullDescription,
-    sku: `SKU-${product.id.toUpperCase()}`,
-    brand: {
-      '@type': 'Brand',
-      name: BUSINESS_CONFIG.businessName,
-    },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'AUD',
-      price: '[PRICE]',
-      availability: 'https://schema.org/InStock',
-      seller: {
-        '@type': 'Organization',
-        name: BUSINESS_CONFIG.businessName,
-      },
-    },
-  };
 
   return (
     <div
@@ -121,9 +97,10 @@ export default function ProductDetailModal({
               <div className="relative aspect-square rounded-xl overflow-hidden bg-stone-100 border border-stone-200 mb-3 shadow-inner">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={product.image}
+                  src={currentImage}
                   alt={`${product.name} - Fresh Australian meat cut carefully portioned and packaged`}
                   className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
                 />
                 {product.badge && (
                   <span className="absolute top-3 left-3 bg-[#7A1F2B] text-white text-xs font-bold uppercase tracking-wider px-3 py-1 rounded shadow">
@@ -134,6 +111,24 @@ export default function ProductDetailModal({
                   Stock: {product.stockStatus}
                 </span>
               </div>
+
+              {product.galleryImages && product.galleryImages.length > 1 && (
+                <div className="grid grid-cols-4 sm:grid-cols-7 gap-1.5 mb-3">
+                  {product.galleryImages.map((imgUrl, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setActiveImage(imgUrl)}
+                      className={`relative aspect-square rounded-md overflow-hidden border-2 transition-all ${
+                        currentImage === imgUrl ? 'border-[#7A1F2B] scale-105 shadow-md' : 'border-stone-200 opacity-70 hover:opacity-100'
+                      }`}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img src={imgUrl} alt="Thumbnail" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    </button>
+                  ))}
+                </div>
+              )}
 
               {/* Alt Text Recommendation Notice for Compliance / SEO */}
               <div className="bg-stone-50 rounded-lg p-2.5 border border-stone-200 text-[11px] text-stone-600 font-mono">
@@ -368,27 +363,7 @@ export default function ProductDetailModal({
                   <span>Perishable Goods Refund Policy</span>
                 </button>
               </div>
-
-              {/* Schema Preview Toggle */}
-              <button
-                type="button"
-                onClick={() => setShowSchema(!showSchema)}
-                className="text-stone-500 hover:text-stone-800 font-mono text-[11px] flex items-center gap-1"
-              >
-                <Code className="w-3.5 h-3.5" />
-                <span>{showSchema ? 'Hide Schema JSON-LD' : 'View Product Schema JSON-LD'}</span>
-              </button>
             </div>
-
-            {/* Product Schema Recommendation Viewer */}
-            {showSchema && (
-              <div className="bg-[#151515] text-stone-300 p-4 rounded-xl font-mono text-xs overflow-x-auto border border-stone-800">
-                <div className="text-[11px] text-[#C7903E] mb-2 font-bold">
-                  Recommended Product Schema Markup (JSON-LD)
-                </div>
-                <pre>{JSON.stringify(jsonLdSchema, null, 2)}</pre>
-              </div>
-            )}
 
             {/* Related Products */}
             <div className="pt-6 border-t border-stone-200">

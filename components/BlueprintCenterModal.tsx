@@ -35,7 +35,7 @@ export default function BlueprintCenterModal({ isOpen, onClose }: BlueprintCente
     '@type': ['ButcherShop', 'Organization'],
     name: BUSINESS_CONFIG.businessName,
     url: `https://${BUSINESS_CONFIG.domain}`,
-    logo: `https://${BUSINESS_CONFIG.domain}/images/logo.png`,
+    logo: `https://${BUSINESS_CONFIG.domain}/site-logo.svg`,
     description: 'Online beef and fresh meat delivery service in Australia.',
     telephone: BUSINESS_CONFIG.phone,
     email: BUSINESS_CONFIG.email,

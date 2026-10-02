@@ -1,6 +1,6 @@
 {
   "name": "Buy Beef Online Australia",
-  "description": "Premium online beef delivery and wholesale meat platform for Australian households, BBQ enthusiasts, and commercial food businesses.",
+  "description": "Premium online beef, seafood and wholesale meat platform for Australian households, BBQ enthusiasts, and commercial food businesses with cold-chain delivery on pastureandtide.com.au.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
