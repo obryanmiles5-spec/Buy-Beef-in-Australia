@@ -226,15 +226,12 @@ export default function Hero({ onShopBeef, onExploreMeatPacks, onViewAll, onWhol
           className="inline-flex items-center gap-1.5 sm:gap-2 text-[8.5px] sm:text-[10px] font-mono tracking-wider uppercase bg-black/60 hover:bg-black/80 backdrop-blur-md px-2.5 py-1 rounded-sm border border-white/15 hover:border-[#C7903E] text-stone-300 transition-all shadow-md group truncate sm:overflow-visible"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-[#2E6B4D] animate-pulse shrink-0" />
-          <span className="text-stone-400 hidden sm:inline">Entity:</span>
-          <strong className="text-white font-semibold hidden sm:inline">A.J BLANCH &amp; M.C BLANCH</strong>
-          <span className="text-stone-600 hidden sm:inline">|</span>
           <span className="text-stone-400">ABN:</span>
-          <strong className="text-[#C7903E] font-bold">45 775 613 837</strong>
-          <span className="text-stone-600 hidden md:inline">|</span>
-          <span className="text-stone-400 hidden md:inline">Business Name:</span>
-          <strong className="text-white font-semibold hidden md:inline">Matty B Farm Fencing</strong>
-          <span className="text-stone-600 hidden sm:inline">|</span>
+          <strong className="text-[#C7903E] font-bold">{BUSINESS_CONFIG.abn}</strong>
+          <span className="text-stone-600">|</span>
+          <span className="text-stone-400">Business Name:</span>
+          <strong className="text-white font-semibold">{BUSINESS_CONFIG.businessName}</strong>
+          <span className="text-stone-600">|</span>
           <span className="text-[#C7903E] group-hover:text-[#E0AE5C] font-bold inline-flex items-center gap-0.5 group-hover:underline shrink-0 ml-0.5">
             Verified ↗
           </span>

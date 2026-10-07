@@ -184,7 +184,7 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
           <div className="flex flex-wrap items-center gap-2 font-mono text-[11px] text-stone-600">
             <span className="inline-flex items-center gap-1 text-[#2E6B4D] font-bold">
               <ShieldCheck className="w-3.5 h-3.5" />
-              <span>ABN 45 775 613 837</span>
+              <span>ABN {BUSINESS_CONFIG.abn}</span>
             </span>
             <span>•</span>
             <span>Sub-4°C Cold Chain Packaging</span>

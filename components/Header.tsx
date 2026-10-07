@@ -735,7 +735,7 @@ export default function Header({
                   >
                     <span className="flex items-center gap-1.5">
                       <ExternalLink className="w-3.5 h-3.5 text-stone-500" />
-                      <span>ABN: 45 775 613 837 (Verified)</span>
+                      <span>ABN: {BUSINESS_CONFIG.abn} (Verified)</span>
                     </span>
                     <span className="text-[10px] text-stone-400 font-mono">ABR ↗</span>
                   </a>

@@ -63,6 +63,7 @@ export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
                     alt={`${category.name} category cuts`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-transparent opacity-80 group-hover:opacity-90 transition-opacity" />
                   <span className="absolute top-3 left-3 text-xs font-serif font-bold text-white/90 bg-black/50 px-2.5 py-0.5 rounded-sm backdrop-blur-xs border border-white/15">

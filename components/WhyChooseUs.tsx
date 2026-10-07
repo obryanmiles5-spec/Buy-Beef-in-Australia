@@ -164,7 +164,7 @@ export default function WhyChooseUs({ onOpenCompliance }: WhyChooseUsProps) {
                   Official Australian Butcher Guarantee
                 </span>
                 <span className="text-[10px] bg-[#2E6B4D] text-white px-2 py-0.5 rounded-xs font-bold font-mono">
-                  ABN: 45 775 613 837
+                  ABN: {BUSINESS_CONFIG.abn}
                 </span>
               </div>
               <p className="text-xs sm:text-sm text-stone-200 leading-relaxed max-w-2xl">

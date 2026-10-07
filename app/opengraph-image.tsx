@@ -130,7 +130,7 @@ export default async function Image() {
           <div style={{ display: 'flex', gap: '30px' }}>
             <span>✓ 100% Australian Sourced</span>
             <span>✓ Temperature-Controlled Cold Chain</span>
-            <span>✓ Verified ABN: 45 775 613 837</span>
+            <span>✓ Verified ABN: 67 124 824 209</span>
           </div>
           <div style={{ fontWeight: 'bold', color: '#E2B766' }}>
             Shop Online Today

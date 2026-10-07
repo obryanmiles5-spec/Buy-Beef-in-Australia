@@ -8,9 +8,17 @@ import { ALL_PRODUCTS, BUSINESS_CONFIG } from '@/lib/data';
 
 interface ProductGalleryViewProps {
   product: Product;
+  onAddToCart?: (product: Product, weight: string, quantity: number) => void;
+  onOpenCart?: () => void;
+  onOpenCompliance?: (sectionId?: string) => void;
 }
 
-export default function ProductGalleryView({ product }: ProductGalleryViewProps) {
+export default function ProductGalleryView({ 
+  product, 
+  onAddToCart, 
+  onOpenCart, 
+  onOpenCompliance 
+}: ProductGalleryViewProps) {
   const images = product.galleryImages && product.galleryImages.length > 0 
     ? product.galleryImages 
     : [product.image];
@@ -39,10 +47,21 @@ export default function ProductGalleryView({ product }: ProductGalleryViewProps)
     }
   };
 
-  const handleAddToCart = () => {
-    // Dispatch custom event or interact with cart if available, or simulate success
+  const handleAddToCartClick = () => {
+    if (onAddToCart) {
+      onAddToCart(product, selectedWeight, quantity);
+    }
     setJustAdded(true);
     setTimeout(() => setJustAdded(false), 2500);
+  };
+
+  const handleCheckoutClick = () => {
+    if (onAddToCart) {
+      onAddToCart(product, selectedWeight, quantity);
+    }
+    if (onOpenCart) {
+      onOpenCart();
+    }
   };
 
   return (
@@ -207,16 +226,26 @@ export default function ProductGalleryView({ product }: ProductGalleryViewProps)
                 </button>
               </div>
 
-              <Link
-                href="/shop"
-                onClick={handleAddToCart}
-                className={`flex-1 text-center py-3.5 px-6 rounded-xl font-bold text-xs uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2 ${
-                  justAdded ? 'bg-[#2E6B4D] text-white' : 'bg-[#7A1F2B] hover:bg-[#5F1721] text-white'
-                }`}
-              >
-                <ShoppingBag className="w-4 h-4" />
-                <span>{justAdded ? 'Added to Cart!' : 'Proceed to Checkout →'}</span>
-              </Link>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 flex-1">
+                <button
+                  type="button"
+                  onClick={handleAddToCartClick}
+                  className={`py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-widest shadow-md transition-all flex items-center justify-center gap-2 ${
+                    justAdded ? 'bg-[#2E6B4D] text-white' : 'bg-[#7A1F2B] hover:bg-[#5F1721] text-white'
+                  }`}
+                >
+                  <ShoppingBag className="w-4 h-4" />
+                  <span>{justAdded ? 'Added to Cart!' : 'Add to Cart'}</span>
+                </button>
+
+                <button
+                  type="button"
+                  onClick={handleCheckoutClick}
+                  className="bg-stone-900 hover:bg-black text-white py-3.5 px-4 rounded-xl font-bold text-xs uppercase tracking-widest shadow-md transition-colors flex items-center justify-center gap-1.5"
+                >
+                  <span>Checkout →</span>
+                </button>
+              </div>
             </div>
 
             {/* Cold Chain Guarantee Badges */}

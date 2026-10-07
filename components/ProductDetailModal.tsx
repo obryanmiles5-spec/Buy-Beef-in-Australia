@@ -386,6 +386,7 @@ export default function ProductDetailModal({
                         src={rel.image}
                         alt={rel.name}
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform"
+                        referrerPolicy="no-referrer"
                       />
                     </div>
                     <div>

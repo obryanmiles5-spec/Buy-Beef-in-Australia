@@ -165,7 +165,7 @@ export default function ReviewSection() {
                 Dispatched from NSW 2642
               </p>
               <div className="flex items-center gap-1 text-[11px] text-stone-600 mb-2">
-                <span>Verified ABN: 45 775 613 837</span>
+                <span>Verified ABN: {BUSINESS_CONFIG.abn}</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-2.5 py-1 bg-[#F8F5EF] border border-[#EAE6DF] rounded-xs text-[10px] font-mono text-stone-600">
                 <span>✓ Australian Farm Direct</span>

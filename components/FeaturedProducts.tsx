@@ -95,7 +95,7 @@ export default function FeaturedProducts({
                 {/* Image Container with Badge (1:1 Aspect Ratio) */}
                 <div 
                   className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer" 
-                  onClick={() => onSelectProduct(product)}
+                  onClick={() => { window.location.href = `/product/${product.id}`; }}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -103,6 +103,7 @@ export default function FeaturedProducts({
                     alt={`${product.name} - Fresh Australian meat cut`}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     loading="lazy"
+                    referrerPolicy="no-referrer"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-60 group-hover:opacity-75 transition-opacity" />
                   
@@ -128,7 +129,7 @@ export default function FeaturedProducts({
                     {/* Product Title */}
                     <h3
                       className="font-serif text-lg sm:text-xl font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-2"
-                      onClick={() => onSelectProduct(product)}
+                      onClick={() => { window.location.href = `/product/${product.id}`; }}
                     >
                       {product.name}
                     </h3>
@@ -186,7 +187,7 @@ export default function FeaturedProducts({
                       <button
                         type="button"
                         id={`view-btn-${product.id}`}
-                        onClick={() => onSelectProduct(product)}
+                        onClick={() => { window.location.href = `/product/${product.id}`; }}
                         className="w-full min-h-[44px] bg-white hover:bg-[#F8F5EF] text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2.5 px-2 rounded-sm border border-[#EAE6DF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5" />

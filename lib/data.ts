@@ -1,13 +1,13 @@
 import { Product, BlogPost, FaqItem, CategoryInfo, TrustpilotReview } from './types';
 
 export const BUSINESS_CONFIG = {
-  businessName: 'Buy Beef Online Australia',
-  registeredBusinessName: 'Matty B Farm Fencing',
-  entityName: 'A.J BLANCH & M.C BLANCH',
+  businessName: 'PastureANDtide',
+  registeredBusinessName: 'PastureANDtide',
+  entityName: 'PastureANDtide',
   domain: 'pastureandtide.com.au',
-  abn: '45 775 613 837',
-  abnVerifiedText: 'Verified ABN: 45 775 613 837',
-  abnLookupUrl: 'https://abr.business.gov.au/ABN/View?abn=45775613837',
+  abn: '67 124 824 209',
+  abnVerifiedText: 'Verified ABN: 67 124 824 209',
+  abnLookupUrl: 'https://abr.business.gov.au/ABN/View?abn=67124824209',
   location: 'NSW, 2642, Australia',
   address: 'NSW, 2642, Australia',
   phone: '1300 000 632',
@@ -405,7 +405,16 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Carcass Shares',
     shortDescription: 'Exquisite F1 Wagyu quarter share with high intramuscular marbling (MB 5-7+). Incomparable tenderness, buttery flavor, and juiciness.',
     fullDescription: 'Sourced from prestigious Australian F1 Wagyu cattle (minimum 350-day grain fed in Riverina NSW). Exceptional marbling score (MB 5-7+). Hand-butchered into Wagyu Scotch Fillet, Wagyu Striploin, Marbled Rump, Wagyu Brisket, Wagyu Short Ribs, and Wagyu Gourmet Burger Mince. Individually vacuum-sealed in heavy puncture-resistant barrier film for zero freezer burn.',
-    image: '/hero/home2_hd.webp',
+    image: 'https://lh3.googleusercontent.com/d/1D7lTSgSTpXohk1iakJXllx88J70DPLH6',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1D7lTSgSTpXohk1iakJXllx88J70DPLH6',
+      'https://lh3.googleusercontent.com/d/1v1lK4coMREfagAH5nfMK5KgjdVMWHDl9',
+      'https://lh3.googleusercontent.com/d/1GGXmVx7e7JBh9N4V0a8pBBtgWVEexsZM',
+      'https://lh3.googleusercontent.com/d/18i1BWz9NDIMJD6ezMW_ZgAjUP1QWzIxk',
+      'https://lh3.googleusercontent.com/d/1LtcLwZf8-H00pdtJlg40eFFsQ3CCsKb4',
+      'https://lh3.googleusercontent.com/d/1f1VM3qB4DW2I4p8tLsGla31eOg_0Wb3L',
+      'https://lh3.googleusercontent.com/d/11-LPPa7DRgL__B5_984b8mmbCH88oFAK'
+    ],
     defaultPrice: '1352.00',
     weightOptions: [
       { weight: 'Standard 1/4 Wagyu Share (~50kg dressed yield)', serves: '120–140 luxury meals', pricePlaceholder: '1352.00' },
@@ -427,7 +436,16 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Carcass Shares',
     shortDescription: 'A full half side of elite Australian F1 Wagyu beef. Melt-in-your-mouth marbling across all prime steak, roast, and slow-cook cuts.',
     fullDescription: 'The pinnacle of luxury home beef supply. An entire half carcass of F1 Wagyu beef showcasing rich intramuscular marbling (MB 5-7+). Cut by master butchers to your preferred thickness and roast sizing, labeled, and dispatched cold-chain direct to your door.',
-    image: '/hero/home_hd.webp',
+    image: 'https://lh3.googleusercontent.com/d/1OGvpWzXLeWfmS5Q-mu6rrweBOHs1Ls5t',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1OGvpWzXLeWfmS5Q-mu6rrweBOHs1Ls5t',
+      'https://lh3.googleusercontent.com/d/1v1lK4coMREfagAH5nfMK5KgjdVMWHDl9',
+      'https://lh3.googleusercontent.com/d/1GGXmVx7e7JBh9N4V0a8pBBtgWVEexsZM',
+      'https://lh3.googleusercontent.com/d/18i1BWz9NDIMJD6ezMW_ZgAjUP1QWzIxk',
+      'https://lh3.googleusercontent.com/d/1LtcLwZf8-H00pdtJlg40eFFsQ3CCsKb4',
+      'https://lh3.googleusercontent.com/d/1f1VM3qB4DW2I4p8tLsGla31eOg_0Wb3L',
+      'https://lh3.googleusercontent.com/d/11-LPPa7DRgL__B5_984b8mmbCH88oFAK'
+    ],
     defaultPrice: '2520.00',
     weightOptions: [
       { weight: 'Standard 1/2 Side Wagyu (~100kg dressed yield)', serves: '250–280 luxury meals', pricePlaceholder: '2520.00' },
@@ -449,7 +467,16 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Carcass Shares',
     shortDescription: 'Whole beast luxury Australian F1 Wagyu carcass (MB 5-7+). The ultimate bulk reserve for connoisseurs, catering, and serious meat lovers.',
     fullDescription: 'Maximum yield, wholesale-tier pricing on whole beast F1 Wagyu. The entire animal including premium marbled fillets, ribeyes, striploins, brisket point/flat, beef ribs, chuck, and artisan burger mince. Fully cryovac-packaged in cold-chain containers.',
-    image: '/hero/home3_hd.webp',
+    image: 'https://lh3.googleusercontent.com/d/1py7Sd-M1tsI2OSV_jsFDdxlkJThkIDto',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1py7Sd-M1tsI2OSV_jsFDdxlkJThkIDto',
+      'https://lh3.googleusercontent.com/d/1v1lK4coMREfagAH5nfMK5KgjdVMWHDl9',
+      'https://lh3.googleusercontent.com/d/1GGXmVx7e7JBh9N4V0a8pBBtgWVEexsZM',
+      'https://lh3.googleusercontent.com/d/18i1BWz9NDIMJD6ezMW_ZgAjUP1QWzIxk',
+      'https://lh3.googleusercontent.com/d/1LtcLwZf8-H00pdtJlg40eFFsQ3CCsKb4',
+      'https://lh3.googleusercontent.com/d/1f1VM3qB4DW2I4p8tLsGla31eOg_0Wb3L',
+      'https://lh3.googleusercontent.com/d/11-LPPa7DRgL__B5_984b8mmbCH88oFAK'
+    ],
     defaultPrice: '4712.00',
     weightOptions: [
       { weight: 'Whole Beast Wagyu (~200kg dressed yield)', serves: '500+ luxury meals', pricePlaceholder: '4712.00' }
@@ -470,7 +497,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Prime Steaks',
     shortDescription: 'Juicy, rich, and naturally tender with distinct central marbling seam. 21 days dry-aged.',
     fullDescription: 'Often considered the king of steaks in Australia, the Scotch Fillet / Ribeye delivers exceptional tenderness and succulent moisture thanks to its natural eye of marbling. Prepared by our experienced butchers from 21-day dry-aged Black Angus beef.',
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1OEvbHgLbiFfFTCE9PyiIFzzhdK-we1hO',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1OEvbHgLbiFfFTCE9PyiIFzzhdK-we1hO'
+    ],
     defaultPrice: '19.60',
     weightOptions: [
       { weight: '1 x 350g Thick-Cut Steak', serves: '1 generous serve', pricePlaceholder: '19.60' },
@@ -517,7 +547,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Prime Steaks',
     shortDescription: 'The leanest and most tender cut of beef. Hand-trimmed Chateaubriand steaks and roasts.',
     fullDescription: 'The absolute pinnacle of tenderness. Cut from the non-working tenderloin muscle, our Black Angus Eye Fillets are completely denuded of silver skin and excess fat. Offers a delicate, buttery texture that cuts effortlessly with a butter knife.',
-    image: 'https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1E4hYTLATLvLKr-C0QA5-vB2MLw-SFBgy',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1E4hYTLATLvLKr-C0QA5-vB2MLw-SFBgy'
+    ],
     defaultPrice: '30.40',
     weightOptions: [
       { weight: '2 x 200g Steaks (400g Pack)', serves: '2 serves', pricePlaceholder: '30.40' },
@@ -540,7 +573,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Steaks & BBQ',
     shortDescription: 'Signature New York strip cut from F1 Wagyu cattle with rich intramuscular marbling (MBS 6-7+).',
     fullDescription: 'Cut from the shortloin with a thin fat strip on the edge. High marbling score MBS 6-7+ throughout the whole muscle provides a robust beefy punch paired with luxurious melt-in-the-mouth texture.',
-    image: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1cpGgtHoC3PBtGtOKK9t9frdtsI3t3clI',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1cpGgtHoC3PBtGtOKK9t9frdtsI3t3clI'
+    ],
     defaultPrice: '27.60',
     weightOptions: [
       { weight: '1 x 300g Wagyu Striploin', serves: '1 luxury serve', pricePlaceholder: '27.60' },
@@ -563,7 +599,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Prime Steaks',
     shortDescription: 'The best of both worlds: tender eye fillet on one side, robust sirloin on the other.',
     fullDescription: 'Cut with the classic bone-in signature, the T-bone offers two distinct steak textures in a single cut. The central T-bone conducts heat and imparts rich marrow depth during grilling, making it an iconic Australian steakhouse experience at home.',
-    image: 'https://images.unsplash.com/photo-1507048331197-7d4ac70811cf?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1LSavb9rQZQuJsAWsAXSXVsFvzSs2iv3u',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1LSavb9rQZQuJsAWsAXSXVsFvzSs2iv3u'
+    ],
     defaultPrice: '18.80',
     weightOptions: [
       { weight: '1 x 450g King Cut T-Bone', serves: '1 large serve', pricePlaceholder: '18.80' },
@@ -586,7 +625,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Steaks & BBQ',
     shortDescription: 'Long-bone French-trimmed Wagyu ribeye steak (MBS 6+). The ultimate visual and culinary showstopper.',
     fullDescription: 'A colossal 1.3kg bone-in ribeye with the rib bone cleaned and French-trimmed to perfection. Showcasing Marble Score 6+ Wagyu fat distribution, this cut commands the table at dinner parties, barbecues, and celebratory feasts.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1u0J96hAdR8xX12no28O3f22NQzdBDuW3',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1u0J96hAdR8xX12no28O3f22NQzdBDuW3'
+    ],
     defaultPrice: '94.40',
     weightOptions: [
       { weight: '1 x 1.2kg–1.4kg French-Trimmed Tomahawk', serves: '2–3 serves (Feast)', pricePlaceholder: '94.40' },
@@ -608,7 +650,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Low & Slow, Brisket & Ribs',
     shortDescription: 'Ideal for low-and-slow smoking, Texas-style BBQ, or tender braised pot roasts.',
     fullDescription: 'The ultimate pitmaster cut. Rich in collagen and connective tissue that breaks down during slow smoking or braising into fork-tender, gelatinous goodness. Offered in trimmed half brisket or full whole packer options with 6mm competition fat cap.',
-    image: 'https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/16Tbb0d9Ru-A0Ec5ooFAmnBo-ul25PDSn',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/16Tbb0d9Ru-A0Ec5ooFAmnBo-ul25PDSn'
+    ],
     defaultPrice: '33.60',
     weightOptions: [
       { weight: 'Half Brisket Flat (~1.8kg Trimmed)', serves: '4–6 serves', pricePlaceholder: '33.60' },
@@ -630,7 +675,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Low & Slow, Brisket & Ribs',
     shortDescription: 'Thick-cut 3-bone beef short rib racks loaded with rich marbling and deep beef flavour.',
     fullDescription: 'Known as Jacob\'s Ladder or Asado ribs. Cut from the beef forequarter ribs 6–8, featuring substantial meat thickness over 3 robust bones. The extensive marbling renders into luscious gelatin during smoking or red-wine braising.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1HeGcvgozzKaypeFqy6Mzcy_29hRmKvpT',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1HeGcvgozzKaypeFqy6Mzcy_29hRmKvpT'
+    ],
     defaultPrice: '25.60',
     weightOptions: [
       { weight: 'Flanken-Style Thin-Cut Cross Ribs (1kg Tray)', serves: '3–4 serves', pricePlaceholder: '25.60' },
@@ -676,7 +724,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Black Angus Prime Steaks',
     shortDescription: 'Generous, full-flavoured beef rump steak with a hearty bite and lean profile.',
     fullDescription: 'Rump steak is beloved across Australian households for its robust, classic beef profile and versatility. Great for sizzling on a smoking-hot BBQ, slicing thin for warm steak salads, or cutting into hearty skewers.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1CbpXsDLAmVbZ9aPdvqlJ62609BCCKvNz',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1CbpXsDLAmVbZ9aPdvqlJ62609BCCKvNz'
+    ],
     defaultPrice: '13.20',
     weightOptions: [
       { weight: '2 x 250g Steaks (500g)', serves: '2 serves', pricePlaceholder: '13.20' },
@@ -699,7 +750,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Roasts & Slow Cook',
     shortDescription: 'Cross-cut beef shin steaks with nutrient-dense central marrow bone. Rich gelatin for stews.',
     fullDescription: 'A winter cooking treasure. Cross-cut from pasture-fed Black Angus beef shins. The central bone is filled with rich marrow that melts into braising sauces while the surrounding collagen transforms into unctuous, spoon-tender beef.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1-lsaDtR4Ng0ySTkiRQWWSfiCLEU9XB-F',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1-lsaDtR4Ng0ySTkiRQWWSfiCLEU9XB-F'
+    ],
     defaultPrice: '12.40',
     weightOptions: [
       { weight: '2 x Thick-Cut Slices (~600g)', serves: '2 serves', pricePlaceholder: '12.40' },
@@ -722,7 +776,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Everyday Beef Mince & Strips',
     shortDescription: 'Versatile, finely ground lean Australian beef mince ideal for bolognese, burgers, and family meals.',
     fullDescription: 'Our Premium Beef Mince is ground daily from quality trimmed whole-muscle chuck and topside cuts to achieve a 90/10 lean-to-fat ratio. Never loaded with excess gristle, off-cuts, water, or preservatives. Provides clean, rich beef flavor for cottage pies, lasagnes, meatballs, and tacos.',
-    image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1MBXSdzXUzKnw343j4IWksbj-FZoC-MRz',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1MBXSdzXUzKnw343j4IWksbj-FZoC-MRz'
+    ],
     defaultPrice: '7.92',
     weightOptions: [
       { weight: '500g Vacuum Pack', serves: '2–3 serves', pricePlaceholder: '7.92' },
@@ -745,7 +802,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Steaks & BBQ',
     shortDescription: 'Thick, seasoned beef burger patties engineered for maximum juiciness on the grill.',
     fullDescription: 'Crafted from coarse-ground Australian Black Angus chuck and rich Wagyu brisket trims with minimal seasoning to let pure beef flavours shine. These patties hold their structure under high grill temperatures while retaining delicious internal moisture.',
-    image: 'https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1FDO3GhJieY5OYqi-oIXQ9ePKO8l-j1vk',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1FDO3GhJieY5OYqi-oIXQ9ePKO8l-j1vk'
+    ],
     defaultPrice: '13.20',
     weightOptions: [
       { weight: '4 x 160g Hand-Pressed Patties (640g)', serves: '4 burgers', pricePlaceholder: '13.20' },
@@ -768,7 +828,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Everyday Beef Mince & Strips',
     shortDescription: 'Lean, tender beef strips sliced across the grain for quick high-heat wok cooking.',
     fullDescription: 'Spend less time prepping and more time enjoying dinner. Sliced from tender beef cuts across the muscle grain, these uniform strips cook evenly in minutes, absorbing marinades and wok aromas cleanly without drying out.',
-    image: 'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1qIaIE156AqHftFH3zwVcmdYkFz3R1_G4',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1qIaIE156AqHftFH3zwVcmdYkFz3R1_G4'
+    ],
     defaultPrice: '11.60',
     weightOptions: [
       { weight: '500g Vacuum Tray', serves: '2–3 serves', pricePlaceholder: '11.60' },
@@ -814,7 +877,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Roasts & Slow Cook',
     shortDescription: 'Artisan brine-cured Black Angus silverside with traditional butcher aromatics. Ideal for family boiling dinners.',
     fullDescription: 'A nostalgic Australian family classic. We cure select Black Angus silverside pieces in our mild brine infused with whole cloves, bay leaves, and black peppercorns. Boils up exceptionally tender, yielding delicious warm slices for dinner and cold cuts for lunch sandwiches.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1TH4YuOVbQA62jhJYcSNlWD8kseGXUcCU',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1TH4YuOVbQA62jhJYcSNlWD8kseGXUcCU'
+    ],
     defaultPrice: '20.40',
     weightOptions: [
       { weight: '1.5kg Traditional Corned Piece', serves: '5–6 serves', pricePlaceholder: '20.40' },
@@ -2242,7 +2308,7 @@ export const TRUSTPILOT_REVIEWS: TrustpilotReview[] = [
     date: '1 month ago',
     verified: true,
     title: 'Verified Australian butcher you can trust',
-    content: 'I always check ABNs before ordering online. The verified ABN 45 775 613 837 linked directly to the Australian Business Register which gave me peace of mind. The pasture-fed French trimmed lamb cutlets and beef short ribs were magnificent. Five stars across the board.',
+    content: 'I always check ABNs before ordering online. The verified ABN 67 124 824 209 linked directly to the Australian Business Register which gave me peace of mind. The pasture-fed French trimmed lamb cutlets and beef short ribs were magnificent. Five stars across the board.',
     productCut: 'Pasture-Fed Lamb Cutlets & Beef Short Ribs',
     helpfulCount: 22
   },

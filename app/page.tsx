@@ -22,6 +22,7 @@ import DeliveryComplianceModal from '@/components/DeliveryComplianceModal';
 import BlueprintCenterModal from '@/components/BlueprintCenterModal';
 import CartDrawer from '@/components/CartDrawer';
 import MobileBottomNav from '@/components/MobileBottomNav';
+import SearchModal from '@/components/SearchModal';
 import { Product, CartItem, BlogPost } from '@/lib/types';
 import { BUSINESS_CONFIG } from '@/lib/data';
 import { Search, User, X } from 'lucide-react';
@@ -361,59 +362,24 @@ export default function HomePage() {
         onClose={() => setBlueprintModalOpen(false)}
       />
 
-      {/* 5. Quick Search Modal */}
-      {searchModalOpen && (
-        <div className="fixed inset-0 z-50 bg-black/75 backdrop-blur-sm flex items-start justify-center p-4 pt-20">
-          <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full p-6 border border-stone-200 animate-fade-in text-stone-900">
-            <div className="flex items-center justify-between mb-4">
-              <h3 className="font-serif text-lg font-bold">Search Cuts & Meat Packs</h3>
-              <button
-                type="button"
-                onClick={() => setSearchModalOpen(false)}
-                className="p-1 rounded text-stone-400 hover:text-black"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <form onSubmit={handleHeaderSearchSubmit} className="relative mb-4">
-              <Search className="w-4 h-4 text-stone-400 absolute left-3 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                value={headerSearchQuery}
-                onChange={(e) => setHeaderSearchQuery(e.target.value)}
-                placeholder="Search beef steaks, brisket, sausages, mince..."
-                className="w-full pl-9 pr-4 py-2.5 bg-stone-50 border border-stone-300 rounded-lg text-xs sm:text-sm outline-none focus:ring-1 focus:ring-[#7A1F2B]"
-                autoFocus
-              />
-            </form>
-
-            <div className="text-xs space-y-2">
-              <p className="text-stone-500 font-semibold uppercase text-[10px] tracking-wider">
-                Popular Searches:
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {['Ribeye Steak', 'Rump', 'Grass-Fed Beef Mince', 'Brisket', 'Family Meat Pack', 'BBQ Sausages'].map(
-                  (term) => (
-                    <button
-                      key={term}
-                      type="button"
-                      onClick={() => {
-                        setHeaderSearchQuery(term);
-                        setSearchModalOpen(false);
-                        setCurrentView('shop');
-                      }}
-                      className="px-2.5 py-1 bg-stone-100 hover:bg-[#7A1F2B] hover:text-white rounded text-stone-700 transition-colors"
-                    >
-                      {term}
-                    </button>
-                  )
-                )}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+      {/* 5. Quick Search Modal with dynamic filtering & grid layout */}
+      <SearchModal
+        isOpen={searchModalOpen}
+        onClose={() => setSearchModalOpen(false)}
+        onSelectProduct={(prod) => {
+          window.location.href = `/product/${prod.id}`;
+        }}
+        onAddToCart={handleAddToCart}
+        onNavigateToShop={(term, category) => {
+          if (category) {
+            setSelectedCategory(category);
+          }
+          if (term) {
+            setHeaderSearchQuery(term);
+          }
+          setCurrentView('shop');
+        }}
+      />
 
       {/* 6. Customer Account Login Placeholder Modal */}
       {accountModalOpen && (

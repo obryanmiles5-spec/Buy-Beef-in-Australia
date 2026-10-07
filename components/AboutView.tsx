@@ -84,7 +84,7 @@ export default function AboutView({ onNavigate, onOpenCompliance }: AboutViewPro
               <ul className="space-y-2 text-xs text-stone-700 font-medium">
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#2E6B4D]" />
-                  <span>100% Australian Sourced (ABN: 45 775 613 837)</span>
+                  <span>100% Australian Sourced (ABN: {BUSINESS_CONFIG.abn})</span>
                 </li>
                 <li className="flex items-center gap-2">
                   <CheckCircle2 className="w-4 h-4 text-[#2E6B4D]" />

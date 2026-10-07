@@ -843,7 +843,7 @@ export default function ShopCatalog({
                 </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-5">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
                 {filteredProducts.map((product) => {
                   const currentWeight =
                     selectedWeights[product.id] || product.weightOptions[0].weight;
@@ -859,13 +859,14 @@ export default function ShopCatalog({
                       {/* Product Image Box (1:1 Aspect Ratio) */}
                       <div
                         className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer"
-                        onClick={() => onSelectProduct(product)}
+                        onClick={() => { window.location.href = `/product/${product.id}`; }}
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
                           src={product.image}
                           alt={`${product.name} - Fresh Australian meat cut`}
                           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                          referrerPolicy="no-referrer"
                         />
                         {product.badge && (
                           <span className="absolute top-2.5 left-2.5 bg-[#7A1F2B] text-white text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-sm shadow-sm">
@@ -891,7 +892,7 @@ export default function ShopCatalog({
 
                           <h3
                             className="font-serif text-base font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-1.5"
-                            onClick={() => onSelectProduct(product)}
+                            onClick={() => { window.location.href = `/product/${product.id}`; }}
                           >
                             {product.name}
                           </h3>
@@ -945,7 +946,7 @@ export default function ShopCatalog({
                           <div className="grid grid-cols-2 gap-2">
                             <button
                               type="button"
-                              onClick={() => onSelectProduct(product)}
+                              onClick={() => { window.location.href = `/product/${product.id}`; }}
                               className="w-full bg-white hover:bg-[#F8F5EF] text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2 px-2 rounded-sm border border-[#EAE6DF] transition-colors flex items-center justify-center gap-1.5"
                             >
                               <Eye className="w-3.5 h-3.5" />

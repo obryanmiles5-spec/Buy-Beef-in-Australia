@@ -349,6 +349,7 @@ export default function CartDrawer({
                               src={item.product.image}
                               alt={item.product.name}
                               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                              referrerPolicy="no-referrer"
                             />
                           </div>
 
