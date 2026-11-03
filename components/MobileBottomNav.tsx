@@ -1,19 +1,20 @@
 'use client';
 
+import Link from 'next/link';
 import { ShoppingBag, Home, Phone, Layers, Store } from 'lucide-react';
 import { BUSINESS_CONFIG } from '@/lib/data';
 
 interface MobileBottomNavProps {
-  currentView: string;
-  selectedCategory: string;
+  currentView?: string;
+  selectedCategory?: string;
   cartCount: number;
-  onNavigate: (view: string, categoryId?: string) => void;
+  onNavigate?: (view: string, categoryId?: string) => void;
   onOpenCart: () => void;
 }
 
 export default function MobileBottomNav({
-  currentView,
-  selectedCategory,
+  currentView = 'home',
+  selectedCategory = 'all',
   cartCount,
   onNavigate,
   onOpenCart,
@@ -26,10 +27,10 @@ export default function MobileBottomNav({
     >
       <div className="grid grid-cols-5 items-center justify-between h-15 px-1 max-w-lg mx-auto">
         {/* 1. Home */}
-        <button
-          type="button"
+        <Link
           id="mobile-bottom-home-btn"
-          onClick={() => onNavigate('home')}
+          href="/"
+          onClick={() => onNavigate?.('home')}
           className={`flex flex-col items-center justify-center py-1 min-h-[48px] rounded-sm transition-colors ${
             currentView === 'home'
               ? 'text-[#7A1F2B] font-bold'
@@ -39,13 +40,13 @@ export default function MobileBottomNav({
         >
           <Home className="w-5 h-5 mb-0.5" />
           <span className="text-[10px] tracking-tight leading-none">Home</span>
-        </button>
+        </Link>
 
         {/* 2. Shop / Catalog */}
-        <button
-          type="button"
+        <Link
           id="mobile-bottom-shop-btn"
-          onClick={() => onNavigate('shop', 'all')}
+          href="/shop"
+          onClick={() => onNavigate?.('shop', 'all')}
           className={`flex flex-col items-center justify-center py-1 min-h-[48px] rounded-sm transition-colors ${
             currentView === 'shop' && selectedCategory === 'all'
               ? 'text-[#7A1F2B] font-bold'
@@ -55,13 +56,13 @@ export default function MobileBottomNav({
         >
           <Store className="w-5 h-5 mb-0.5" />
           <span className="text-[10px] tracking-tight leading-none">Shop</span>
-        </button>
+        </Link>
 
         {/* 3. Carcase Shares (Direct Feature) */}
-        <button
-          type="button"
+        <Link
           id="mobile-bottom-shares-btn"
-          onClick={() => onNavigate('shop', 'beef')}
+          href="/shop/beef"
+          onClick={() => onNavigate?.('shop', 'beef')}
           className={`flex flex-col items-center justify-center py-1 min-h-[48px] rounded-sm transition-colors ${
             currentView === 'shop' && selectedCategory === 'beef'
               ? 'text-[#7A1F2B] font-bold'
@@ -76,7 +77,7 @@ export default function MobileBottomNav({
             </span>
           </div>
           <span className="text-[10px] tracking-tight leading-none text-[#C7903E] font-medium">Shares</span>
-        </button>
+        </Link>
 
         {/* 4. Call Master Butcher */}
         <a
@@ -94,7 +95,7 @@ export default function MobileBottomNav({
           type="button"
           id="mobile-bottom-cart-btn"
           onClick={onOpenCart}
-          className="flex flex-col items-center justify-center py-1 min-h-[48px] rounded-sm text-stone-700 hover:text-[#7A1F2B] relative transition-colors"
+          className="flex flex-col items-center justify-center py-1 min-h-[48px] rounded-sm text-stone-700 hover:text-[#7A1F2B] relative transition-colors cursor-pointer"
           aria-label={`Cart with ${cartCount} items`}
         >
           <div className="relative">

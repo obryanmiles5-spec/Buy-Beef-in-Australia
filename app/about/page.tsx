@@ -1,10 +1,17 @@
 'use client';
 
+import SiteLayout from '@/components/SiteLayout';
 import AboutView from '@/components/AboutView';
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-[#F8F5EF] text-[#151515]">
+    <SiteLayout
+      currentView="about"
+      breadcrumbs={[{ label: 'About Us' }]}
+      backFallbackHref="/"
+      backFallbackLabel="Back to Home"
+      showBackBar={true}
+    >
       <AboutView
         onNavigate={(view) => {
           if (typeof window !== 'undefined') {
@@ -13,6 +20,6 @@ export default function AboutPage() {
         }}
         onOpenCompliance={() => {}}
       />
-    </div>
+    </SiteLayout>
   );
 }

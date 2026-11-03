@@ -1,7 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { ArrowLeft } from 'lucide-react';
 import { Product, CartItem } from '@/lib/types';
+import { CATEGORIES } from '@/lib/data';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import CartDrawer from '@/components/CartDrawer';
@@ -9,14 +13,13 @@ import MobileBottomNav from '@/components/MobileBottomNav';
 import DeliveryComplianceModal from '@/components/DeliveryComplianceModal';
 import ProductGalleryView from '@/components/ProductGalleryView';
 import SearchModal from '@/components/SearchModal';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
 
 interface ProductPageClientProps {
   product: Product;
 }
 
 export default function ProductPageClient({ product }: ProductPageClientProps) {
+  const router = useRouter();
   const [cartItems, setCartItems] = useState<CartItem[]>(() => {
     if (typeof window !== 'undefined') {
       const saved = localStorage.getItem('pt_cart_items');
@@ -72,13 +75,31 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
 
   const totalCartCount = cartItems.reduce((acc, item) => acc + item.quantity, 0);
 
+  const categoryObj = CATEGORIES.find((c) => c.id === product.category || c.slug === product.category);
+  const categoryDisplayName = categoryObj?.name || product.category;
+  const categoryTargetSlug = categoryObj?.slug || categoryObj?.id || product.category;
+
   return (
     <div className="min-h-screen bg-[#F8F5EF] text-[#151515] flex flex-col font-sans selection:bg-[#7A1F2B] selection:text-white pb-16 lg:pb-0">
       {/* Sitewide Header */}
       <Header
         currentView="shop"
         onNavigate={(view, cat) => {
-          window.location.href = view === 'shop' && cat ? `/shop/${cat}` : `/${view === 'home' ? '' : view}`;
+          if (view === 'category' && cat) {
+            const categoryMatch = CATEGORIES.find((c) => c.id === cat || c.slug === cat);
+            router.push(`/shop/${categoryMatch?.slug || cat}`);
+          } else if (view === 'shop') {
+            if (cat && cat !== 'all') {
+              const categoryMatch = CATEGORIES.find((c) => c.id === cat || c.slug === cat);
+              router.push(`/shop/${categoryMatch?.slug || cat}`);
+            } else {
+              router.push('/shop');
+            }
+          } else if (view === 'home') {
+            router.push('/');
+          } else {
+            router.push(`/${view}`);
+          }
         }}
         cartCount={totalCartCount}
         onOpenCart={() => setCartOpen(true)}
@@ -91,27 +112,63 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
         onOpenBlueprint={() => {}}
       />
 
-      {/* Breadcrumb Header */}
-      <div className="bg-stone-900 text-white py-6 px-4 sm:px-6 lg:px-8 border-b border-[#C7903E]">
-        <div className="max-w-7xl mx-auto flex items-center gap-2 text-xs font-mono text-[#E2B766]">
-          <Link href="/" className="hover:underline">Home</Link>
-          <span>/</span>
-          <Link href="/shop" className="hover:underline">Shop</Link>
-          <span>/</span>
-          <Link href={`/shop/${product.category}`} className="hover:underline capitalize">{product.category}</Link>
-          <span>/</span>
-          <span className="text-stone-300 truncate">{product.name}</span>
+      {/* Breadcrumb Header & Easy Back Navigation */}
+      <div className="bg-[#151515] text-white py-4 px-4 sm:px-6 lg:px-8 border-b border-[#C7903E]/40">
+        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-3 text-xs font-mono">
+          <div className="flex items-center gap-2 text-[#E2B766] flex-wrap min-w-0">
+            <Link href="/" className="hover:underline flex items-center gap-1 shrink-0">Home</Link>
+            <span>/</span>
+            <Link href="/shop" className="hover:underline shrink-0">Shop</Link>
+            <span>/</span>
+            <Link href={`/shop/${categoryTargetSlug}`} className="hover:underline shrink-0 text-[#E2B766] font-semibold">
+              {categoryDisplayName}
+            </Link>
+            <span>/</span>
+            <span className="text-stone-300 truncate max-w-[200px] sm:max-w-md">{product.name}</span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.history.length > 1) {
+                window.history.back();
+              } else {
+                router.push(`/shop/${categoryTargetSlug}`);
+              }
+            }}
+            className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-xs bg-white/10 hover:bg-[#7A1F2B] text-[#E2B766] hover:text-white transition-colors shrink-0 text-[11px] font-bold uppercase tracking-wider cursor-pointer"
+            title="Navigate to previous page"
+          >
+            <ArrowLeft className="w-3.5 h-3.5" />
+            <span>Back to Previous</span>
+          </button>
         </div>
       </div>
 
-      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <Link
-          href={`/shop/${product.category}`}
-          className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-[#7A1F2B] hover:underline mb-8"
-        >
-          <ArrowLeft className="w-4 h-4" />
-          <span>Back to {product.category} Department</span>
-        </Link>
+      <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+        <div className="flex items-center justify-between mb-8 pb-3 border-b border-stone-200">
+          <Link
+            href={`/shop/${categoryTargetSlug}`}
+            className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-[#7A1F2B] hover:text-[#5F1721] hover:underline transition-colors"
+          >
+            <ArrowLeft className="w-4 h-4" />
+            <span>Back to {categoryDisplayName} Department</span>
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => {
+              if (typeof window !== 'undefined' && window.history.length > 1) {
+                window.history.back();
+              } else {
+                router.push(`/shop/${categoryTargetSlug}`);
+              }
+            }}
+            className="text-xs font-mono text-stone-500 hover:text-stone-900 transition-colors hidden sm:inline-flex items-center gap-1 cursor-pointer"
+          >
+            <span>← Previous page</span>
+          </button>
+        </div>
 
         {/* WooCommerce Single Product Gallery & Cart Component */}
         <ProductGalleryView 
@@ -128,7 +185,16 @@ export default function ProductPageClient({ product }: ProductPageClientProps) {
       {/* Footer */}
       <Footer 
         onNavigate={(view, cat) => {
-          window.location.href = view === 'shop' && cat ? `/shop/${cat}` : `/${view === 'home' ? '' : view}`;
+          if (view === 'category' && cat) {
+            const categoryMatch = CATEGORIES.find((c) => c.id === cat || c.slug === cat);
+            router.push(`/shop/${categoryMatch?.slug || cat}`);
+          } else if (view === 'shop') {
+            router.push(cat && cat !== 'all' ? `/shop/${cat}` : '/shop');
+          } else if (view === 'home') {
+            router.push('/');
+          } else {
+            router.push(`/${view}`);
+          }
         }}
         onOpenCompliance={(sec) => {
           setComplianceSection(sec || 'delivery-info');

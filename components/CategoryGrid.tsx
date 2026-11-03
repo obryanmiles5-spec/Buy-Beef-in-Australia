@@ -1,10 +1,11 @@
 'use client';
 
+import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import { CATEGORIES } from '@/lib/data';
 
 interface CategoryGridProps {
-  onSelectCategory: (categoryId: string) => void;
+  onSelectCategory?: (categoryId: string) => void;
 }
 
 export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
@@ -34,26 +35,29 @@ export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
             <span className="hidden md:inline-flex text-[11px] font-mono text-stone-500 uppercase">
               10 Specialized Departments
             </span>
-            <button
-              type="button"
+            <Link
               id="category-grid-view-all-btn"
-              onClick={() => onSelectCategory('beef')}
+              href="/shop"
+              onClick={() => onSelectCategory?.('beef')}
               className="text-[11px] font-bold uppercase tracking-widest text-white bg-[#7A1F2B] hover:bg-[#5A1720] px-4 py-2.5 rounded-sm transition-colors flex items-center gap-1.5 shadow-xs"
             >
               <span>View Full Catalog</span>
               <ArrowRight className="w-3.5 h-3.5" />
-            </button>
+            </Link>
           </div>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
           {CATEGORIES.filter((c) => c.id !== 'wholesale').map((category, index) => {
             const indexStr = String(index + 1).padStart(2, '0');
+            const href = `/shop/${category.slug || category.id}`;
+
             return (
-              <div
+              <Link
                 key={category.id}
                 id={`category-card-${category.id}`}
-                onClick={() => onSelectCategory(category.id)}
+                href={href}
+                onClick={() => onSelectCategory?.(category.id)}
                 className="group relative bg-white rounded-sm overflow-hidden border border-[#EAE6DF] hover:border-[#C7903E] hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
               >
                 <div className="relative aspect-[16/10] sm:aspect-[16/11] overflow-hidden bg-stone-100">
@@ -94,7 +98,7 @@ export default function CategoryGrid({ onSelectCategory }: CategoryGridProps) {
                     </span>
                   </div>
                 </div>
-              </div>
+              </Link>
             );
           })}
         </div>

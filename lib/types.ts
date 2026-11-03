@@ -62,6 +62,8 @@ export interface CategoryInfo {
   faqSuggestions: { question: string; answer: string }[];
 }
 
+export type Category = CategoryInfo;
+
 export interface TrustpilotReview {
   id: string;
   author: string;

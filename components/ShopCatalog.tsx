@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   Search, 
   Filter, 
@@ -857,9 +858,10 @@ export default function ShopCatalog({
                       className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] hover:border-[#C7903E] hover:shadow-lg transition-all flex flex-col justify-between group"
                     >
                       {/* Product Image Box (1:1 Aspect Ratio) */}
-                      <div
-                        className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer"
-                        onClick={() => { window.location.href = `/product/${product.id}`; }}
+                      <Link
+                        href={`/product/${product.id}`}
+                        onClick={() => onSelectProduct?.(product)}
+                        className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer block"
                       >
                         {/* eslint-disable-next-line @next/next/no-img-element */}
                         <img
@@ -876,7 +878,7 @@ export default function ShopCatalog({
                         <span className="absolute top-2.5 right-2.5 bg-[#151515]/85 backdrop-blur-sm text-[#F8F5EF] text-[9px] font-mono px-2 py-0.5 rounded-sm border border-stone-700">
                           {product.stockStatus}
                         </span>
-                      </div>
+                      </Link>
 
                       {/* Product Content */}
                       <div className="p-4 flex-1 flex flex-col justify-between">
@@ -890,12 +892,13 @@ export default function ShopCatalog({
                             </span>
                           </div>
 
-                          <h3
-                            className="font-serif text-base font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-1.5"
-                            onClick={() => { window.location.href = `/product/${product.id}`; }}
-                          >
-                            {product.name}
-                          </h3>
+                          <Link href={`/product/${product.id}`} onClick={() => onSelectProduct?.(product)}>
+                            <h3
+                              className="font-serif text-base font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-1.5"
+                            >
+                              {product.name}
+                            </h3>
+                          </Link>
 
                           <p className="text-xs text-stone-600 line-clamp-2 mb-3 leading-relaxed">
                             {product.shortDescription}
@@ -944,14 +947,14 @@ export default function ShopCatalog({
                           </div>
 
                           <div className="grid grid-cols-2 gap-2">
-                            <button
-                              type="button"
-                              onClick={() => { window.location.href = `/product/${product.id}`; }}
-                              className="w-full bg-white hover:bg-[#F8F5EF] text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2 px-2 rounded-sm border border-[#EAE6DF] transition-colors flex items-center justify-center gap-1.5"
+                            <Link
+                              href={`/product/${product.id}`}
+                              onClick={() => onSelectProduct?.(product)}
+                              className="w-full bg-white hover:bg-[#F8F5EF] text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2 px-2 rounded-sm border border-[#EAE6DF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                             >
                               <Eye className="w-3.5 h-3.5" />
                               <span>Details</span>
-                            </button>
+                            </Link>
 
                             <button
                               type="button"

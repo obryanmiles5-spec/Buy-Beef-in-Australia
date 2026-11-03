@@ -3,8 +3,19 @@ import { notFound } from 'next/navigation';
 import { ALL_PRODUCTS, BUSINESS_CONFIG } from '@/lib/data';
 import ProductPageClient from '@/components/ProductPageClient';
 
+export const dynamicParams = true;
+
 interface PageProps {
   params: Promise<{ productId: string }>;
+}
+
+function findProduct(idOrSlug: string) {
+  const normalized = decodeURIComponent(idOrSlug).toLowerCase().trim();
+  return ALL_PRODUCTS.find(
+    (p) =>
+      p.id.toLowerCase() === normalized ||
+      p.slug?.toLowerCase() === normalized
+  );
 }
 
 export async function generateStaticParams() {
@@ -15,19 +26,19 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { productId } = await params;
-  const product = ALL_PRODUCTS.find((p) => p.id === productId);
+  const product = findProduct(productId);
   if (!product) return { title: 'Product Not Found' };
 
   return {
     title: `${product.name} | ${BUSINESS_CONFIG.businessName}`,
     description: product.shortDescription,
     alternates: {
-      canonical: `https://${BUSINESS_CONFIG.domain}/product/${productId}`,
+      canonical: `https://${BUSINESS_CONFIG.domain}/product/${product.id}`,
     },
     openGraph: {
       title: product.name,
       description: product.shortDescription,
-      url: `https://${BUSINESS_CONFIG.domain}/product/${productId}`,
+      url: `https://${BUSINESS_CONFIG.domain}/product/${product.id}`,
       images: [{ url: product.image, alt: product.name }],
       type: 'website',
     },
@@ -36,7 +47,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
 export default async function ProductPage({ params }: PageProps) {
   const { productId } = await params;
-  const product = ALL_PRODUCTS.find((p) => p.id === productId);
+  const product = findProduct(productId);
   if (!product) notFound();
 
   const jsonLd = {

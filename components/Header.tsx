@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
 import { 
   Search, 
   User, 
@@ -14,7 +15,7 @@ import {
   ArrowRight,
   Layers,
   MapPin,
-  Clock,
+  Clock, 
   ExternalLink
 } from 'lucide-react';
 import AnnouncementBar from './AnnouncementBar';
@@ -22,8 +23,8 @@ import BrandLogo from './BrandLogo';
 import { CATEGORIES, BUSINESS_CONFIG } from '@/lib/data';
 
 interface HeaderProps {
-  currentView: string;
-  onNavigate: (view: string, categoryId?: string) => void;
+  currentView?: string;
+  onNavigate?: (view: string, categoryId?: string) => void;
   cartCount: number;
   onOpenCart: () => void;
   onOpenSearch: () => void;
@@ -33,7 +34,7 @@ interface HeaderProps {
 }
 
 export default function Header({
-  currentView,
+  currentView = 'home',
   onNavigate,
   cartCount,
   onOpenCart,
@@ -124,6 +125,22 @@ export default function Header({
     },
   ];
 
+  const getCategoryHref = (deptId: string) => {
+    const cat = CATEGORIES.find((c) => c.id === deptId || c.slug === deptId);
+    return `/shop/${cat?.slug || deptId}`;
+  };
+
+  const getViewHref = (view: string, categoryId?: string) => {
+    if (view === 'category' && categoryId) {
+      return getCategoryHref(categoryId);
+    }
+    if (view === 'shop') {
+      return categoryId && categoryId !== 'all' ? getCategoryHref(categoryId) : '/shop';
+    }
+    if (view === 'home') return '/';
+    return `/${view}`;
+  };
+
   return (
     <header className="w-full relative z-30 font-sans">
       {/* 1. Announcement Slider */}
@@ -152,15 +169,18 @@ export default function Header({
                 {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
               </button>
 
-              {/* Refined Brand Logo */}
-              <button
-                type="button"
+              {/* Refined Brand Logo as Native Link */}
+              <Link
+                href="/"
                 id="brand-logo-btn"
-                onClick={() => onNavigate('home')}
+                onClick={() => {
+                  onNavigate?.('home');
+                  setMobileMenuOpen(false);
+                }}
                 className="text-left group flex items-center min-w-0 py-1 cursor-pointer focus:outline-none"
               >
                 <BrandLogo variant="full" />
-              </button>
+              </Link>
             </div>
 
             {/* Middle: Desktop Navigation (Main Links) */}
@@ -174,11 +194,11 @@ export default function Header({
                       onMouseEnter={() => setShopDropdownOpen(true)}
                       onMouseLeave={() => setShopDropdownOpen(false)}
                     >
-                      <button
-                        type="button"
+                      <Link
+                        href="/shop"
                         id="shop-dropdown-btn"
                         onClick={() => {
-                          onNavigate('shop');
+                          onNavigate?.('shop');
                           setShopDropdownOpen(false);
                         }}
                         aria-haspopup="true"
@@ -191,7 +211,7 @@ export default function Header({
                       >
                         <span>{item.label}</span>
                         <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${shopDropdownOpen ? 'rotate-180 text-[#7A1F2B]' : 'text-stone-400 group-hover:text-[#7A1F2B]'}`} />
-                      </button>
+                      </Link>
 
                       {/* Shop Mega Drop-down (Natural Tones) */}
                       {shopDropdownOpen && (
@@ -219,14 +239,14 @@ export default function Header({
                             <div className="grid grid-cols-2 divide-x divide-[#EAE6DF]/60 p-2 gap-y-1">
                               {SHOP_DROPDOWN_ITEMS.map((dept) => {
                                 return (
-                                  <button
+                                  <Link
                                     key={dept.id}
                                     role="menuitem"
-                                    type="button"
                                     id={`shop-dropdown-${dept.id}`}
+                                    href={getCategoryHref(dept.id)}
                                     onClick={() => {
                                       setShopDropdownOpen(false);
-                                      onNavigate('category', dept.id);
+                                      onNavigate?.('category', dept.id);
                                     }}
                                     className="text-left p-2.5 hover:bg-[#F8F5EF] rounded-sm transition-colors flex items-start justify-between group/item"
                                   >
@@ -242,37 +262,37 @@ export default function Header({
                                       </p>
                                     </div>
                                     <ArrowRight className="w-3 h-3 mt-1 text-stone-300 group-hover/item:text-[#7A1F2B] group-hover/item:translate-x-0.5 transition-all flex-shrink-0" />
-                                  </button>
+                                  </Link>
                                 );
                               })}
                             </div>
 
                             {/* Mega Drop-down Footer: Wholesale & Complete Catalog */}
                             <div className="px-4 py-3 bg-[#F8F5EF] border-t border-[#EAE6DF] flex items-center justify-between gap-3">
-                              <button
-                                type="button"
+                              <Link
+                                href="/wholesale"
                                 onClick={() => {
                                   setShopDropdownOpen(false);
-                                  onNavigate('wholesale');
+                                  onNavigate?.('wholesale');
                                 }}
                                 className="text-left flex items-center gap-2 group/ws text-xs font-bold text-stone-700 hover:text-[#7A1F2B]"
                               >
                                 <span className="w-2 h-2 rounded-full bg-[#C7903E]" />
-                                <span>Wholesale (Butcher & Commercial Food Service)</span>
+                                <span>Wholesale (Butcher &amp; Commercial Food Service)</span>
                                 <ArrowRight className="w-3.5 h-3.5 text-[#C7903E] group-hover/ws:translate-x-0.5 transition-transform" />
-                              </button>
+                              </Link>
 
-                              <button
-                                type="button"
+                              <Link
+                                href="/shop"
                                 onClick={() => {
                                   setShopDropdownOpen(false);
-                                  onNavigate('shop');
+                                  onNavigate?.('shop');
                                 }}
                                 className="py-1.5 px-3.5 text-[11px] font-bold uppercase tracking-wider text-[#7A1F2B] hover:text-white hover:bg-[#7A1F2B] rounded-sm transition-colors flex items-center gap-1.5 border border-[#7A1F2B]/30"
                               >
                                 <span>All Cuts</span>
                                 <ArrowRight className="w-3 h-3" />
-                              </button>
+                              </Link>
                             </div>
                           </div>
                         </div>
@@ -282,16 +302,17 @@ export default function Header({
                 }
 
                 const isWholesale = item.view === 'wholesale';
+                const href = getViewHref(item.view, item.categoryId);
 
                 return (
-                  <button
+                  <Link
                     key={item.label}
-                    type="button"
+                    href={href}
                     onClick={() => {
                       if (item.categoryId) {
-                        onNavigate(item.view, item.categoryId);
+                        onNavigate?.(item.view, item.categoryId);
                       } else {
-                        onNavigate(item.view);
+                        onNavigate?.(item.view);
                       }
                     }}
                     className={`py-2 transition-colors flex items-center gap-1 ${
@@ -303,7 +324,7 @@ export default function Header({
                     }`}
                   >
                     <span>{item.label}</span>
-                  </button>
+                  </Link>
                 );
               })}
             </nav>
@@ -315,18 +336,18 @@ export default function Header({
                 type="button"
                 id="header-search-btn"
                 onClick={onOpenSearch}
-                className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center text-stone-600 hover:text-[#151515] transition-colors focus:outline-none"
+                className="p-2 min-w-[40px] min-h-[40px] flex items-center justify-center text-stone-600 hover:text-[#151515] transition-colors focus:outline-none cursor-pointer"
                 aria-label="Search meat cuts and products"
               >
                 <Search className="w-5 h-5" />
               </button>
 
-              {/* Account Icon (Hidden on small mobile to prevent crowding; accessible via mobile menu) */}
+              {/* Account Icon */}
               <button
                 type="button"
                 id="header-account-btn"
                 onClick={onOpenAccount}
-                className="hidden sm:flex p-2 min-w-[40px] min-h-[40px] items-center justify-center text-stone-600 hover:text-[#151515] transition-colors focus:outline-none"
+                className="hidden sm:flex p-2 min-w-[40px] min-h-[40px] items-center justify-center text-stone-600 hover:text-[#151515] transition-colors focus:outline-none cursor-pointer"
                 aria-label="Customer Account and Login"
               >
                 <User className="w-5 h-5" />
@@ -338,7 +359,7 @@ export default function Header({
                   type="button"
                   id="header-cart-btn"
                   onClick={onOpenCart}
-                  className="relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-700 hover:text-[#151515] transition-colors focus:outline-none"
+                  className="relative p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-stone-700 hover:text-[#151515] transition-colors focus:outline-none cursor-pointer"
                   aria-label={`Shopping cart with ${cartCount} items`}
                 >
                   <ShoppingBag className="w-5 h-5" />
@@ -349,15 +370,15 @@ export default function Header({
                   )}
                 </button>
 
-                {/* Order Now Call-To-Action Button (Visible on md+ so mobile header fits perfectly) */}
-                <button
-                  type="button"
+                {/* Order Now Call-To-Action Button */}
+                <Link
+                  href="/shop"
                   id="header-order-now-btn"
-                  onClick={() => onNavigate('shop')}
-                  className="hidden md:inline-flex bg-[#7A1F2B] text-white px-5 sm:px-6 py-2 sm:py-2.5 text-[11px] font-bold uppercase tracking-[0.1em] rounded-sm hover:bg-[#5A1720] transition-colors shadow-sm whitespace-nowrap"
+                  onClick={() => onNavigate?.('shop')}
+                  className="hidden md:inline-flex bg-[#7A1F2B] text-white px-5 sm:px-6 py-2 sm:py-2.5 text-[11px] font-bold uppercase tracking-[0.1em] rounded-sm hover:bg-[#5A1720] transition-colors shadow-sm whitespace-nowrap cursor-pointer"
                 >
                   Order Now
-                </button>
+                </Link>
               </div>
             </div>
           </div>
@@ -366,24 +387,27 @@ export default function Header({
         {/* Secondary Navigation Row for Smaller Desktop Screens */}
         <div className="hidden lg:flex xl:hidden border-t border-[#EAE6DF] bg-[#F8F5EF] py-1.5 px-6 justify-between items-center text-[10px] uppercase tracking-wider font-bold text-[#4A4A4A]">
           <div className="flex gap-4 overflow-x-auto">
-            {navLinks.map((item) => (
-              <button
-                key={item.label}
-                type="button"
-                onClick={() => {
-                  if (item.categoryId) {
-                    onNavigate(item.view, item.categoryId);
-                  } else {
-                    onNavigate(item.view);
-                  }
-                }}
-                className={`whitespace-nowrap hover:text-[#7A1F2B] ${
-                  currentView === item.view ? 'text-[#7A1F2B] font-bold' : 'text-stone-600'
-                }`}
-              >
-                {item.label}
-              </button>
-            ))}
+            {navLinks.map((item) => {
+              const href = getViewHref(item.view, item.categoryId);
+              return (
+                <Link
+                  key={item.label}
+                  href={href}
+                  onClick={() => {
+                    if (item.categoryId) {
+                      onNavigate?.(item.view, item.categoryId);
+                    } else {
+                      onNavigate?.(item.view);
+                    }
+                  }}
+                  className={`whitespace-nowrap hover:text-[#7A1F2B] ${
+                    currentView === item.view ? 'text-[#7A1F2B] font-bold' : 'text-stone-600'
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
           </div>
         </div>
       </div>
@@ -401,12 +425,14 @@ export default function Header({
             <div className="pb-6">
               {/* Mobile Drawer Header */}
               <div className="p-4 border-b border-[#EAE6DF] flex items-center justify-between bg-white sticky top-0 z-10">
-                <BrandLogo variant="compact" onClick={() => { setMobileMenuOpen(false); onNavigate('home'); }} />
+                <Link href="/" onClick={() => setMobileMenuOpen(false)}>
+                  <BrandLogo variant="compact" />
+                </Link>
                 <button
                   type="button"
                   id="mobile-nav-close-btn"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-sm text-stone-500 hover:text-stone-900 hover:bg-[#F8F5EF] transition-colors"
+                  className="min-w-[44px] min-h-[44px] flex items-center justify-center rounded-sm text-stone-500 hover:text-stone-900 hover:bg-[#F8F5EF] transition-colors cursor-pointer"
                   aria-label="Close mobile menu"
                 >
                   <X className="w-5 h-5" />
@@ -426,7 +452,7 @@ export default function Header({
                       setMobileMenuOpen(false);
                       onOpenSearch();
                     }}
-                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-[#7A1F2B] transition-colors text-left min-h-[44px]"
+                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-[#7A1F2B] transition-colors text-left min-h-[44px] cursor-pointer"
                   >
                     <div className="w-7 h-7 rounded-sm bg-[#7A1F2B]/10 text-[#7A1F2B] flex items-center justify-center shrink-0">
                       <Search className="w-3.5 h-3.5" />
@@ -444,7 +470,7 @@ export default function Header({
                       setMobileMenuOpen(false);
                       onOpenCart();
                     }}
-                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-[#7A1F2B] transition-colors text-left min-h-[44px]"
+                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-[#7A1F2B] transition-colors text-left min-h-[44px] cursor-pointer"
                   >
                     <div className="w-7 h-7 rounded-sm bg-[#7A1F2B]/10 text-[#7A1F2B] flex items-center justify-center shrink-0 relative">
                       <ShoppingBag className="w-3.5 h-3.5" />
@@ -481,22 +507,22 @@ export default function Header({
                       setMobileMenuOpen(false);
                       onOpenAccount();
                     }}
-                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-[#C7903E] transition-colors text-left min-h-[44px]"
+                    className="flex items-center gap-2 p-2.5 bg-white rounded-sm border border-[#EAE6DF] hover:border-stone-500 transition-colors text-left min-h-[44px] cursor-pointer"
                   >
-                    <div className="w-7 h-7 rounded-sm bg-[#C7903E]/15 text-[#C7903E] flex items-center justify-center shrink-0">
+                    <div className="w-7 h-7 rounded-sm bg-stone-100 text-stone-700 flex items-center justify-center shrink-0">
                       <User className="w-3.5 h-3.5" />
                     </div>
                     <div>
-                      <span className="text-[11px] font-bold text-[#151515] block leading-tight">My Account</span>
-                      <span className="text-[9px] text-stone-500">Orders &amp; Log</span>
+                      <span className="text-[11px] font-bold text-[#151515] block leading-tight">Account</span>
+                      <span className="text-[9px] text-stone-500">Sign in</span>
                     </div>
                   </button>
                 </div>
               </div>
 
-              {/* Spotlight: Farm-Direct Carcase Shares (1/4, 1/2, Full) */}
-              <div className="p-3 mx-3 mt-3 bg-linear-to-r from-[#151515] to-[#252525] text-white rounded-sm border border-[#C7903E]/40 shadow-xs">
-                <div className="flex items-center justify-between mb-1">
+              {/* Carcase Shares Feature Banner */}
+              <div className="m-3 p-3.5 bg-gradient-to-br from-[#151515] to-[#252525] rounded-sm text-white border border-[#C7903E]/40 shadow-sm">
+                <div className="flex items-center justify-between mb-1.5">
                   <span className="inline-flex items-center gap-1 text-[9px] font-mono uppercase tracking-widest text-[#C7903E] font-bold">
                     <Layers className="w-3 h-3" />
                     Farm-Direct Carcase Shares
@@ -509,82 +535,82 @@ export default function Header({
                   Whole, Half &amp; Quarter Animal Shares
                 </p>
                 <div className="grid grid-cols-4 gap-1 mb-2.5">
-                  <button
-                    type="button"
+                  <Link
+                    href="/shop/beef"
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      onNavigate('category', 'beef');
+                      onNavigate?.('category', 'beef');
                     }}
                     className="py-1 px-1 bg-white/10 hover:bg-[#C7903E] hover:text-[#151515] text-[9px] font-bold rounded-xs text-center transition-colors truncate"
                   >
                     Beef
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+                  <Link
+                    href="/shop/lamb"
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      onNavigate('category', 'lamb');
+                      onNavigate?.('category', 'lamb');
                     }}
                     className="py-1 px-1 bg-white/10 hover:bg-[#C7903E] hover:text-[#151515] text-[9px] font-bold rounded-xs text-center transition-colors truncate"
                   >
                     Lamb
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+                  <Link
+                    href="/shop/pork"
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      onNavigate('category', 'pork');
+                      onNavigate?.('category', 'pork');
                     }}
                     className="py-1 px-1 bg-white/10 hover:bg-[#C7903E] hover:text-[#151515] text-[9px] font-bold rounded-xs text-center transition-colors truncate"
                   >
                     Pork
-                  </button>
-                  <button
-                    type="button"
+                  </Link>
+                  <Link
+                    href="/shop/chicken"
                     onClick={() => {
                       setMobileMenuOpen(false);
-                      onNavigate('category', 'chicken');
+                      onNavigate?.('category', 'chicken');
                     }}
                     className="py-1 px-1 bg-white/10 hover:bg-[#C7903E] hover:text-[#151515] text-[9px] font-bold rounded-xs text-center transition-colors truncate"
                   >
                     Poultry
-                  </button>
+                  </Link>
                 </div>
-                <button
-                  type="button"
+                <Link
+                  href="/shop/beef"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('shop', 'beef');
+                    onNavigate?.('shop', 'beef');
                   }}
                   className="w-full text-center text-[10px] text-[#C7903E] hover:text-white font-bold tracking-wider uppercase flex items-center justify-center gap-1"
                 >
                   <span>Explore All Carcase Shares</span>
                   <ArrowRight className="w-3 h-3" />
-                </button>
+                </Link>
               </div>
 
               {/* Main Navigation Links */}
               <nav className="p-3 space-y-1">
                 {/* Home */}
-                <button
-                  type="button"
+                <Link
+                  href="/"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('home');
+                    onNavigate?.('home');
                   }}
                   className={`w-full text-left py-3 px-3 rounded-sm text-xs font-bold uppercase tracking-wider min-h-[44px] flex items-center transition-colors ${
                     currentView === 'home' ? 'bg-[#7A1F2B] text-white shadow-xs' : 'text-[#4A4A4A] hover:bg-[#EAE6DF]/60'
                   }`}
                 >
                   Home
-                </button>
+                </Link>
 
                 {/* Shop Accordion with All 10 Departments */}
                 <div>
                   <button
                     type="button"
                     onClick={() => setMobileShopAccordionOpen(!mobileShopAccordionOpen)}
-                    className="w-full flex items-center justify-between py-3 px-3 rounded-sm text-xs font-bold uppercase tracking-wider text-[#4A4A4A] hover:bg-[#EAE6DF]/60 min-h-[44px] transition-colors"
+                    className="w-full flex items-center justify-between py-3 px-3 rounded-sm text-xs font-bold uppercase tracking-wider text-[#4A4A4A] hover:bg-[#EAE6DF]/60 min-h-[44px] transition-colors cursor-pointer"
                   >
                     <span className="flex items-center gap-1.5">
                       <span>Shop by Meat Department</span>
@@ -598,12 +624,12 @@ export default function Header({
                   {mobileShopAccordionOpen && (
                     <div className="pl-2 pr-2 py-2 space-y-1 bg-white border border-[#EAE6DF] rounded-sm my-1">
                       {SHOP_DROPDOWN_ITEMS.map((dept) => (
-                        <button
+                        <Link
                           key={dept.id}
-                          type="button"
+                          href={getCategoryHref(dept.id)}
                           onClick={() => {
                             setMobileMenuOpen(false);
-                            onNavigate('category', dept.id);
+                            onNavigate?.('category', dept.id);
                           }}
                           className="w-full text-left py-2 px-2.5 rounded-sm text-xs text-stone-800 hover:text-[#7A1F2B] hover:bg-[#F8F5EF] flex items-center justify-between font-medium min-h-[40px] transition-colors"
                         >
@@ -612,20 +638,20 @@ export default function Header({
                             <span className="text-[9px] text-stone-400 line-clamp-1">{dept.tagline}</span>
                           </div>
                           <span className="text-[10px] text-[#7A1F2B] font-mono font-bold shrink-0 ml-2">Browse →</span>
-                        </button>
+                        </Link>
                       ))}
                       <div className="pt-2 border-t border-[#EAE6DF] mt-1">
-                        <button
-                          type="button"
+                        <Link
+                          href="/shop"
                           onClick={() => {
                             setMobileMenuOpen(false);
-                            onNavigate('shop');
+                            onNavigate?.('shop');
                           }}
                           className="w-full text-center py-2 px-2.5 text-[11px] font-bold uppercase tracking-wider text-white bg-[#7A1F2B] hover:bg-[#5A1720] rounded-xs transition-colors flex items-center justify-center gap-1.5 min-h-[38px]"
                         >
                           <span>View Complete Catalog (All Cuts)</span>
                           <ArrowRight className="w-3.5 h-3.5" />
-                        </button>
+                        </Link>
                       </div>
                     </div>
                   )}
@@ -634,11 +660,11 @@ export default function Header({
                 <div className="pt-1 border-t border-[#EAE6DF] my-1" />
 
                 {/* Wholesale Supply */}
-                <button
-                  type="button"
+                <Link
+                  href="/wholesale"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('wholesale');
+                    onNavigate?.('wholesale');
                   }}
                   className={`w-full text-left py-3 px-3 rounded-sm text-xs font-bold uppercase tracking-wider min-h-[44px] flex items-center justify-between transition-colors ${
                     currentView === 'wholesale' ? 'bg-[#7A1F2B] text-white' : 'text-[#151515] hover:bg-[#EAE6DF]/60'
@@ -648,49 +674,49 @@ export default function Header({
                   <span className="text-[9px] uppercase font-mono px-1.5 py-0.5 rounded-xs bg-[#C7903E]/20 text-[#8C6226] font-bold">
                     Commercial
                   </span>
-                </button>
+                </Link>
 
                 {/* About Us */}
-                <button
-                  type="button"
+                <Link
+                  href="/about"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('about');
+                    onNavigate?.('about');
                   }}
                   className={`w-full text-left py-3 px-3 rounded-sm text-xs font-semibold uppercase tracking-wider min-h-[44px] flex items-center transition-colors ${
                     currentView === 'about' ? 'bg-[#7A1F2B] text-white' : 'text-stone-700 hover:bg-[#EAE6DF]/60'
                   }`}
                 >
                   About Our Butcher &amp; Farm
-                </button>
+                </Link>
 
                 {/* Contact Us */}
-                <button
-                  type="button"
+                <Link
+                  href="/contact"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('contact');
+                    onNavigate?.('contact');
                   }}
                   className={`w-full text-left py-3 px-3 rounded-sm text-xs font-semibold uppercase tracking-wider min-h-[44px] flex items-center transition-colors ${
                     currentView === 'contact' ? 'bg-[#7A1F2B] text-white' : 'text-stone-700 hover:bg-[#EAE6DF]/60'
                   }`}
                 >
                   Contact Us &amp; Regional Hub
-                </button>
+                </Link>
 
                 {/* Blog & Cooking Guides */}
-                <button
-                  type="button"
+                <Link
+                  href="/blog"
                   onClick={() => {
                     setMobileMenuOpen(false);
-                    onNavigate('blog');
+                    onNavigate?.('blog');
                   }}
                   className={`w-full text-left py-3 px-3 rounded-sm text-xs font-semibold uppercase tracking-wider min-h-[44px] flex items-center transition-colors ${
                     currentView === 'blog' ? 'bg-[#7A1F2B] text-white' : 'text-stone-700 hover:bg-[#EAE6DF]/60'
                   }`}
                 >
                   Blog &amp; Butchery Guides
-                </button>
+                </Link>
               </nav>
 
               {/* Compliance & Delivery Shortcuts */}
@@ -705,7 +731,7 @@ export default function Header({
                       setMobileMenuOpen(false);
                       onOpenCompliance('delivery-info');
                     }}
-                    className="w-full text-left flex items-center justify-between text-stone-700 hover:text-[#7A1F2B] py-1 text-xs"
+                    className="w-full text-left flex items-center justify-between text-stone-700 hover:text-[#7A1F2B] py-1 text-xs cursor-pointer"
                   >
                     <span className="flex items-center gap-1.5">
                       <Truck className="w-3.5 h-3.5 text-[#2E6B4D]" />
@@ -719,7 +745,7 @@ export default function Header({
                       setMobileMenuOpen(false);
                       onOpenCompliance('cold-chain');
                     }}
-                    className="w-full text-left flex items-center justify-between text-stone-700 hover:text-[#7A1F2B] py-1 text-xs"
+                    className="w-full text-left flex items-center justify-between text-stone-700 hover:text-[#7A1F2B] py-1 text-xs cursor-pointer"
                   >
                     <span className="flex items-center gap-1.5">
                       <ShieldCheck className="w-3.5 h-3.5 text-[#C7903E]" />
@@ -745,18 +771,18 @@ export default function Header({
 
             {/* Mobile Footer CTAs */}
             <div className="p-4 border-t border-[#EAE6DF] bg-white space-y-2.5 sticky bottom-0 z-10 shadow-[0_-2px_10px_rgba(0,0,0,0.05)]">
-              <button
-                type="button"
+              <Link
+                href="/shop"
                 id="mobile-menu-order-now-btn"
                 onClick={() => {
                   setMobileMenuOpen(false);
-                  onNavigate('shop');
+                  onNavigate?.('shop');
                 }}
-                className="w-full bg-[#7A1F2B] hover:bg-[#5A1720] text-white text-xs font-bold uppercase tracking-widest py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 shadow-sm transition-colors min-h-[48px]"
+                className="w-full bg-[#7A1F2B] hover:bg-[#5A1720] text-white text-xs font-bold uppercase tracking-widest py-3.5 px-4 rounded-sm flex items-center justify-center gap-2 shadow-sm transition-colors min-h-[48px] cursor-pointer"
               >
                 <span>Order Meat Online Now</span>
                 <ArrowRight className="w-4 h-4" />
-              </button>
+              </Link>
 
               <div className="flex items-center justify-between text-[10px] text-stone-500 font-mono pt-1">
                 <span className="flex items-center gap-1">

@@ -1,12 +1,13 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { ShoppingBag, Eye, Truck, Check, ArrowRight } from 'lucide-react';
 import { Product } from '@/lib/types';
 import { FEATURED_PRODUCTS } from '@/lib/data';
 
 interface FeaturedProductsProps {
-  onSelectProduct: (product: Product) => void;
+  onSelectProduct?: (product: Product) => void;
   onAddToCart: (product: Product, weight: string, quantity: number) => void;
   onOpenCompliance: (sectionId?: string) => void;
 }
@@ -93,9 +94,10 @@ export default function FeaturedProducts({
                 className="bg-white rounded-sm overflow-hidden border border-[#EAE6DF] hover:border-[#C7903E] hover:shadow-xl transition-all duration-300 flex flex-col justify-between group"
               >
                 {/* Image Container with Badge (1:1 Aspect Ratio) */}
-                <div 
-                  className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer" 
-                  onClick={() => { window.location.href = `/product/${product.id}`; }}
+                <Link 
+                  href={`/product/${product.id}`}
+                  onClick={() => onSelectProduct?.(product)}
+                  className="relative aspect-square bg-stone-100 overflow-hidden cursor-pointer block" 
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
@@ -116,7 +118,7 @@ export default function FeaturedProducts({
                   <span className="absolute top-3 right-3 bg-[#151515]/85 backdrop-blur-xs text-[#F8F5EF] text-[9px] font-mono px-2.5 py-1 rounded-sm border border-stone-700">
                     {product.stockStatus}
                   </span>
-                </div>
+                </Link>
 
                 {/* Content Details */}
                 <div className="p-4 sm:p-5 flex-1 flex flex-col justify-between">
@@ -127,12 +129,13 @@ export default function FeaturedProducts({
                     </p>
 
                     {/* Product Title */}
-                    <h3
-                      className="font-serif text-lg sm:text-xl font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-2"
-                      onClick={() => { window.location.href = `/product/${product.id}`; }}
-                    >
-                      {product.name}
-                    </h3>
+                    <Link href={`/product/${product.id}`} onClick={() => onSelectProduct?.(product)}>
+                      <h3
+                        className="font-serif text-lg sm:text-xl font-bold text-[#151515] group-hover:text-[#7A1F2B] transition-colors cursor-pointer line-clamp-1 mb-2"
+                      >
+                        {product.name}
+                      </h3>
+                    </Link>
 
                     {/* Short Description */}
                     <p className="text-xs text-stone-600 line-clamp-2 mb-4 leading-relaxed">
@@ -184,15 +187,15 @@ export default function FeaturedProducts({
 
                     {/* Action Buttons - Touch friendly on mobile (min 44px height) */}
                     <div className="grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
+                      <Link
                         id={`view-btn-${product.id}`}
-                        onClick={() => { window.location.href = `/product/${product.id}`; }}
+                        href={`/product/${product.id}`}
+                        onClick={() => onSelectProduct?.(product)}
                         className="w-full min-h-[44px] bg-white hover:bg-[#F8F5EF] text-stone-800 text-[11px] font-bold uppercase tracking-wider py-2.5 px-2 rounded-sm border border-[#EAE6DF] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
                       >
                         <Eye className="w-3.5 h-3.5" />
                         <span>Details</span>
-                      </button>
+                      </Link>
 
                       <button
                         type="button"

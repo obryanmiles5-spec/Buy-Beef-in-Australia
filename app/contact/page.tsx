@@ -1,10 +1,17 @@
 'use client';
 
+import SiteLayout from '@/components/SiteLayout';
 import ContactView from '@/components/ContactView';
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-[#F8F5EF] text-[#151515]">
+    <SiteLayout
+      currentView="contact"
+      breadcrumbs={[{ label: 'Contact Us' }]}
+      backFallbackHref="/"
+      backFallbackLabel="Back to Home"
+      showBackBar={true}
+    >
       <ContactView
         onNavigate={(view) => {
           if (typeof window !== 'undefined') {
@@ -13,6 +20,6 @@ export default function ContactPage() {
         }}
         onOpenCompliance={() => {}}
       />
-    </div>
+    </SiteLayout>
   );
 }

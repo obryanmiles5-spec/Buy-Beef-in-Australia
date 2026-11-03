@@ -88,7 +88,7 @@ export const CATEGORIES: CategoryInfo[] = [
     metaDescription: 'Order fresh Australian free-range chicken online. Quarter (1/4), half (1/2), and full poultry farm shares, breast fillets, thighs, wings, and whole birds delivered cold-chain fresh.',
     h1: 'Fresh Australian Free-Range Poultry (1/4, 1/2, Full Shares & Cuts)',
     introCopy: 'Raised ethically on open green pastures across regional NSW 2642 with generous outdoor roaming access, natural grain forage, and zero chemical washes, hormones, or antibiotics. Available in our popular bulk poultry shares: 1/4 Farm Share, 1/2 Farm Share, and Full Farm Cartons (featuring balanced allocations of whole roasting birds, breast fillets, juicy boneless thighs, party wings, drumsticks, and crumbed schnitzels), alongside individually portioned everyday staples. Vacuum-packed in leak-proof cold-chain pouches to lock in natural moisture and farm freshness.',
-    subcategories: ['Free-Range Poultry Shares', 'Breast Fillets', 'Thighs & Cutlets', 'Drumsticks & Wings', 'Whole Birds', 'Diced & Stir-Fry', 'Roasting Portions'],
+    subcategories: ['Free-Range Poultry Shares', 'Breast Fillets', 'Thighs & Cutlets', 'Drumsticks & Wings', 'Whole Birds'],
     faqSuggestions: [
       {
         question: 'What is included in a 1/4, 1/2, or Full poultry farm share?',
@@ -524,7 +524,12 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'F1 Wagyu Steaks & BBQ',
     shortDescription: 'Elite Australian F1 Wagyu Scotch Fillet with dense intramuscular marbling (MBS 7+). Ultra buttery.',
     fullDescription: 'First-generation Wagyu cross with intensive intramuscular marbling (MBS 7+). Sourced from long-fed cattle in NSW. Delicate web of fine fat ribbons renders during cooking to deliver unparalleled tenderness and deep umami richness.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/14341dTsdZmeRCC2by4KAGiliMZjroHp6',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/14341dTsdZmeRCC2by4KAGiliMZjroHp6',
+      'https://lh3.googleusercontent.com/d/1qnNINO453LS6NOgRkLucJaOgXIWwQlBw',
+      'https://lh3.googleusercontent.com/d/1atsUbN7Rk6DbYVaf7cTOm6jyEFVx2emb'
+    ],
     defaultPrice: '31.20',
     weightOptions: [
       { weight: '1 x 300g Wagyu Steak', serves: '1 luxury serve', pricePlaceholder: '31.20' },
@@ -854,7 +859,11 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Roasts & Slow Cook',
     shortDescription: 'Rich, collagen-dense beef shoulder cut ideal for slow cooker casseroles, beef bourguignon, and pot roasts.',
     fullDescription: 'Cut from the forequarter shoulder, our Black Angus Chuck is marbling-rich with connective tissue that dissolves into luxurious sauce during long, slow braising. Hand-trimmed and diced into generous bite-sized chunks or whole roast pieces.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1-8m1aWhSq9r6L_KjthmIVX1xkBYUWE5t',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1-8m1aWhSq9r6L_KjthmIVX1xkBYUWE5t',
+      'https://lh3.googleusercontent.com/d/1x8BvPhm7t31ugu6ykuk17EbnkDFi0KSy'
+    ],
     defaultPrice: '10.80',
     weightOptions: [
       { weight: '500g Diced Casserole Pack', serves: '2–3 serves', pricePlaceholder: '10.80' },
@@ -962,73 +971,6 @@ export const ALL_PRODUCTS: Product[] = [
     allergensPlaceholder: '100% Australian Free-Range Chicken. (Schnitzels contain wheat, dairy, egg).',
     originPlaceholder: 'Certified Australian Free-Range Poultry — NSW 2642.',
     badge: 'Whole Flock Reserve',
-    isFeatured: true
-  },
-  {
-    id: 'half-cut-chicken',
-    name: '1/2 Free-Range Spatchcock Chicken (Butterflied Half Bird)',
-    category: 'chicken',
-    subCategory: 'Whole Birds',
-    shortDescription: 'Half free-range chicken butterflied flat for rapid, even barbecue grilling or crisp oven roasting.',
-    fullDescription: 'Half bird split lengthwise with breast, wing, thigh, and drumstick intact. Flattened flat to cook in half the time of a whole bird while ensuring crisp golden skin and succulent, moist breast meat.',
-    image: 'https://images.unsplash.com/photo-1598103442097-8b74394b95c6?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '10.00',
-    weightOptions: [
-      { weight: 'Single Half Bird (~900g)', serves: '2 serves', pricePlaceholder: '10.00' },
-      { weight: 'Twin Half Birds (2 x ~900g)', serves: '4 serves', pricePlaceholder: '18.40' }
-    ],
-    stockStatus: 'In Stock • Spatchcocked & Ready',
-    cutInformation: 'Half bird with bone intact, flattened for fast, uniform barbecue cooking.',
-    storageInstructions: 'Refrigerate at 0–4°C. Freeze at -18°C for up to 6 months.',
-    cookingSuggestions: 'Season with lemon, garlic, and fresh oregano. Grill skin-side down over medium coals for 15 mins, flip and finish for 12 mins.',
-    allergensPlaceholder: '100% Australian Free-Range Chicken. Nil allergens.',
-    originPlaceholder: 'Australian Free-Range Poultry — NSW 2642.',
-    badge: '1/2 Bird Cut',
-    isFeatured: false
-  },
-  {
-    id: 'quarter-cut-chicken',
-    name: '1/4 Cut Chicken Portions (Bone-In Maryland & Breast Quarters)',
-    category: 'chicken',
-    subCategory: 'Roasting Portions',
-    shortDescription: 'Traditional butcher quarter chicken cuts: bone-in chicken maryland (thigh + drumstick) and bone-in breast with wing.',
-    fullDescription: 'Portioned from whole Australian free-range chickens. Provides bone-in, skin-on chicken quarters for deep roasting flavor and maximum moisture retention.',
-    image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '8.80',
-    weightOptions: [
-      { weight: '2 Quarter Cuts (~900g Pack)', serves: '2 serves', pricePlaceholder: '8.80' },
-      { weight: '4 Quarter Cuts (~1.8kg Family Pack)', serves: '4 serves', pricePlaceholder: '16.00' }
-    ],
-    stockStatus: 'In Stock • Traditional Quarter Cut',
-    cutInformation: '1/4 chicken portions with bone and skin intact for roasting.',
-    storageInstructions: 'Keep refrigerated below 4°C. Freeze at -18°C.',
-    cookingSuggestions: 'Roast at 200°C for 40 minutes with garlic butter and rosemary.',
-    allergensPlaceholder: '100% Australian Chicken. Nil allergens.',
-    originPlaceholder: 'NSW Pasture-Raised Poultry.',
-    badge: '1/4 Bird Cut',
-    isFeatured: false
-  },
-  {
-    id: 'chicken-breast-fillets',
-    name: 'Free-Range Chicken Breast Fillets (Skinless & Boneless)',
-    category: 'chicken',
-    subCategory: 'Breast Fillets',
-    shortDescription: 'Tender, skinless and boneless chicken breast fillets from Australian free-range farms.',
-    fullDescription: 'Hand-trimmed free-range chicken breasts with zero added hormones or growth promoters. Sourced from certified Australian free-range farms where birds roam freely outdoors. Exceptionally tender, lean, and vacuum-sealed in leak-proof cold-chain pouches.',
-    image: 'https://images.unsplash.com/photo-1587593810167-a84920ea0781?q=80&w=800&auto=format&fit=crop',
-    defaultPrice: '9.20',
-    weightOptions: [
-      { weight: '500g Pack (~2–3 Fillets)', serves: '2–3 serves', pricePlaceholder: '9.20' },
-      { weight: '1kg Family Pack (~4–5 Fillets)', serves: '4–6 serves', pricePlaceholder: '16.80' },
-      { weight: '2kg Bulk Meal Prep Pack (~8–10 Fillets)', serves: '8–12 serves', pricePlaceholder: '31.20' }
-    ],
-    stockStatus: 'Fresh Daily • In Stock',
-    cutInformation: 'Premium skinless, boneless single breast fillets with tenderloins intact. Fat cleanly trimmed.',
-    storageInstructions: 'Keep refrigerated between 0°C and 4°C. Consume within 3 days or freeze immediately at -18°C for up to 6 months.',
-    cookingSuggestions: 'Pan-sear on medium-high heat with olive oil and fresh rosemary for 5–6 mins per side until internal temperature reaches 74°C, then rest for 3 minutes.',
-    allergensPlaceholder: '100% Australian Free-Range Chicken. Free from gluten, preservatives, and dairy. Nil known allergens.',
-    originPlaceholder: '100% Australian Free-Range Poultry — Certified Farms NSW/VIC.',
-    badge: 'Free-Range Certified',
     isFeatured: true
   },
   {
@@ -1360,7 +1302,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Lamb Carcass Shares',
     shortDescription: 'Balanced quarter carcass of tender Australian pasture-fed lamb: cutlets, loin chops, leg/shoulder roast, shanks, and mince.',
     fullDescription: 'Our 1/4 Pasture-Fed Lamb Share offers outstanding farm-direct value and freezer convenience. Selected from young prime Australian lambs raised on native pastures in NSW 2642. Custom portioned into table-ready cuts: French-trimmed rib cutlets, sweet loin chops, boneless butterflied or bone-in leg roast, succulent forequarter shoulder chops, meaty slow-cook shanks, and lean lamb mince. All cuts are individually vacuum-sealed in heavy barrier cryovac pouches and clearly labeled.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/186H0q1rIMMykAPdgETBc7JdcB807PjT-',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/186H0q1rIMMykAPdgETBc7JdcB807PjT-'
+    ],
     defaultPrice: '132.00',
     weightOptions: [
       { weight: 'Standard 1/4 Lamb Share (~6kg–7kg dressed yield)', serves: '18–22 family meals', pricePlaceholder: '132.00' },
@@ -1382,7 +1327,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Lamb Carcass Shares',
     shortDescription: 'Complete half side of Australian pasture-fed lamb: full rack of cutlets, loin chops, whole leg roast, shoulder, shanks, ribs, and mince.',
     fullDescription: 'The ultimate lamb freezer-filler for Australian families. A full half carcass (forequarter, loin, and hindquarter) of pasture-fed prime lamb. Aged and custom butchered into: 8-bone French-trimmed rack/cutlets, prime T-bone loin chops, chump steaks, whole leg roast (bone-in or butterflied), whole shoulder roast (bone-in or rolled boneless), 2 hindquarter shanks, breast ribs, and freshly ground lamb mince. Vacuum sealed and labeled.',
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1jkx1F4GVpdfbV0budI2KaYtyypCHqo5j',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1jkx1F4GVpdfbV0budI2KaYtyypCHqo5j'
+    ],
     defaultPrice: '236.00',
     weightOptions: [
       { weight: 'Standard 1/2 Lamb Side (~12kg–14kg dressed yield)', serves: '35–42 family meals', pricePlaceholder: '236.00' },
@@ -1404,7 +1352,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Lamb Carcass Shares',
     shortDescription: 'Whole pasture-fed Australian lamb carcass. Available custom-butchered into individual cuts or prepared whole for spit roasting.',
     fullDescription: 'Direct farm-to-table whole lamb buying. Sourced from prime Australian pasture-fed lambs in NSW 2642. You can choose either: (A) Full artisan butcher breakdown into vacuum-sealed table-ready cuts (16 French cutlets, 16+ loin chops, 2 whole leg roasts, 2 whole shoulder roasts, 4 shanks, ribs, neck chops, and bulk mince), OR (B) Whole dressed carcass prepared and secured for festive Greek/Cypriot charcoal spit roasting. Dispatched in temperature-controlled cold-chain packaging.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1tkAtDXapkDmEVTXylPCk7v2ILKoOEJ44',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1tkAtDXapkDmEVTXylPCk7v2ILKoOEJ44'
+    ],
     defaultPrice: '432.00',
     weightOptions: [
       { weight: 'Whole Lamb Custom Butchered (~24kg–26kg dressed yield)', serves: '75–90 family meals', pricePlaceholder: '432.00' },
@@ -1450,7 +1401,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Lamb Shanks',
     shortDescription: 'Meaty, collagen-rich hindquarter lamb shanks ready for rich winter braises.',
     fullDescription: 'Generous hindquarter shanks trimmed of excessive external fat while keeping the connective tissues intact. Melts into fork-tender succulence when braised with wine and herbs.',
-    image: 'https://images.unsplash.com/photo-1574484284002-952d92456975?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1VZvbSr-i2RaoZFWDVwaqN8rDScLc2puh',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1VZvbSr-i2RaoZFWDVwaqN8rDScLc2puh'
+    ],
     defaultPrice: '22.00',
     weightOptions: [
       { weight: '2 Shanks (~800g Pack)', serves: '2 serves', pricePlaceholder: '22.00' },
@@ -1473,7 +1427,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Leg Roasts',
     shortDescription: 'Boneless pasture-fed lamb leg flattened for even, rapid barbecue cooking or oven roasting.',
     fullDescription: 'Our butchers remove the pelvic and femur bones, opening out the leg to an even thickness. Creates caramelized charred edges on the outside while maintaining juicy pink meat through the center.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1uAArClqSEygHvKGAO3oO899Hc5VMxb7R',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1uAArClqSEygHvKGAO3oO899Hc5VMxb7R'
+    ],
     defaultPrice: '30.40',
     weightOptions: [
       { weight: 'Butterflied Leg (~1.5kg)', serves: '5–6 serves', pricePlaceholder: '30.40' },
@@ -1496,7 +1453,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Lamb Chops',
     shortDescription: 'Tender miniature T-bone chops combining the sweet loin eye and tenderloin fillet.',
     fullDescription: 'The classic Australian weekday chop. Cut from the mid-loin section, featuring the characteristic T-bone bone structure that imparts rich roasted marrow depth when cooked over hot coals.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1ZXuguPmbXzb-5shXCeh4ulZu7CAq4cdw',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1ZXuguPmbXzb-5shXCeh4ulZu7CAq4cdw'
+    ],
     defaultPrice: '14.80',
     weightOptions: [
       { weight: '4 Chops (~500g Pack)', serves: '2 serves', pricePlaceholder: '14.80' },
@@ -1518,7 +1478,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Leg Roasts',
     shortDescription: 'Richly marbled bone-in lamb shoulder. The ultimate cut for fork-shredded Greek lamb roasts.',
     fullDescription: 'The forequarter oyster cut retains the blade bone, providing internal structure while rendering deep collagen throughout long, slow roasting. Seasoned simply with garlic and oregano, the meat collapses into tender shreds under a fork.',
-    image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/14_KWrQYVTMrawN8kfjte9tKW3Oes0_Er',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/14_KWrQYVTMrawN8kfjte9tKW3Oes0_Er'
+    ],
     defaultPrice: '28.80',
     weightOptions: [
       { weight: 'Bone-In Shoulder (~1.8kg)', serves: '5–6 serves', pricePlaceholder: '28.80' },
@@ -1540,7 +1503,10 @@ export const ALL_PRODUCTS: Product[] = [
     subCategory: 'Mince',
     shortDescription: 'Freshly minced Australian pasture-fed lamb trims. Ideal for moussaka, koftas, and shepherd\'s pie.',
     fullDescription: 'Ground fresh daily from trimmed lamb leg and shoulder cuts. Clean, sweet lamb flavor without excessive grease. Perfect for Greek koftas, Middle Eastern kibbeh, and homemade burgers.',
-    image: 'https://images.unsplash.com/photo-1588168333986-5078d3ae3976?q=80&w=800&auto=format&fit=crop',
+    image: 'https://lh3.googleusercontent.com/d/1FSRVpgOhpoV9i-8kIvZ3v83L-qmIPLXC',
+    galleryImages: [
+      'https://lh3.googleusercontent.com/d/1FSRVpgOhpoV9i-8kIvZ3v83L-qmIPLXC'
+    ],
     defaultPrice: '10.80',
     weightOptions: [
       { weight: '500g Pack', serves: '2–3 serves', pricePlaceholder: '10.80' },

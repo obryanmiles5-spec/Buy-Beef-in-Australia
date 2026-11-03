@@ -1,16 +1,17 @@
 'use client';
 
+import Link from 'next/link';
 import { ShieldCheck } from 'lucide-react';
 import BrandLogo from './BrandLogo';
 import { BUSINESS_CONFIG } from '@/lib/data';
 
 interface FooterProps {
-  onNavigate: (view: string, categoryId?: string) => void;
+  onNavigate?: (view: string, categoryId?: string) => void;
   onOpenCompliance: (sectionId?: string) => void;
-  onOpenBlueprint: () => void;
+  onOpenBlueprint?: () => void;
 }
 
-export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }: FooterProps) {
+export default function Footer({ onNavigate, onOpenCompliance }: FooterProps) {
   const currentYear = new Date().getFullYear();
 
   return (
@@ -25,7 +26,9 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
           <div className="lg:col-span-4 flex flex-col justify-between">
             <div>
               <div className="mb-2">
-                <BrandLogo variant="footer" onClick={() => onNavigate('home')} />
+                <Link href="/" onClick={() => onNavigate?.('home')} className="inline-block cursor-pointer">
+                  <BrandLogo variant="footer" />
+                </Link>
               </div>
               <p className="text-xs text-stone-600 leading-relaxed mb-3">
                 Farm-direct carcass shares, free-range poultry, and artisan cuts dispatched across Australia with cold-chain packaging.
@@ -56,26 +59,26 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
             </h4>
             <div className="grid grid-cols-2 gap-x-3 gap-y-1 text-xs">
               {[
-                { name: 'Beef & Wagyu', id: 'beef' },
-                { name: 'Chicken & Poultry', id: 'chicken' },
-                { name: 'Pork & Roasts', id: 'pork' },
-                { name: 'Lamb & Cutlets', id: 'lamb' },
-                { name: 'Fish & Fillets', id: 'fish' },
-                { name: 'Ocean Seafood', id: 'seafood' },
-                { name: 'Artisan Sausages', id: 'sausages' },
-                { name: 'Curated Meat Packs', id: 'packs' },
-                { name: 'BARF Pet Food', id: 'pet-food' },
-                { name: 'Offal & Specialty', id: 'offal' },
+                { name: 'Beef & Wagyu', id: 'beef', slug: 'beef' },
+                { name: 'Chicken & Poultry', id: 'chicken', slug: 'chicken' },
+                { name: 'Pork & Roasts', id: 'pork', slug: 'pork' },
+                { name: 'Lamb & Cutlets', id: 'lamb', slug: 'lamb' },
+                { name: 'Fish & Fillets', id: 'fish', slug: 'fish-and-fillets' },
+                { name: 'Ocean Seafood', id: 'seafood', slug: 'seafood' },
+                { name: 'Artisan Sausages', id: 'sausages', slug: 'sausages' },
+                { name: 'Curated Meat Packs', id: 'packs', slug: 'meat-packs' },
+                { name: 'BARF Pet Food', id: 'pet-food', slug: 'pet-food' },
+                { name: 'Offal & Specialty', id: 'offal', slug: 'offal-specialty-cuts' },
               ].map((cat) => (
-                <button
+                <Link
                   key={cat.id}
-                  type="button"
-                  onClick={() => onNavigate('category', cat.id)}
+                  href={`/shop/${cat.slug || cat.id}`}
+                  onClick={() => onNavigate?.('category', cat.id)}
                   className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 text-stone-600 truncate cursor-pointer"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
                   <span className="truncate">{cat.name}</span>
-                </button>
+                </Link>
               ))}
             </div>
           </div>
@@ -87,14 +90,14 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
             </h4>
             <ul className="space-y-1 text-xs text-stone-600">
               <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('contact')}
+                <Link
+                  href="/contact"
+                  onClick={() => onNavigate?.('contact')}
                   className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
                   <span>Contact &amp; Orders</span>
-                </button>
+                </Link>
               </li>
               <li>
                 <button
@@ -136,44 +139,44 @@ export default function Footer({ onNavigate, onOpenCompliance, onOpenBlueprint }
             </h4>
             <ul className="space-y-1 text-xs text-stone-600">
               <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('about')}
+                <Link
+                  href="/about"
+                  onClick={() => onNavigate?.('about')}
                   className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
                   <span>About Our Butchery</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('blog')}
+                <Link
+                  href="/blog"
+                  onClick={() => onNavigate?.('blog')}
                   className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
                   <span>Butcher Journal</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={() => onNavigate('wholesale')}
+                <Link
+                  href="/wholesale"
+                  onClick={() => onNavigate?.('wholesale')}
                   className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer font-medium text-[#7A1F2B]"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
                   <span>Wholesale Meat Supply</span>
-                </button>
+                </Link>
               </li>
               <li>
-                <button
-                  type="button"
-                  onClick={onOpenBlueprint}
-                  className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer font-mono text-[11px]"
+                <Link
+                  href="/shop"
+                  onClick={() => onNavigate?.('shop')}
+                  className="hover:text-[#7A1F2B] hover:translate-x-0.5 transition-all text-left flex items-center gap-1 py-0.5 cursor-pointer font-medium"
                 >
                   <span className="text-[#C7903E] text-[9px]">›</span>
-                  <span>Site Architecture</span>
-                </button>
+                  <span>All Meat Departments</span>
+                </Link>
               </li>
             </ul>
           </div>

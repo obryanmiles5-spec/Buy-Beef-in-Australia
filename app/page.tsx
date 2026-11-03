@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import CategoryGrid from '@/components/CategoryGrid';
@@ -24,10 +25,12 @@ import CartDrawer from '@/components/CartDrawer';
 import MobileBottomNav from '@/components/MobileBottomNav';
 import SearchModal from '@/components/SearchModal';
 import { Product, CartItem, BlogPost } from '@/lib/types';
-import { BUSINESS_CONFIG } from '@/lib/data';
+import { BUSINESS_CONFIG, CATEGORIES } from '@/lib/data';
 import { Search, User, X } from 'lucide-react';
 
 export default function HomePage() {
+  const router = useRouter();
+
   // Navigation & View State
   const [currentView, setCurrentView] = useState<string>('home');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -41,52 +44,108 @@ export default function HomePage() {
   const [complianceInitialSection, setComplianceInitialSection] = useState<string>('delivery-info');
   const [activeProduct, setActiveProduct] = useState<Product | null>(null);
 
-  // Cart Items State
-  const [cartItems, setCartItems] = useState<CartItem[]>([
-    // Sample initial item to show immediate functionality
-    {
-      product: {
-        id: 'ribeye-scotch-fillet',
-        name: 'Grass-Fed Ribeye (Scotch Fillet)',
-        slug: 'grass-fed-ribeye-scotch-fillet',
-        category: 'beef',
-        subCategory: 'Steaks',
-        badge: 'Best Seller',
-        shortDescription: 'Tender, juicy Scotch Fillet with natural marbling for maximum steak flavour.',
-        fullDescription: 'Hand-selected Australian beef scotch fillet, trimmed to butcher standards. Exceptional tenderness and buttery richness.',
-        defaultPrice: '44.90',
-        weightOptions: [
-          { weight: '500g (2 steaks)', pricePlaceholder: '44.90', serves: '2-3 people' },
-          { weight: '1kg (4 steaks)', pricePlaceholder: '86.50', serves: '4-6 people' },
-        ],
-        stockStatus: 'In Stock',
-        originPlaceholder: '[INSERT VERIFIED COUNTRY OF ORIGIN - E.G. 100% AUSTRALIAN BEEF]',
-        allergensPlaceholder: 'Nil declared allergens. Pure 100% beef.',
-        cutInformation: 'Cube roll primal cut, trimmed fat cover 6mm.',
-        storageInstructions: 'Refrigerate immediately between 0°C and 4°C. Freeze if unused within 4 days.',
-        cookingSuggestions: 'Bring to room temperature. Sear on high cast-iron skillet for 3 mins each side with butter.',
-        image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+  // Cart Items State with localStorage sync
+  const [cartItems, setCartItems] = useState<CartItem[]>(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('pt_cart_items');
+      if (saved) {
+        try {
+          return JSON.parse(saved);
+        } catch {
+          // ignore
+        }
+      }
+    }
+    return [
+      {
+        product: {
+          id: 'ribeye-scotch-fillet',
+          name: 'Grass-Fed Ribeye (Scotch Fillet)',
+          slug: 'grass-fed-ribeye-scotch-fillet',
+          category: 'beef',
+          subCategory: 'Steaks',
+          badge: 'Best Seller',
+          shortDescription: 'Tender, juicy Scotch Fillet with natural marbling for maximum steak flavour.',
+          fullDescription: 'Hand-selected Australian beef scotch fillet, trimmed to butcher standards. Exceptional tenderness and buttery richness.',
+          defaultPrice: '44.90',
+          weightOptions: [
+            { weight: '500g (2 steaks)', pricePlaceholder: '44.90', serves: '2-3 people' },
+            { weight: '1kg (4 steaks)', pricePlaceholder: '86.50', serves: '4-6 people' },
+          ],
+          stockStatus: 'In Stock',
+          originPlaceholder: '[INSERT VERIFIED COUNTRY OF ORIGIN - E.G. 100% AUSTRALIAN BEEF]',
+          allergensPlaceholder: 'Nil declared allergens. Pure 100% beef.',
+          cutInformation: 'Cube roll primal cut, trimmed fat cover 6mm.',
+          storageInstructions: 'Refrigerate immediately between 0°C and 4°C. Freeze if unused within 4 days.',
+          cookingSuggestions: 'Bring to room temperature. Sear on high cast-iron skillet for 3 mins each side with butter.',
+          image: 'https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop',
+        },
+        selectedWeight: '500g (2 steaks)',
+        quantity: 1,
+        pricePerUnit: '44.90',
       },
-      selectedWeight: '500g (2 steaks)',
-      quantity: 1,
-      pricePerUnit: '44.90',
-    },
-  ]);
+    ];
+  });
+
+  // Keep cart in sync across routes and tabs
+  useEffect(() => {
+    const handleStorage = () => {
+      const saved = localStorage.getItem('pt_cart_items');
+      if (saved) {
+        try {
+          setCartItems(JSON.parse(saved));
+        } catch {
+          // ignore
+        }
+      }
+    };
+    window.addEventListener('storage', handleStorage);
+    window.addEventListener('pt_cart_updated', handleStorage);
+    return () => {
+      window.removeEventListener('storage', handleStorage);
+      window.removeEventListener('pt_cart_updated', handleStorage);
+    };
+  }, []);
 
   const [headerSearchQuery, setHeaderSearchQuery] = useState('');
 
-  // Navigation Handlers
+  // Navigation Handlers - Push real URL paths for proper browser history
   const handleNavigate = (view: string, categoryId?: string) => {
     if (view === 'category' && categoryId) {
-      setSelectedCategory(categoryId);
-      setCurrentView('shop');
-    } else {
-      setCurrentView(view);
-      if (view === 'shop') {
-        setSelectedCategory(categoryId || 'all');
-      }
+      const cat = CATEGORIES.find((c) => c.id === categoryId || c.slug === categoryId);
+      router.push(`/shop/${cat?.slug || categoryId}`);
+      return;
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (view === 'shop') {
+      if (categoryId && categoryId !== 'all') {
+        const cat = CATEGORIES.find((c) => c.id === categoryId || c.slug === categoryId);
+        router.push(`/shop/${cat?.slug || categoryId}`);
+      } else {
+        router.push('/shop');
+      }
+      return;
+    }
+    if (view === 'wholesale') {
+      router.push('/wholesale');
+      return;
+    }
+    if (view === 'about') {
+      router.push('/about');
+      return;
+    }
+    if (view === 'contact') {
+      router.push('/contact');
+      return;
+    }
+    if (view === 'blog') {
+      router.push('/blog');
+      return;
+    }
+    if (view === 'home') {
+      router.push('/');
+      return;
+    }
+    router.push(`/${view}`);
   };
 
   // Cart Operations
@@ -98,20 +157,26 @@ export default function HomePage() {
       const existingIndex = prev.findIndex(
         (item) => item.product.id === product.id && item.selectedWeight === weight
       );
+      let updated: CartItem[];
       if (existingIndex > -1) {
-        const updated = [...prev];
+        updated = [...prev];
         updated[existingIndex].quantity += quantity;
-        return updated;
+      } else {
+        updated = [
+          ...prev,
+          {
+            product,
+            selectedWeight: weight,
+            quantity,
+            pricePerUnit: unitPrice,
+          },
+        ];
       }
-      return [
-        ...prev,
-        {
-          product,
-          selectedWeight: weight,
-          quantity,
-          pricePerUnit: unitPrice,
-        },
-      ];
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('pt_cart_items', JSON.stringify(updated));
+        window.dispatchEvent(new Event('pt_cart_updated'));
+      }
+      return updated;
     });
 
     setCartOpen(true);
@@ -119,21 +184,38 @@ export default function HomePage() {
 
   const handleUpdateCartQuantity = (index: number, newQty: number) => {
     setCartItems((prev) => {
-      const updated = [...prev];
+      let updated: CartItem[];
       if (newQty <= 0) {
-        return updated.filter((_, i) => i !== index);
+        updated = prev.filter((_, i) => i !== index);
+      } else {
+        updated = [...prev];
+        updated[index].quantity = newQty;
       }
-      updated[index].quantity = newQty;
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('pt_cart_items', JSON.stringify(updated));
+        window.dispatchEvent(new Event('pt_cart_updated'));
+      }
       return updated;
     });
   };
 
   const handleRemoveCartItem = (index: number) => {
-    setCartItems((prev) => prev.filter((_, i) => i !== index));
+    setCartItems((prev) => {
+      const updated = prev.filter((_, i) => i !== index);
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('pt_cart_items', JSON.stringify(updated));
+        window.dispatchEvent(new Event('pt_cart_updated'));
+      }
+      return updated;
+    });
   };
 
   const handleClearCart = () => {
     setCartItems([]);
+    if (typeof window !== 'undefined') {
+      localStorage.removeItem('pt_cart_items');
+      window.dispatchEvent(new Event('pt_cart_updated'));
+    }
   };
 
   const handleOpenCompliance = (sectionId: string = 'delivery-info') => {
@@ -145,7 +227,7 @@ export default function HomePage() {
     e.preventDefault();
     if (headerSearchQuery.trim()) {
       setSearchModalOpen(false);
-      setCurrentView('shop');
+      router.push(`/shop?q=${encodeURIComponent(headerSearchQuery.trim())}`);
     }
   };
 
@@ -236,12 +318,15 @@ export default function HomePage() {
 
             {/* 2. Shop by Category Grid */}
             <CategoryGrid
-              onSelectCategory={(catId) => handleNavigate('category', catId)}
+              onSelectCategory={(catId) => {
+                const cat = CATEGORIES.find((c) => c.id === catId || c.slug === catId);
+                router.push(`/shop/${cat?.slug || catId}`);
+              }}
             />
 
             {/* 3. Featured Meat Cuts */}
             <FeaturedProducts
-              onSelectProduct={(product) => setActiveProduct(product)}
+              onSelectProduct={(product) => router.push(`/product/${product.id}`)}
               onAddToCart={handleAddToCart}
               onOpenCompliance={handleOpenCompliance}
             />
@@ -344,7 +429,7 @@ export default function HomePage() {
         product={activeProduct}
         onClose={() => setActiveProduct(null)}
         onAddToCart={handleAddToCart}
-        onSelectProduct={(p) => setActiveProduct(p)}
+        onSelectProduct={(p) => router.push(`/product/${p.id}`)}
         onOpenCompliance={handleOpenCompliance}
       />
 
@@ -367,17 +452,18 @@ export default function HomePage() {
         isOpen={searchModalOpen}
         onClose={() => setSearchModalOpen(false)}
         onSelectProduct={(prod) => {
-          window.location.href = `/product/${prod.id}`;
+          setSearchModalOpen(false);
+          router.push(`/product/${prod.id}`);
         }}
         onAddToCart={handleAddToCart}
         onNavigateToShop={(term, category) => {
+          setSearchModalOpen(false);
           if (category) {
-            setSelectedCategory(category);
+            const cat = CATEGORIES.find((c) => c.id === category || c.slug === category);
+            router.push(`/shop/${cat?.slug || category}${term ? `?q=${encodeURIComponent(term)}` : ''}`);
+          } else {
+            router.push(`/shop${term ? `?q=${encodeURIComponent(term)}` : ''}`);
           }
-          if (term) {
-            setHeaderSearchQuery(term);
-          }
-          setCurrentView('shop');
         }}
       />
 
